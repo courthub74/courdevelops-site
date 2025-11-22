@@ -54,7 +54,7 @@ Focus: Use what you've built and apply it to others.
 
 \* One creative business (photographer, filmmaker, musician)
 
-Build for each:
+## Build for each:
 
 \* 1-page portfolio OR
 
@@ -66,63 +66,63 @@ End-of-month result:
 
 Your studio now has real case studies — priceless for your career.
 
-📌 MONTH 4 — CourDevelops.com Launch
+### 📌 MONTH 4 — CourDevelops.com Launch
 
 Focus: Turn your studio into a professional destination.
 
-Build website sections:
+## Build website sections:
 
-Home
+\* Home
 
-Services (Web Dev for Art, Creative Tech, AI Tools)
+\* Services (Web Dev for Art, Creative Tech, AI Tools)
 
-Case Studies (Dream Agent + 2 other clients)
+\* Case Studies (Dream Agent + 2 other clients)
 
-About Courtney / CourDevelops
+\* About Courtney / CourDevelops
 
-Contact + booking page
+\* Contact + booking page
 
 End-of-month result:
 
 CourDevelops becomes a real brand you can present with confidence.
 
-📌 MONTH 5 — Public Visibility + Marketing Start
+### 📌 MONTH 5 — Public Visibility + Marketing Start
 
-Focus: Start showing your work consistently.
+## Focus: Start showing your work consistently.
 
 Weekly output:
 
-Dream Agent painting
+\* Dream Agent painting
 
-GSAP animation demo
+\* GSAP animation demo
 
-Dashboard feature demo
+\* Dashboard feature demo
 
-Short behind-the-scenes breakdown
+\* Short behind-the-scenes breakdown
 
 End-of-month result:
 
 Your name spreads — people see you as “web dev for the arts.”
 
-📌 MONTH 6 — Outreach + Initial Paid Clients
+### 📌 MONTH 6 — Outreach + Initial Paid Clients
 
-Focus: Begin landing paid work intentionally.
+## Focus: Begin landing paid work intentionally.
 
 Outreach targets:
 
-local artists
+\* local artists
 
-galleries
+\* galleries
 
-dance studios
+\* dance studios
 
-musicians
+\* musicians
 
-NFT creators
+\* NFT creators
 
-independent brands
+\* independent brands
 
-creative agencies
+\* creative agencies
 
 Send this message:
 
@@ -133,55 +133,55 @@ End-of-month result:
 
 2–4 paid projects minimum.
 
-📌 MONTH 7 — Skill Expansion
+### 📌 MONTH 7 — Skill Expansion
 
-Focus: Strengthen both technical + artistic abilities.
+## Focus: Strengthen both technical + artistic abilities.
 
 Learn deeply:
 
-GSAP timelines
+\* GSAP timelines
 
-React transitions
+\* React transitions
 
-Database indexing
+\* Database indexing
 
-Auth best practices
+\* Auth best practices
 
-NFT metadata automation
+\* NFT metadata automation
 
-XRPL / Ethereum integration
+\* XRPL / Ethereum integration
 
-AI video workflows (Sora, Runway, Pika)
+\* AI video workflows (Sora, Runway, Pika)
 
 End-of-month result:
 
 You become dangerous — a hybrid artist-engineer.
 
-📌 MONTH 8 — Dream Agent Universe Expansion
+### 📌 MONTH 8 — Dream Agent Universe Expansion
 
-Focus: Make Dream Agent a richer narrative world.
+## Focus: Make Dream Agent a richer narrative world.
 
 Add:
 
-lore pages
+\* lore pages
 
-interactive stories
+\* interactive stories
 
-animated scroll sequences
+\* animated scroll sequences
 
-AI voice logs
+\* AI voice logs
 
-Sora video drops
+\* Sora video drops
 
-behind-the-painting commentary
+\* behind-the-painting commentary
 
 End-of-month result:
 
 Dream Agent feels like an entire mythos, not just art.
 
-📌 MONTH 9 — Monetization Scaling
+### 📌 MONTH 9 — Monetization Scaling
 
-Focus: Turn your skills into real income streams.
+## Focus: Turn your skills into real income streams.
 
 Offer packages:
 
@@ -199,9 +199,9 @@ End-of-month result:
 
 You’re earning real money consistently.
 
-📌 MONTH 10 — Thought Leadership
+### 📌 MONTH 10 — Thought Leadership
 
-Focus: Position yourself as an expert in art-tech.
+## Focus: Position yourself as an expert in art-tech.
 
 Publish:
 
@@ -219,47 +219,47 @@ End-of-month result:
 
 People start asking you for advice, not just services.
 
-📌 MONTH 11 — Studio Products
+### 📌 MONTH 11 — Studio Products
 
-Focus: Turn CourDevelops into a tool-making studio.
+## Focus: Turn CourDevelops into a tool-making studio.
 
 Build:
 
-AI art pricing tool
+\* AI art pricing tool
 
-NFT metadata generator
+\* NFT metadata generator
 
-portfolio template
+\* portfolio template
 
-animated gallery template
+\* animated gallery template
 
-1–2 reusable React components for artists
+\* 1–2 reusable React components for artists
 
-“Dream OS Lite” for public use
+\* “Dream OS Lite” for public use
 
 End-of-month result:
 
 Your studio now has products — not just services.
 
-📌 MONTH 12 — High-Level Clients
+### 📌 MONTH 12 — High-Level Clients
 
-Focus: Go after bigger names.
+## Focus: Go after bigger names.
 
 Target:
 
-galleries
+\* galleries
 
-museums
+\* museums
 
-indie record labels
+\* indie record labels
 
-foundations
+\* foundations
 
-film/tv creatives
+\* film/tv creatives
 
-NFT companies
+\* NFT companies
 
-art residencies
+\* art residencies
 
 Your pitch:
 
