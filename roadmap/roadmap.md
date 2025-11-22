@@ -1,3 +1,5 @@
+#### 1 Year Roadmap
+
 ### 📌 MONTH 1 — Foundation + Identity
 
 Focus: Lock in who you are professionally + solidify your brand ecosystem.
