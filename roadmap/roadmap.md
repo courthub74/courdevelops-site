@@ -6,19 +6,19 @@ Focus: Lock in who you are professionally + solidify your brand ecosystem.
 
 ## Tasks
 
-\* Finalize Dream Agent front-end structure
+\* ~Finalize Dream Agent front-end structure~
 
-\* Fix all responsiveness + loading issues
+\* ~Fix all responsiveness + loading issues~
 
-\* Get Dream Agent collections fully organized
+\* ~Get Dream Agent collections fully organized~
 
-\* Create CourDevelops identity (logo, color, tagline)
+\* ~Create CourDevelops identity (logo, color, tagline)~
 
-\* Write your personal bio + CourDevelops About page
+\* ~Write your personal bio + CourDevelops About page~
 
 \* Update LinkedIn headline & summary
 
-\* Set up GitHub repos for Dream Agent + Dream OS
+\* ~Set up GitHub repos for Dream Agent + Dream OS~
 
 ### 📌 MONTH 2 — Dream OS MVP
 
