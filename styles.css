@@ -510,7 +510,7 @@ main {
 
 .contact-form label {
   font-size: 0.8rem;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   letter-spacing: 0.06em;
   opacity: 0.8;
 }
