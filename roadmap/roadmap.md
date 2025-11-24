@@ -16,7 +16,7 @@ Focus: Lock in who you are professionally + solidify your brand ecosystem.
 
 \* ~Write your personal bio + CourDevelops About page~
 
-\* Update LinkedIn headline & summary
+\* ~Update LinkedIn headline & summary~
 
 \* ~Set up GitHub repos for Dream Agent + Dream OS~
 

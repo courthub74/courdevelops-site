@@ -46,21 +46,73 @@
         <div class="contact-card">
           <h2 class="section-title" style="font-size:1.05rem;">Start a conversation</h2>
           <p class="lead" style="font-size:0.9rem;">
-            For now, the simplest way to reach out is directly by email or LinkedIn.
-            Include links to your work and a short description of what you’d like to build.
+            Use the form below to introduce your project. Include links to your work,
+            a brief description of what you’d like to build, and any timelines or constraints.
           </p>
 
-          <div class="contact-row">
-            <strong>Email</strong>
-            <!-- Replace with your real address -->
-            <a href="mailto:hello@courdevelops.com">hello@courdevelops.com</a>
-          </div>
-          <div class="contact-row">
-            <strong>LinkedIn</strong>
-            <a href="https://www.linkedin.com/in/courtney-jacobs-b85438365/" target="_blank" rel="noreferrer">
-              Courtney&nbsp;Jacobs
-            </a>
-          </div>
+          <!-- Contact Form -->
+          <form class="contact-form" action="YOUR_FORM_ENDPOINT_HERE" method="POST">
+            <div class="contact-row">
+              <div class="field-group">
+                <label for="name"><strong>Name</strong></label>
+                <input type="text" id="name" name="name" required placeholder="Your name">
+              </div>
+            </div>
+
+            <div class="contact-row">
+              <div class="field-group">
+                <label for="email"><strong>Email</strong></label>
+                <input type="email" id="email" name="email" required placeholder="you@example.com">
+              </div>
+            </div>
+
+            <div class="contact-row">
+              <div class="field-group">
+                <label for="project-type"><strong>Project type</strong></label>
+                <select id="project-type" name="project_type" required>
+                  <option value="">Select one</option>
+                  <option value="artist-experience">Artist / portfolio experience</option>
+                  <option value="interactive-piece">Interactive / experimental piece</option>
+                  <option value="web-app">Web app / tool</option>
+                  <option value="ai-integration">AI-integrated product</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="contact-row">
+              <div class="field-group">
+                <label for="timeline"><strong>Timeline</strong></label>
+                <input type="text" id="timeline" name="timeline" placeholder="e.g. 4–8 weeks, flexible, ASAP">
+              </div>
+            </div>
+
+            <div class="contact-row">
+              <div class="field-group">
+                <label for="budget"><strong>Rough budget range</strong></label>
+                <input type="text" id="budget" name="budget" placeholder="e.g. $3k–$5k, $10k+, exploring">
+              </div>
+            </div>
+
+            <div class="contact-row">
+              <div class="field-group">
+                <label for="message"><strong>Project details & links</strong></label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                  placeholder="Describe what you’d like to create, who it’s for, and include any links to references or existing work."
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="contact-row">
+              <button type="submit" class="nav-cta">
+                Send message
+              </button>
+            </div>
+          </form>
 
           <p class="lead" style="margin-top:1.4rem; font-size:0.88rem;">
             Helpful details to include:
@@ -70,6 +122,13 @@
             <li>Any inspiration or references (links, mood, other projects)</li>
             <li>Timeline and rough budget range</li>
           </ul>
+
+          <div class="contact-row" style="margin-top:1.2rem;">
+            <strong>LinkedIn</strong>
+            <a href="https://www.linkedin.com/in/courtney-jacobs-b85438365/" target="_blank" rel="noreferrer">
+              Courtney&nbsp;Jacobs
+            </a>
+          </div>
         </div>
       </div>
     </section>

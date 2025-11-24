@@ -501,6 +501,39 @@ main {
   text-align: right;
 }
 
+.contact-form .field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  width: 100%;
+}
+
+.contact-form label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.8;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  padding: 0.6rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(5, 6, 10, 0.9);
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: rgba(0, 229, 255, 0.7);
+}
+
+
 /* Responsive */
 
 @media (max-width: 880px) {
