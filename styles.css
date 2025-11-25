@@ -7,6 +7,7 @@
   --accent-soft: #2e78c8;
   --text-main: #ffffff;
   --text-muted: #9ca3af;
+  --on-page: #60646c;
   --border-soft: rgba(255, 255, 255, 0.08);
   --radius-lg: 16px;
   --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.6);
@@ -36,6 +37,7 @@ img {
   max-width: 100%;
   display: block;
 }
+
 
 /* Layout */
 
@@ -69,6 +71,13 @@ img {
   justify-content: space-between;
   padding: 0.9rem 0;
 }
+
+.nav-links a.disabled {
+  color: #ffffff55;
+  cursor: default;
+  pointer-events: none;
+}
+
 
 .brand {
   display: flex;
@@ -344,6 +353,7 @@ main {
 }
 
 .card-tagline {
+  display: flex;
   font-size: 0.75rem;
   color: var(--accent);
   text-transform: uppercase;
