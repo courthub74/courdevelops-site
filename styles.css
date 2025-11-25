@@ -533,6 +533,35 @@ main {
   border-color: rgba(0, 229, 255, 0.7);
 }
 
+/* Img Icons */
+.icon_rep {
+  width: 35px;
+  height: 35px;
+  /* width: 1em;
+  height: 1em; */
+  border-radius: 6px;
+  object-fit: cover;
+  vertical-align: middle;
+  margin-right: 0.4rem;
+}
+
+/* Img Icons */
+.icon_rep_studio {
+  width: 55px;
+  height: 55px;
+  /* width: 1em;
+  height: 1em; */
+  border-radius: 6px;
+  object-fit: cover;
+  vertical-align: middle;
+  margin-right: 0.4rem;
+}
+
+.img_with_title {
+  display: flex;
+  align-items: center;
+}
+
 
 /* Responsive */
 
