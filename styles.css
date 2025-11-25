@@ -299,7 +299,7 @@ main {
 /* Section layouts */
 
 .section {
-  padding: 3rem 0 3.5rem;
+  padding: 3rem 0 .5rem;
 }
 
 .section-header {
@@ -324,6 +324,88 @@ main {
   color: var(--text-muted);
   max-width: 34rem;
 }
+
+/* Studio */
+/* .think_focus {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+} */
+
+/* .section-process-focus {
+  margin-top: 10px;
+} */
+
+/* main two-column grid */
+.bottom-info-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 56px;
+  padding-top: 40px;
+  /* margin-top: 48px; */
+  border-top: 1px solid rgba(255, 255, 255, 0.06); /* soft top divider */
+}
+
+/* columns */
+.bottom-column {
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* subtle vertical divider for right column */
+.bottom-column--right {
+  border-left: 1px solid rgba(255, 255, 255, 0.04);
+  padding-left: 32px;
+}
+
+/* eyebrow heading */
+.section-eyebrow {
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 12px;
+}
+
+/* list styling */
+.bottom-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.bottom-list li {
+  position: relative;
+  padding-left: 16px;
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+/* tiny chevron bullet */
+.bottom-list li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.8rem;
+}
+
+/* responsive: stack on mobile, adjust dividers */
+@media (max-width: 768px) {
+  .bottom-info-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .bottom-column--right {
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 24px;
+  }
+}
+
 
 /* Cards */
 
