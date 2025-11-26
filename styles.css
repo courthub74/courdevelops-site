@@ -327,15 +327,104 @@ main {
 }
 
 /* Studio */
-/* .think_focus {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-} */
+.section-studio-intro {
+  padding-top: 96px;
+}
 
-/* .section-process-focus {
-  margin-top: 10px;
-} */
+/* main two-column grid */
+.studio-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2.2fr) minmax(0, 1fr);
+  gap: 72px;
+  align-items: flex-start;
+}
+
+.studio-copy p {
+  max-width: 44rem;
+}
+
+/* meta column */
+.studio-meta {
+  padding-left: 32px;
+  border-left: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 0.9rem;
+}
+
+/* small icon */
+.studio-meta-icon {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 20px;
+}
+
+.studio-meta-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: rgba(0, 229, 255, 0.9);
+  stroke-width: 1.4;
+}
+
+/* groups inside meta column */
+.studio-meta-group + .studio-meta-group {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06); /* subtle divider */
+}
+
+/* label */
+.studio-meta-label {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 10px;
+}
+
+/* list */
+.studio-meta-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.studio-meta-list li {
+  margin-bottom: 8px;
+  color: rgba(255, 255, 255, 0.82);
+  position: relative;
+  padding-left: 14px;
+}
+
+/* tiny tick as bullet */
+.studio-meta-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.4em;
+  width: 6px;
+  height: 1px;
+  background: rgba(0, 229, 255, 0.7);
+}
+
+/* responsive stacking */
+@media (max-width: 900px) {
+  .studio-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .studio-meta {
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 24px;
+  }
+
+  .studio-meta-icon {
+    margin-bottom: 16px;
+  }
+}
+
 
 /* main two-column grid */
 .bottom-info-grid {
@@ -697,3 +786,106 @@ main {
     text-align: left;
   }
 }
+
+/* NEW OVERRIDES */
+.section-studio-intro {
+  padding-top: 88px;      /* slightly tighter than 96 */
+  padding-bottom: 72px;   /* more air before the next divider */
+}
+
+.studio-copy .section-kicker {
+  margin-bottom: 18px;
+}
+
+.studio-copy .section-title {
+  margin-bottom: 18px;
+  line-height: 1.25;         /* a bit tighter for a hero heading */
+}
+
+.studio-copy p {
+  margin-top: 0;
+  margin-bottom: 14px;
+  line-height: 1.7;
+  font-size: 0.98rem;        /* micro bump for readability */
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.studio-copy p:last-of-type {
+  margin-bottom: 0;          /* no extra gap at the bottom */
+}
+
+.studio-grid {
+  grid-template-columns: minmax(0, 2.1fr) minmax(0, 1fr);
+  gap: 64px;                 /* was 72 – pulls things together a bit */
+}
+
+.studio-meta {
+  padding-left: 40px;        /* slightly stronger inset */
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* nudge the icon up so it visually lines with the heading */
+.studio-meta-icon {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 22px;
+  margin-top: 4px;
+}
+
+.studio-meta-label {
+  margin-bottom: 8px;        /* slightly tighter */
+  font-size: 0.68rem;
+}
+
+/* group spacing */
+.studio-meta-group + .studio-meta-group {
+  margin-top: 22px;
+  padding-top: 18px;
+}
+
+/* list text */
+.studio-meta-list li {
+  margin-bottom: 6px;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+/* subtle bullet + color unify with kicker */
+:root {
+  --accent-blue: #00B7FF;    /* or your exact kicker color */
+}
+
+.studio-meta-icon svg {
+  stroke: var(--accent-blue);
+  filter: drop-shadow(0 0 6px rgba(0, 183, 255, 0.35));
+}
+
+.studio-meta-label {
+  color: var(--accent-blue);
+}
+
+.studio-meta-list li::before {
+  background: var(--accent-blue);
+  opacity: 0.85;
+}
+
+@media (max-width: 900px) {
+  .section-studio-intro {
+    padding-top: 72px;
+    padding-bottom: 56px;
+  }
+
+  .studio-grid {
+    gap: 36px;
+  }
+
+  .studio-meta {
+    padding-top: 20px;
+  }
+
+  .studio-meta-group + .studio-meta-group {
+    margin-top: 18px;
+    padding-top: 16px;
+  }
+}
+
