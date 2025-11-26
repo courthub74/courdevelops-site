@@ -788,10 +788,20 @@ main {
 }
 
 /* NEW OVERRIDES */
-.section-studio-intro {
-  padding-top: 88px;      /* slightly tighter than 96 */
-  padding-bottom: 72px;   /* more air before the next divider */
+.section-title {
+  letter-spacing: -0.015em;
+  max-width: 92%;
 }
+
+.section-studio-intro {
+  padding-top: 88px;
+  padding-bottom: 48px; /* was ~72–80, now tighter */
+}
+
+.section-process-focus {
+  padding-top: 12px;    /* was ~64 */
+}
+
 
 .studio-copy .section-kicker {
   margin-bottom: 18px;
@@ -805,10 +815,12 @@ main {
 .studio-copy p {
   margin-top: 0;
   margin-bottom: 14px;
-  line-height: 1.7;
+  line-height: 1.72;
+  max-width: 42rem;
   font-size: 0.98rem;        /* micro bump for readability */
   color: rgba(255, 255, 255, 0.86);
 }
+
 
 .studio-copy p:last-of-type {
   margin-bottom: 0;          /* no extra gap at the bottom */
@@ -821,33 +833,43 @@ main {
 
 .studio-meta {
   padding-left: 40px;        /* slightly stronger inset */
-  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  /* border-left: 1px solid rgba(255, 255, 255, 0.08); */
+  border-left: 1px solid rgba(255, 255, 255, 0.085);
+  margin-top: -4px; /* optically aligns with heading */
 }
 
 /* nudge the icon up so it visually lines with the heading */
 .studio-meta-icon {
   width: 32px;
   height: 32px;
-  margin-bottom: 22px;
-  margin-top: 4px;
+  /* margin-bottom: 22px;
+  margin-top: 4px; */
+  margin-top: 2px;
+  margin-bottom: 24px;
 }
 
 .studio-meta-label {
   margin-bottom: 8px;        /* slightly tighter */
   font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
 }
 
 /* group spacing */
 .studio-meta-group + .studio-meta-group {
-  margin-top: 22px;
-  padding-top: 18px;
+  margin-top: 16px;
+  /* padding-top: 18px; */
 }
+
+
 
 /* list text */
 .studio-meta-list li {
   margin-bottom: 6px;
   font-size: 0.88rem;
   line-height: 1.6;
+  letter-spacing: 0.01em;
+  margin-bottom: 7px;
 }
 
 /* subtle bullet + color unify with kicker */
