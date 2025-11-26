@@ -76,6 +76,7 @@ img {
   color: #ffffff55;
   cursor: default;
   pointer-events: none;
+  border-bottom: 1px solid var(--accent-soft);
 }
 
 
