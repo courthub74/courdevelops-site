@@ -347,6 +347,7 @@ main {
 .studio-meta {
   padding-left: 32px;
   border-left: 1px solid rgba(255, 255, 255, 0.06);
+  border-left: 1px solid rgba(0,183,255,0.05);
   font-size: 0.9rem;
 }
 
@@ -370,6 +371,7 @@ main {
   margin-top: 24px;
   padding-top: 18px;
   border-top: 1px solid rgba(255, 255, 255, 0.06); /* subtle divider */
+  border-top: 1px solid rgba(255, 255, 255, 0.04);; /* subtle divider */
 }
 
 /* label */
@@ -433,7 +435,8 @@ main {
   gap: 56px;
   padding-top: 40px;
   /* margin-top: 48px; */
-  border-top: 1px solid rgba(255, 255, 255, 0.06); /* soft top divider */
+  /* border-top: 1px solid rgba(255, 255, 255, 0.06); */
+  box-shadow: inset 0 1px 0 rgba(0,183,255,0.05);
 }
 
 /* columns */
@@ -795,12 +798,21 @@ main {
 
 .section-studio-intro {
   padding-top: 88px;
-  padding-bottom: 48px; /* was ~72–80, now tighter */
+  padding-bottom: 40px; /* was ~72–80, now tighter */
 }
 
 .section-process-focus {
-  padding-top: 12px;    /* was ~64 */
+  padding-top: 10px; /* was 44 */
 }
+
+.section-process-focus {
+  /* border-top: 1px solid rgba(255,255,255,0.06); */
+  margin-top: -4px;
+}
+
+/* .section-process-focus {
+  box-shadow: inset 0 1px 0 rgba(0,183,255,0.05);
+} */
 
 
 .studio-copy .section-kicker {
@@ -833,8 +845,8 @@ main {
 
 .studio-meta {
   padding-left: 40px;        /* slightly stronger inset */
-  /* border-left: 1px solid rgba(255, 255, 255, 0.08); */
   border-left: 1px solid rgba(255, 255, 255, 0.085);
+  border-left: 1px solid rgba(255, 255, 255, 0.04);
   margin-top: -4px; /* optically aligns with heading */
 }
 
