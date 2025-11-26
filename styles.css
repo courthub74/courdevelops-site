@@ -798,7 +798,7 @@ main {
 
 .section-studio-intro {
   padding-top: 88px;
-  padding-bottom: 40px; /* was ~72–80, now tighter */
+  padding-bottom: 36px; /* was ~72–80, now tighter */
 }
 
 .section-process-focus {
