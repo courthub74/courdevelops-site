@@ -1733,5 +1733,24 @@ main {
   filter: brightness(1.08);
 }
 
+/* STUDIO STEPS */
+.studio-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 8px;
+  object-fit: cover;
+  vertical-align: middle;
+  margin-right: 0.6rem;
+}
+
+.card-tagline {
+  display: flex;
+  font-size: 0.75rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  margin-bottom: 0.5rem;
+  align-items: center;
+}
 
 
