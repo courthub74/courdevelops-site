@@ -172,6 +172,20 @@ main {
   align-items: center;
 }
 
+/* Desktop hero image sizing */
+.hero-image {
+  display: flex;
+  justify-content: center;   /* center it in its column */
+  align-items: center;
+}
+
+.hero-image img {
+  width: 280px;              /* 🔧 change this to the size you want */
+  max-width: 100%;           /* don't overflow on smaller screens */
+  height: auto;
+}
+
+
 .hero-kicker {
   font-size: 0.8rem;
   letter-spacing: 0.16em;
@@ -1192,3 +1206,82 @@ main {
   }
 }
 
+
+/* Mobile: show inline logo + adjust heading */
+@media (max-width: 880px) {
+  .hero-title {
+    font-size: clamp(1.6rem, 5vw, 2rem);
+    line-height: 1.2;
+  }
+
+  .hero-title-inline {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+  }
+
+  .hero-inline-logo {
+    display: block;
+    width: 100px;   /* adjust size here */
+    height: auto;
+    flex-shrink: 0;
+  }
+
+  /* Hide the big right-side hero image on mobile */
+  .hero-image {
+    display: none;
+  }
+}
+
+
+/* Default (desktop): show text-only title, hide inline logo version */
+.hero-title-desktop {
+  display: inline;
+}
+
+.hero-title-inline,
+.hero-inline-logo {
+  display: none;
+}
+
+/* Mobile: use logo + inline title instead */
+@media (max-width: 880px) {
+  .hero-title {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);  /* was 1.6rem, 5vw, 2rem */
+    /* font-size: clamp(1.4rem, 4.5vw, 1.8rem);  
+    font-size: clamp(1.2rem, 4vw, 1.6rem);   */
+    line-height: 1.2;
+    }
+
+
+  /* Hide desktop-only title */
+  .hero-title-desktop {
+    display: none;
+  }
+
+  /* Show inline version with logo */
+  .hero-title-inline {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+  }
+
+  .hero-inline-logo {
+    display: block;
+    width: 80px;  /* tweak size here */
+    height: auto;
+    flex-shrink: 0;
+  }
+
+  /* Hide the big right-side hero image on mobile */
+  .hero-image {
+    display: none;
+  }
+}
+
+/* Mobile: tighten space under hero */
+@media (max-width: 880px) {
+  .hero {
+    padding-bottom: 1.2rem;  /* was ~3rem */
+  }
+}
