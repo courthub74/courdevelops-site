@@ -1485,4 +1485,46 @@ main {
 }
 
 
+/* PROJECT NAV ARROWS — minimal brand style */
+.section-nav-btn {
+  background: transparent;
+  border: none;
+  width: auto;
+  height: auto;
+  padding: 0.15rem 0.4rem;
+
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1;
+
+  color: #3A9DF7;
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    text-shadow 0.2s ease;
+}
+
+/* Hover pulse */
+.section-nav-btn:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+  text-shadow:
+    0 0 6px rgba(58, 157, 247, 0.7),
+    0 0 14px rgba(58, 157, 247, 0.4);
+}
+
+/* Active click */
+.section-nav-btn:active {
+  transform: translateY(0);
+}
+
+/* Keyboard focus */
+.section-nav-btn:focus-visible {
+  outline: none;
+  text-shadow:
+    0 0 8px rgba(58, 157, 247, 0.85),
+    0 0 16px rgba(58, 157, 247, 0.55);
+}
 
