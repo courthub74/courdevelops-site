@@ -1285,3 +1285,11 @@ main {
     padding-bottom: 1.2rem;  /* was ~3rem */
   }
 }
+
+/* Subtle glow for hero logos */
+.hero-image img,
+.hero-inline-logo {
+  filter: drop-shadow(0 0 6px rgba(0, 183, 255, 0.35))
+        drop-shadow(0 0 12px rgba(0, 183, 255, 0.1));
+}
+
