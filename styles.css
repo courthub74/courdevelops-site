@@ -180,7 +180,7 @@ main {
 }
 
 .hero-image img {
-  width: 280px;              /* 🔧 change this to the size you want */
+  width: 300px;              /* 🔧 change this to the size you want */
   max-width: 100%;           /* don't overflow on smaller screens */
   height: auto;
 }
@@ -1252,7 +1252,7 @@ main {
 /* Mobile: slightly reduce case study section title size */
 @media (max-width: 768px) {
   .section-case-studies .section-title {
-    font-size: 1rem; /* was ~1.4rem */
+    font-size: .8rem; /* was ~1.4rem */
     line-height: 1.25;
   }
 }
@@ -1753,4 +1753,10 @@ main {
   align-items: center;
 }
 
+/* Mobile: hide case study hero badges */
+@media (max-width: 768px) {
+  .hero-badges {
+    display: none;
+  }
+}
 
