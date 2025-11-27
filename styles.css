@@ -929,6 +929,35 @@ main {
   padding-right: 3.5rem;
 }
 
+/* Mobile-friendly case studies */
+@media (max-width: 768px) {
+  /* Let the viewport grow with content */
+  .case-viewport {
+    min-height: auto;
+  }
+
+  /* Make the active card part of normal flow instead of absolutely positioned */
+  .case-card {
+    position: relative;
+    inset: auto;
+    transform: none;
+    filter: none;
+  }
+
+  /* Hide inactive cards entirely so only one shows */
+  .case-card:not(.is-active) {
+    display: none;
+  }
+}
+
+/* SMALLEST SCREENS MOBILE */
+@media (max-width: 768px) {
+  .case-card {
+    padding: 1.1rem 1.1rem;
+  }
+}
+
+
 /* Mobile refinement */
 @media (max-width: 768px) {
   .case-nav.inside {
@@ -1121,6 +1150,37 @@ main {
   .studio-meta-group + .studio-meta-group {
     margin-top: 18px;
     padding-top: 16px;
+  }
+}
+
+
+/* HERO LOGO MOBILE */
+@media (max-width: 880px) {
+  .hero-grid,
+  .two-column,
+  .card-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero {
+    padding-top: 2.4rem;
+  }
+
+  .hero-panel {
+    margin-top: 1.8rem;
+  }
+
+  .card-grid {
+    gap: 1.2rem;
+  }
+
+  .nav-links {
+    display: none; /* simplify mobile for now */
+  }
+
+  /* 🔹 Hide hero image on mobile */
+  .hero-image {
+    display: none;
   }
 }
 
