@@ -1528,3 +1528,67 @@ main {
     0 0 16px rgba(58, 157, 247, 0.55);
 }
 
+
+/* CASE STUDY ARROWS — minimal brand blue, no circles */
+.section-case-studies .case-nav.inside {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+
+  /* strip button chrome */
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+
+  /* size/spacing */
+  width: auto;
+  height: auto;
+  padding: 0.1rem 0.4rem;
+
+  /* typography */
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1;
+  color: #3A9DF7;
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    text-shadow 0.2s ease;
+}
+
+/* Positioning left/right */
+.section-case-studies .case-nav-prev.inside {
+  left: 0.75rem;
+}
+
+.section-case-studies .case-nav-next.inside {
+  right: 0.75rem;
+}
+
+/* Hover glow */
+.section-case-studies .case-nav.inside:hover {
+  opacity: 0.95;
+  transform: translateY(-50%) translateY(-1px);
+  text-shadow:
+    0 0 6px rgba(58, 157, 247, 0.7),
+    0 0 14px rgba(58, 157, 247, 0.4);
+}
+
+/* Active click */
+.section-case-studies .case-nav.inside:active {
+  transform: translateY(-50%);
+}
+
+/* Keyboard focus */
+.section-case-studies .case-nav.inside:focus-visible {
+  outline: none;
+  text-shadow:
+    0 0 8px rgba(58, 157, 247, 0.85),
+    0 0 16px rgba(58, 157, 247, 0.55);
+}
+
