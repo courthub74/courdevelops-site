@@ -803,23 +803,70 @@ main {
   filter: blur(0);
 }
 
-/* Arrow buttons */
-.case-nav {
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(10, 12, 20, 0.8);
-  border-radius: 999px;
-  width: 2.5rem;
-  height: 2.5rem;
-  display: inline-flex;
+/* CASE STUDIES CAROUSEL – arrows outside, brand blue text */
+
+/* Layout: arrows + viewport */
+.section-case-studies .case-carousel {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
+  gap: 1rem;
+}
+
+/* Keep your existing viewport behavior */
+.case-viewport {
+  position: relative;
+  flex: 1;
+  min-height: 280px;
+}
+
+/* Arrows */
+/* Base arrow buttons (outside card) */
+.case-nav {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+
+  color: #3A9DF7;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0;
+
   cursor: pointer;
-  flex-shrink: 0;
+
   transition:
-    background 0.2s ease,
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+    transform 0.15s ease,
+    text-shadow 0.15s ease,
+    filter 0.15s ease;
+}
+
+
+
+.case-nav:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.2);
+  text-shadow:
+    0 0 4px  rgba(58, 157, 247, 1),
+    0 0 10px rgba(58, 157, 247, 0.95),
+    0 0 18px rgba(58, 157, 247, 0.75),
+    0 0 28px rgba(58, 157, 247, 0.55),
+    0 0 44px rgba(58, 157, 247, 0.35);
+}
+
+
+
+
+/* Active click */
+.case-nav:active {
+  transform: translateY(0);
+}
+
+/* Keyboard focus */
+.case-nav:focus-visible {
+  outline: none;
+  text-shadow:
+    0 0 8px rgba(58, 157, 247, 0.85),
+    0 0 16px rgba(58, 157, 247, 0.55);
 }
 
 .case-nav:hover {
@@ -1591,4 +1638,46 @@ main {
     0 0 8px rgba(58, 157, 247, 0.85),
     0 0 16px rgba(58, 157, 247, 0.55);
 }
+
+/* CASE STUDY ARROWS — OUTSIDE CARD */
+.section-case-studies .case-nav.outside {
+  position: relative;
+  top: auto;
+  transform: none;
+
+  background: transparent;
+  border: none;
+  padding: 0.2rem 0.4rem;
+
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #3A9DF7;
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    text-shadow 0.2s ease;
+}
+
+/* Align vertically next to cards */
+.section-case-studies .case-carousel {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Hover glow */
+.section-case-studies .case-nav.outside:hover {
+  text-shadow:
+    0 0 6px rgba(58, 157, 247, 0.7),
+    0 0 14px rgba(58, 157, 247, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Active */
+.section-case-studies .case-nav.outside:active {
+  transform: translateY(0);
+}
+
 
