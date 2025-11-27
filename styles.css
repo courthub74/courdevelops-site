@@ -747,6 +747,207 @@ main {
   align-items: center;
 }
 
+/* CASE STUDIES CAROUSEL */
+.section-case-studies .section-header {
+  text-align: left;
+  max-width: 640px;
+  margin-bottom: 2.5rem;
+}
+
+.case-carousel {
+  display: flex;
+  align-items: stretch;
+  gap: 1.5rem;
+}
+
+.case-viewport {
+  position: relative;
+  flex: 1;
+  min-height: 260px; /* adjust if you want it taller */
+}
+
+/* Kaleidoscope-style card transitions */
+.case-card {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.96) translateY(6px) rotate(-1deg);
+  filter: blur(2px);
+  overflow-wrap: break-word;
+  min-height: 300px;
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s ease,
+    filter 0.45s ease;
+}
+
+.case-card.is-active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1) translateY(0) rotate(0deg);
+  filter: blur(0);
+}
+
+/* Arrow buttons */
+.case-nav {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(10, 12, 20, 0.8);
+  border-radius: 999px;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.case-nav:hover {
+  background: rgba(20, 24, 40, 0.95);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.case-nav:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.case-nav:focus-visible {
+  outline: 2px solid #00e5ff;
+  outline-offset: 2px;
+}
+
+/* Dots */
+.case-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 3rem;
+}
+
+.case-dot {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.case-dot.is-active {
+  background: #00e5ff; /* or your accent blue */
+  border-color: #00e5ff;
+  transform: scale(1.2);
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .case-carousel {
+    gap: 0.75rem;
+  }
+
+  .case-nav {
+    width: 2.2rem;
+    height: 2.2rem;
+    font-size: 1rem;
+  }
+
+  .case-viewport {
+    min-height: 300px;
+  }
+}
+
+/* Updated viewport for internal arrows */
+.case-viewport {
+  position: relative;
+  flex: 1;
+  min-height: 280px;
+}
+
+/* Updated nav arrows when INSIDE card */
+.case-nav.inside {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+
+  background: rgba(8, 10, 18, 0.75);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 999px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.1rem;
+  color: white;
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Left */
+.case-nav-prev.inside {
+  left: 0.75rem;
+}
+
+/* Right */
+.case-nav-next.inside {
+  right: 0.75rem;
+}
+
+/* Hover effect */
+.case-nav.inside:hover {
+  background: rgba(0, 229, 255, 0.25);
+  box-shadow: 0 8px 20px rgba(0, 229, 255, 0.15);
+  transform: translateY(-50%) scale(1.05);
+}
+
+/* Make sure arrows are above content but still subtle */
+.case-card {
+  padding-left: 3.5rem;  /* Leaves space for arrows */
+  padding-right: 3.5rem;
+}
+
+/* Mobile refinement */
+@media (max-width: 768px) {
+  .case-nav.inside {
+    width: 2.1rem;
+    height: 2.1rem;
+    font-size: 1rem;
+  }
+
+  .case-nav-prev.inside { left: 0.5rem; }
+  .case-nav-next.inside { right: 0.5rem; }
+
+  .case-card {
+    padding-left: 2.6rem;
+    padding-right: 2.6rem;
+  }
+}
+
+
+
 
 /* Responsive */
 
