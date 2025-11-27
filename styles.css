@@ -841,7 +841,6 @@ main {
 }
 
 
-
 .case-nav:hover {
   transform: translateY(-1px);
   filter: brightness(1.2);
@@ -893,25 +892,30 @@ main {
   margin-top: 3rem;
 }
 
+/* Slider dots base */
 .case-dot {
-  width: 0.6rem;
-  height: 0.6rem;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-color: #3A9DF7;
   background: transparent;
-  cursor: pointer;
-  padding: 0;
-  transition:
-    background 0.2s ease,
-    transform 0.2s ease,
-    border-color 0.2s ease;
 }
 
+/* Active dot */
 .case-dot.is-active {
-  background: #00e5ff; /* or your accent blue */
-  border-color: #00e5ff;
-  transform: scale(1.2);
+  background: #3A9DF7;
+  border-color: #3A9DF7;
+  box-shadow:
+    0 0 6px rgba(58, 157, 247, 0.8),
+    0 0 14px rgba(58, 157, 247, 0.55),
+    0 0 22px rgba(58, 157, 247, 0.3);
 }
+
+/* Hover glow */
+.case-dot:hover {
+  background: rgba(58, 157, 247, 0.25);
+  box-shadow:
+    0 0 6px rgba(58, 157, 247, 0.6),
+    0 0 14px rgba(58, 157, 247, 0.4);
+}
+
 
 /* Responsive tweaks */
 @media (max-width: 768px) {
@@ -1679,5 +1683,55 @@ main {
 .section-case-studies .case-nav.outside:active {
   transform: translateY(0);
 }
+
+/* =========================================
+   ECOSYSTEM HEADER NAV — MATCH CASE NAV STYLE
+========================================= */
+
+.section-header .section-nav-btn {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+
+  color: #3A9DF7;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.15s ease,
+    text-shadow 0.15s ease,
+    filter 0.15s ease;
+}
+
+/* Hover neon */
+.section-header .section-nav-btn:hover {
+  transform: translateY(-1px);
+  text-shadow:
+    0 0 6px rgba(58, 157, 247, 0.7),
+    0 0 14px rgba(58, 157, 247, 0.45);
+}
+
+/* Active click */
+.section-header .section-nav-btn:active {
+  transform: translateY(0);
+  filter: brightness(1.05);
+}
+
+/* Keyboard focus */
+.section-header .section-nav-btn:focus-visible {
+  outline: none;
+  text-shadow:
+    0 0 12px rgba(58, 157, 247, 0.9),
+    0 0 22px rgba(58, 157, 247, 0.6);
+}
+
+.section-header .section-nav-btn:hover {
+  filter: brightness(1.08);
+}
+
 
 
