@@ -1293,3 +1293,196 @@ main {
         drop-shadow(0 0 12px rgba(0, 183, 255, 0.1));
 }
 
+
+/* PROJECTS SWIPE STYLES */
+/* Header with inline navigation (Projects page) */
+.section-header-with-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.section-header-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Small arrow buttons next to header */
+.section-nav-btn {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(10, 12, 20, 0.9);
+  border-radius: 999px;
+  width: 2.1rem;
+  height: 2.1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding: 0;
+  color: #e5e7eb;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.section-nav-btn:hover {
+  background: rgba(0, 183, 255, 0.18);
+  border-color: rgba(0, 183, 255, 0.6);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.45);
+  transform: translateY(-1px);
+}
+
+.section-nav-btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.section-nav-btn:focus-visible {
+  outline: 2px solid #00e5ff;
+  outline-offset: 2px;
+}
+
+/* Highlight the currently "focused" project */
+.project-card.is-current-project {
+  border-color: rgba(0, 183, 255, 0.7);
+  box-shadow:
+    0 0 0 1px rgba(0, 183, 255, 0.22),
+    0 18px 45px rgba(0, 0, 0, 0.8);
+}
+
+/* Mobile: stack header + nav nicely */
+@media (max-width: 768px) {
+  .section-header-with-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .section-header-nav {
+    align-self: flex-end;
+  }
+}
+
+/* PROJECT ECOSYSTEM KALEIDOSCOPE */
+/* PROJECT ECOSYSTEM KALEIDOSCOPE */
+.projects-viewport {
+  position: relative;
+}
+
+/* Base style: all panels are "slides" but only active one is in flow */
+.ecosystem-panel {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.97) translateY(8px) rotate(-0.75deg);
+  filter: blur(2px);
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s ease,
+    filter 0.45s ease;
+}
+
+/* Active slide: visible AND in normal flow so main gets correct height */
+.ecosystem-panel.is-active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1) translateY(0) rotate(0deg);
+  filter: blur(0);
+  position: relative;  /* stays in the normal layout */
+  z-index: 1;
+}
+
+/* Inactive slides: taken out of layout but kept stacked for transition */
+.ecosystem-panel:not(.is-active) {
+  position: absolute;
+  inset: 0;
+}
+
+/* Header + arrows row */
+.section-header-with-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.section-header-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Small arrow buttons */
+.section-nav-btn {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(10, 12, 20, 0.9);
+  border-radius: 999px;
+  width: 2.1rem;
+  height: 2.1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding: 0;
+  color: #e5e7eb;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.section-nav-btn:hover {
+  background: rgba(0, 183, 255, 0.18);
+  border-color: rgba(0, 183, 255, 0.6);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.45);
+  transform: translateY(-1px);
+}
+
+.section-nav-btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.section-nav-btn:focus-visible {
+  outline: 2px solid #00e5ff;
+  outline-offset: 2px;
+}
+
+/* Mobile: keep things simple & stacked */
+@media (max-width: 768px) {
+  .section-header-with-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .section-header-nav {
+    align-self: flex-end;
+  }
+
+  .projects-viewport {
+    position: static;
+  }
+
+  .ecosystem-panel,
+  .ecosystem-panel.is-active {
+    position: static;
+    opacity: 1;
+    transform: none;
+    filter: none;
+    pointer-events: auto;
+  }
+
+  .ecosystem-panel:not(.is-active) {
+    display: none;
+  }
+}
+
+
+
