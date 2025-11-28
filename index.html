@@ -26,10 +26,24 @@
           <a href="contact.html">Contact</a>
         </nav>
 
+        <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+            ☰
+        </button>
+
+
         <a class="nav-cta" href="contact.html">Start a project</a>
       </div>
     </div>
   </header>
+
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav">
+    <a href="#">Home</a>
+    <a href="studio.html">Studio</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+    </div>
+
 
   <main>
     <section class="hero">
@@ -319,6 +333,15 @@
       if (e.key === 'ArrowRight') showCase(currentCaseIndex + 1);
     });
   }
+
+    // Mobile nav toggle
+    const mobileToggle = document.querySelector('.mobile-nav-toggle');
+    const mobileNav = document.querySelector('.mobile-nav');
+
+    mobileToggle.addEventListener('click', () => {
+    mobileNav.classList.toggle('is-open');
+    });
+
 </script>
 
 </body>
