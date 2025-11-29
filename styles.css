@@ -1839,4 +1839,27 @@ main {
   }
 }
 
+@media (max-width: 900px) {
+  .studio-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .studio-meta {
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 24px;
+    order: 2; /* Move meta below copy */
+  }
+
+  .studio-copy {
+    order: 1; /* Keep copy on top */
+  }
+
+  .studio-meta-icon {
+    margin-bottom: 16px;
+  }
+}
+
 
