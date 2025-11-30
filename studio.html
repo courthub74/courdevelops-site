@@ -19,15 +19,18 @@
           </div>
         </a>
 
+        <!-- Nav with mobile burger -->
         <nav class="nav-links">
-          <a href="index.html">Home</a>
-          <a href="#" class="disabled">Studio</a>
+          <a href="#" class="disabled">Home</a>
+          <a href="studio.html">Studio</a>
           <a href="projects.html">Projects</a>
           <a href="contact.html">Contact</a>
         </nav>
 
-        <button class="mobile-nav-toggle" aria-label="Toggle navigation">
-            ☰
+        <button class="mobile-nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
         </button>
 
         <a class="nav-cta" href="contact.html">Start a project</a>
@@ -35,14 +38,14 @@
     </div>
   </header>
 
-  <!-- MOBILE NAV -->
-  <div class="mobile-nav">
+  <!-- NAV MENU -->
+  <nav class="mobile-nav" aria-label="Mobile navigation">
     <a href="index.html">Home</a>
-    <a href="#">Studio</a>
+    <a href="#" class="disabled mobile-disable">Studio</a>
     <a href="projects.html">Projects</a>
     <a href="contact.html">Contact</a>
-    <!-- <a class="nav-cta" href="contact.html">Start a project</a> -->
-  </div>
+  </nav>
+  
 
   <main>
     <!-- STUDIO HEADER -->
@@ -251,11 +254,80 @@
   document.getElementById('year').textContent = new Date().getFullYear();
 
   // Mobile nav toggle
+  // ===== MOBILE NAV LOGIC =====
   const mobileToggle = document.querySelector('.mobile-nav-toggle');
   const mobileNav = document.querySelector('.mobile-nav');
+  const bodyEl = document.body;
 
-  mobileToggle.addEventListener('click', () => {
-    mobileNav.classList.toggle('is-open');
+  function openMobileNav() {
+    mobileNav.classList.add('is-open');
+    mobileToggle.classList.add('is-open');
+    mobileToggle.setAttribute('aria-expanded', 'true');
+    bodyEl.classList.add('no-scroll');
+  }
+
+  function closeMobileNav() {
+    mobileNav.classList.remove('is-open');
+    mobileToggle.classList.remove('is-open');
+    mobileToggle.setAttribute('aria-expanded', 'false');
+    bodyEl.classList.remove('no-scroll');
+  }
+
+  if (mobileToggle && mobileNav) {
+    // Toggle on button click
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation(); // don't trigger click-outside
+      if (mobileNav.classList.contains('is-open')) {
+        closeMobileNav();
+      } else {
+        openMobileNav();
+      }
+    });
+
+    // Auto-close when a link is clicked
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        closeMobileNav();
+      });
+    });
+
+    // Click outside to close
+    document.addEventListener('click', (e) => {
+      if (!mobileNav.classList.contains('is-open')) return;
+
+      const clickInsideNav = mobileNav.contains(e.target);
+      const clickToggle = mobileToggle.contains(e.target);
+
+      if (!clickInsideNav && !clickToggle) {
+        closeMobileNav();
+      }
+    });
+
+    // ESC to close
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileNav.classList.contains('is-open')) {
+        closeMobileNav();
+      }
+    });
+  }
+
+  // ===== ACTIVE LINK HIGHLIGHT (desktop + mobile) =====
+  const allNavLinks = document.querySelectorAll('.nav-links a, .mobile-nav a');
+  const currentPath = window.location.pathname;
+
+  allNavLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (!href) return;
+
+    const isHome =
+      href === '#' && (currentPath.endsWith('/') || currentPath.endsWith('/index.html'));
+
+    const matchesPath =
+      href !== '#' && currentPath.endsWith('/' + href);
+
+    if (isHome || matchesPath) {
+      link.classList.add('nav-link-active');
+    }
   });
 
 </script>

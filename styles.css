@@ -261,7 +261,6 @@ main {
 }
 
 /* Hero - right panel */
-
 .hero-panel {
   background: radial-gradient(circle at 20% 0%, rgba(148, 163, 253, 0.16), transparent),
               linear-gradient(to bottom right, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.7));
@@ -422,6 +421,7 @@ main {
   height: 1px;
   background: rgba(0, 229, 255, 0.7);
 }
+
 
 /* responsive stacking */
 @media (max-width: 900px) {
@@ -1913,6 +1913,12 @@ body.no-scroll {
   .nav-links {
     display: none;
   }
+
+   .mobile-nav a.mobile-disable {  /* ← More specific now */
+    color: #7dd3fc;
+    opacity: 0.5;
+    pointer-events: none;
+  }
 }
 
 /* ACTIVE LINK HIGHLIGHT */
@@ -1926,6 +1932,7 @@ body.no-scroll {
   color: #7dd3fc;
   border-bottom-color: rgba(125, 211, 252, 0.8);
 }
+
 
 /*******************************************************************************************/
 /*******************************************************************************************/
