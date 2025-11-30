@@ -1842,13 +1842,17 @@ body.no-scroll {
 }
 
 /* Hamburger → X animation */
-/* .mobile-nav-toggle.is-open .bar:nth-child(1) {
-  transform: translateY(2px) rotate(45deg);
+.mobile-nav-toggle.is-open .bar:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
 }
 
 .mobile-nav-toggle.is-open .bar:nth-child(2) {
-  transform: translateY(-2px) rotate(-45deg);
-} */
+  opacity: 0;
+}
+
+.mobile-nav-toggle.is-open .bar:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
 
 /* MOBILE NAV PANEL */
 .mobile-nav {
