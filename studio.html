@@ -26,14 +26,27 @@
           <a href="contact.html">Contact</a>
         </nav>
 
+        <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+            ☰
+        </button>
+
         <a class="nav-cta" href="contact.html">Start a project</a>
       </div>
     </div>
   </header>
 
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav">
+    <a href="index.html">Home</a>
+    <a href="#">Studio</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+    <!-- <a class="nav-cta" href="contact.html">Start a project</a> -->
+  </div>
+
   <main>
     <!-- STUDIO HEADER -->
-    <section class="section section-studio-intro">
+  <section class="section section-studio-intro">
   <div class="container studio-grid">
 
     <!-- LEFT: Studio copy -->
@@ -72,12 +85,12 @@
       <!-- group 1: Capabilities -->
       <div class="studio-meta-group">
         <div class="studio-meta-label">Capabilities</div>
-        <ul class="studio-meta-list">
-          <li>AI-integrated web experiences</li>
-          <li>Creative dashboards & backroom tools</li>
-          <li>Interactive narrative & storyworld sites</li>
-          <li>Technical strategy for NFT ecosystems</li>
-          <li>Automation & AI-assisted workflows</li>
+        <ul class="studio-meta-list capabilities-list">
+          <p>[ AI-Integrated Web Experiences ]</p>
+          <p>[ Creative Dashboards & Tools ]</p>
+          <p>[ Interactive Narratives ]</p>
+          <p>[ NFT Technical Strategy ]</p>
+          <p>[ Automations & Workflows ]</p>
         </ul>
       </div>
 
@@ -232,10 +245,19 @@
       </div>
     </div>
   </footer>
-</div>
+
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Mobile nav toggle
+  const mobileToggle = document.querySelector('.mobile-nav-toggle');
+  const mobileNav = document.querySelector('.mobile-nav');
+
+  mobileToggle.addEventListener('click', () => {
+    mobileNav.classList.toggle('is-open');
+  });
+
 </script>
 </body>
 </html>
