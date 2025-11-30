@@ -443,6 +443,90 @@ main {
 }
 
 /* CAPABILIIES LIST */
+/* Capabilities — card grid */
+.capabilities-list {
+  list-style: none;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.9rem;
+}
+
+.capabilities-list li {
+  position: relative;
+  padding: 0.9rem 1.1rem;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(0, 229, 255, 0.18);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  color: #e7f5ff;
+  overflow: hidden;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    opacity 0.2s ease;
+}
+
+/* subtle cyan highlight sweep */
+.capabilities-list li::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left,
+    rgba(0, 229, 255, 0.16),
+    transparent 55%);
+  opacity: 0.7;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+/* hover / focus effect */
+.capabilities-list li:hover,
+.capabilities-list li:focus-within {
+  transform: translateY(-3px);
+  background: rgba(7, 20, 40, 0.95);
+  border-color: #00e5ff;
+  box-shadow:
+    0 14px 35px rgba(0, 0, 0, 0.65),
+    0 0 18px rgba(0, 229, 255, 0.35);
+}
+
+/* tiny leading bullet accent */
+.capabilities-list li::marker {
+  /* no default bullet */
+  content: "";
+}
+
+/* optional left accent bar */
+.capabilities-list li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 18%;
+  bottom: 18%;
+  width: 3px;
+  border-radius: 999px;
+  background: linear-gradient(
+    to bottom,
+    #00e5ff,
+    #9b5fff
+  );
+  opacity: 0.75;
+}
+
+/* Responsive: two-column grid on wider screens */
+@media (min-width: 960px) {
+  .capabilities-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 
 
 
