@@ -528,8 +528,6 @@ main {
 }
 
 
-
-
 /* main two-column grid */
 .bottom-info-grid {
   display: grid;
@@ -1256,6 +1254,28 @@ main {
   /* padding-top: 18px; */
 }
 
+/* Sidebar blocks spacing */
+.sidebar-block + .sidebar-block {
+  margin-top: 1.8rem; /* increase or decrease as needed for the gap */
+}
+
+/* Label with inline icon */
+.studio-meta-label--with-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Tiny Industries/use-cases icon */
+.studio-meta-label--with-icon svg {
+  width: 14px;
+  height: 14px;
+  stroke: var(--accent-blue);
+  fill: none;
+  stroke-width: 1.5;
+}
+
+
 
 
 /* list text */
@@ -1371,7 +1391,6 @@ main {
     display: none;
   }
 }
-
 
 /* Default (desktop): show text-only title, hide inline logo version */
 .hero-title-desktop {
