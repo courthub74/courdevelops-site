@@ -2077,4 +2077,115 @@ body.no-scroll {
   }
 }
 
+/* Desktop: keep Capabilities + Industries lists single-column in sidebar */
+@media (min-width: 960px) {
+  .studio-meta .capabilities-list {
+    grid-template-columns: minmax(0, 1fr); /* override the global 2-col */
+  }
+}
+
+/* Slightly smaller cards inside the sidebar column */
+.studio-meta .capabilities-list li {
+  padding: 0.75rem 0.95rem;
+  font-size: 0.86rem;
+}
+
+
+/* Industries & Use Cases: violet / studio tone */
+.studio-meta .sidebar-block:last-child .capabilities-list li {
+  background: rgba(155, 95, 255, 0.06);
+  border: 1px solid rgba(155, 95, 255, 0.22);
+  color: #efeaff;
+}
+
+.studio-meta .sidebar-block:last-child .capabilities-list li:hover {
+  background: rgba(155, 95, 255, 0.12);
+}
+
+@media (min-width: 960px) {
+  /* Focus areas: 2-column layout on desktop for a more compact block */
+  .bottom-column--right .bottom-list {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 24px;
+  }
+
+  .bottom-column--right .bottom-list li {
+    margin-bottom: 8px;  /* slight spacing per item inside the grid */
+  }
+}
+
+/* Compact the Process / Focus wrapper */
+@media (min-width: 1024px) {
+  .section-process-focus {
+    padding-top: 2rem;
+    padding-bottom: 2rem; /* reduces vertical mass */
+  }
+
+  .bottom-info-grid {
+    gap: 2.25rem; /* tighter column spacing */
+    padding-top: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  /* Focus Areas grid */
+  .bottom-column--right .bottom-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1.75rem;
+    row-gap: 0.5rem;
+  }
+
+}
+
+.studio-quote {
+  margin-top: 40px;
+  padding: 20px 24px;
+  max-width: 680px;
+
+  border-radius: 14px;
+  background: radial-gradient(circle at top left, 
+               rgba(0, 229, 255, 0.12), 
+               rgba(3, 15, 30, 0.9));
+  border: 1px solid rgba(0, 229, 255, 0.18);
+
+  /* keep the left accent if you like */
+  /* border-left-width: 3px; */
+}
+
+.quote-label {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: rgba(0,229,255,0.7);
+  display: block;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.studio-quote blockquote {
+  margin: 0 0 8px;
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  line-height: 1.5;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.quote-sub {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.65);
+}
+
+@media (min-width: 1024px) {
+  .studio-quote {
+  /* from above */
+   margin-top: 80px;
+  }
+}
+
+
+
+
+
 
