@@ -2153,6 +2153,8 @@ body.no-scroll {
 
   /* keep the left accent if you like */
   /* border-left-width: 3px; */
+  position: relative;
+  padding: 32px 40px;
 }
 
 .quote-label {
@@ -2177,12 +2179,44 @@ body.no-scroll {
   color: rgba(255,255,255,0.65);
 }
 
+.studio-quote::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 16%;
+  bottom: 16%;
+  width: 3px;
+  border-radius: 2px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,229,255,0.9),
+    rgba(0,229,255,0.05)
+  );
+}
+
+.studio-quote::before {
+  box-shadow: 0 0 12px rgba(0,229,255,0.35);
+}
+
+
+
 @media (min-width: 1024px) {
   .studio-quote {
   /* from above */
    margin-top: 80px;
   }
 }
+
+@media (min-width: 1024px) {
+  .studio-quote {
+    padding: 36px 48px;
+  }
+}
+
+.studio-quote {
+  min-height: 140px;
+}
+
 
 
 
