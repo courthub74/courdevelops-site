@@ -2257,6 +2257,13 @@ body.no-scroll {
   padding: 0.7rem 1.4rem;
 }
 
+/* Studio Philosophy section */
+.quote-sub {
+  margin-top: 8px;
+  /* font-size: 0.6rem; */
+  color: rgba(255, 255, 255, 0.72);
+  max-width: 600px;
+}
 
 
 
