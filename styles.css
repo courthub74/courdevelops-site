@@ -217,6 +217,7 @@ main {
   color: #e5e7eb;
 }
 
+/* HERO BUTTONS */
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -235,6 +236,17 @@ main {
   align-items: center;
   gap: 0.5rem;
   text-decoration: none;
+}
+
+/* CHANGE SIZING FOR HERO BUTTONS ON MOBILE */
+@media (max-width: 800px) {
+  .btn-primary,
+  .btn-ghost {
+    padding: .5rem .8rem;
+    font-size: .8rem;
+    /* width: 100%;
+    justify-content: center; */
+  }
 }
 
 .btn-primary {
