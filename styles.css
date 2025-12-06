@@ -1190,7 +1190,7 @@ main {
 }
 
 .section-studio-intro {
-  padding-top: 88px;
+  padding-top: 20px;
   padding-bottom: 36px; /* was ~72–80, now tighter */
 }
 
@@ -1320,7 +1320,7 @@ main {
 
 @media (max-width: 900px) {
   .section-studio-intro {
-    padding-top: 72px;
+    padding-top: 40px;
     padding-bottom: 56px;
   }
 
@@ -1349,6 +1349,7 @@ main {
 
   .hero {
     padding-top: 2.4rem;
+    padding-top: 20px;
   }
 
   .hero-panel {
@@ -1418,8 +1419,6 @@ main {
 @media (max-width: 880px) {
   .hero-title {
     font-size: clamp(1.8rem, 5vw, 2.5rem);  /* was 1.6rem, 5vw, 2rem */
-    /* font-size: clamp(1.4rem, 4.5vw, 1.8rem);  
-    font-size: clamp(1.2rem, 4vw, 1.6rem);   */
     line-height: 1.2;
     }
 
@@ -1438,7 +1437,7 @@ main {
 
   .hero-inline-logo {
     display: block;
-    width: 80px;  /* tweak size here */
+    width: 110px;  /* tweak size here */
     height: auto;
     flex-shrink: 0;
   }
@@ -2235,48 +2234,15 @@ body.no-scroll {
   }
 }
 
-/* Mobile nav CTA that matches the desktop pill */
-.mobile-nav .mobile-nav-cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
 
-  padding: 0.7rem 1.3rem;
-  border-radius: 999px;
-
-  border: 1px solid var(--accent);
-  color: var(--accent);
-  background: rgba(58, 157, 247, 0.06);
-  box-shadow: 0 0 0 1px rgba(58, 157, 247, 0.12);
-
-  font-size: 0.9rem;
-  font-weight: 500;
-
-  /* override base mobile link styling */
-  border-bottom: none;
-  padding-bottom: 0;
-  margin-top: 0.4rem;
-  align-self: flex-start;
+.mobile-menu-cta {
+  font-weight: 700;
+  color: var(--accent-blue) !important;
 }
 
-.mobile-nav .mobile-nav-cta:hover {
-  background: rgba(58, 157, 247, 0.16);
-  color: var(--accent);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+.mobile-menu-cta-arrow {
+  color: rgba(0, 229, 255, 0.7);
 }
-
-.mobile-nav .mobile-nav-cta {
-  padding: 0.7rem 1.4rem;
-}
-
-/* Studio Philosophy section */
-.quote-sub {
-  margin-top: 8px;
-  /* font-size: 0.6rem; */
-  color: rgba(255, 255, 255, 0.72);
-  max-width: 600px;
-}
-
 
 
 
