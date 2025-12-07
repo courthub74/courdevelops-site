@@ -2543,3 +2543,9 @@ body.no-scroll {
     0 0 16px rgba(58, 157, 247, 0.55);
 }
 
+@media (max-width: 900px) {
+  .studio-quote {
+    display: none;
+  }
+}
+
