@@ -371,8 +371,11 @@ main {
 }
 
 .section-nav-btn:focus {
-  outline: 2px solid rgba(58,157,247,0.22);
-  outline-offset: 2px;
+  outline: none;
+}
+
+.section-nav-btn:active {
+  outline: none;
 }
 
 /* Hide all cards by default; show the active one */
@@ -1808,6 +1811,38 @@ main {
   /* gap: 1.5rem; */
 }
 
+@media (max-width: 768px) {
+  /* Keep header row, place arrows to the right of the kicker */
+  .section-header-with-nav-case-studies {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  /* Let the column with kicker/title take remaining space */
+  .case-studies-columned {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  /* Keep the arrows horizontally aligned and to the right of the kicker */
+  .section-header-nav {
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-left: 0.5rem;
+  }
+
+  /* Make sure the kicker sits on the same baseline as the nav visually */
+  .case-studies-columned .section-kicker {
+    margin: 0;
+  }
+}
+
 .section-header-with-nav-case-studies .section-nav-btn {
   background: transparent;
   border: none;
@@ -1964,43 +1999,6 @@ main {
   gap: 0.4rem;
 }
 
-/* Small arrow buttons */
-/* .section-nav-btn {
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  background: rgba(10, 12, 20, 0.9);
-  border-radius: 999px;
-  width: 2.1rem;
-  height: 2.1rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.95rem;
-  cursor: pointer;
-  padding: 0;
-  color: #e5e7eb;
-  transition:
-    background 0.2s ease,
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    border-color 0.2s ease;
-}
-
-.section-nav-btn:hover {
-  background: rgba(0, 183, 255, 0.18);
-  border-color: rgba(0, 183, 255, 0.6);
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.45);
-  transform: translateY(-1px);
-}
-
-.section-nav-btn:active {
-  transform: translateY(0);
-  box-shadow: none;
-} */
-
-/* .section-nav-btn:focus-visible {
-  outline: 2px solid #00e5ff;
-  outline-offset: 2px;
-} */
 
 /* Mobile: keep things simple & stacked */
 @media (max-width: 768px) {
