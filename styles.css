@@ -353,8 +353,9 @@ main {
 
 /* Studio */
 .section-studio-intro {
-  margin-top: -30px;
-  /* padding-top: 40px; */
+  /* Reduce top spacing on the studio page so content sits higher under header */
+  margin-top: 5px;
+  padding-top: 12px;
 }
 
 /* main two-column grid */
@@ -832,14 +833,15 @@ main {
 
 /* Img Icons */
 .icon_rep {
-  width: 35px;
-  height: 35px;
+  width: 50px;
+  height: 50px;
   /* width: 1em;
   height: 1em; */
-  border-radius: 6px;
+  border-radius: 50%; /* make circular */
   object-fit: cover;
   vertical-align: middle;
-  margin-right: 0.4rem;
+  margin-right: 0; /* spacing handled by .case-study-name gap */
+  flex-shrink: 0; /* keep icon size inside flex layout */
 }
 
 /* Img Icons */
@@ -848,7 +850,7 @@ main {
   height: 55px;
   /* width: 1em;
   height: 1em; */
-  border-radius: 6px;
+  border-radius: 50%; /* make circular */
   object-fit: cover;
   vertical-align: middle;
   margin-right: 0.4rem;
@@ -860,7 +862,7 @@ main {
 }
 
 /* CASE STUDIES CAROUSEL */
-.section-case-studies .section-header {
+/* .section-case-studies .section-header {
   text-align: left;
   max-width: 640px;
   margin-bottom: 2.5rem;
@@ -875,11 +877,11 @@ main {
 .case-viewport {
   position: relative;
   flex: 1;
-  min-height: 260px; /* adjust if you want it taller */
-}
+  min-height: 260px; /* adjust if you want it taller 
+} 
 
 /* Kaleidoscope-style card transitions */
-.case-card {
+/* .case-card {
   position: absolute;
   inset: 0;
   opacity: 0;
@@ -899,27 +901,27 @@ main {
   pointer-events: auto;
   transform: scale(1) translateY(0) rotate(0deg);
   filter: blur(0);
-}
+} */
 
 /* CASE STUDIES CAROUSEL – arrows outside, brand blue text */
 
 /* Layout: arrows + viewport */
-.section-case-studies .case-carousel {
+/* .section-case-studies .case-carousel {
   display: flex;
   align-items: center;
   gap: 1rem;
-}
+} */
 
 /* Keep your existing viewport behavior */
-.case-viewport {
+/* .case-viewport {
   position: relative;
   flex: 1;
   min-height: 280px;
-}
+} */
 
 /* Arrows */
 /* Base arrow buttons (outside card) */
-.case-nav {
+/* .case-nav {
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
@@ -936,10 +938,10 @@ main {
     transform 0.15s ease,
     text-shadow 0.15s ease,
     filter 0.15s ease;
-}
+} */
 
 
-.case-nav:hover {
+/* .case-nav:hover {
   transform: translateY(-1px);
   filter: brightness(1.2);
   text-shadow:
@@ -948,25 +950,25 @@ main {
     0 0 18px rgba(58, 157, 247, 0.75),
     0 0 28px rgba(58, 157, 247, 0.55),
     0 0 44px rgba(58, 157, 247, 0.35);
-}
+} */
 
 
 
 
 /* Active click */
-.case-nav:active {
+/* .case-nav:active {
   transform: translateY(0);
-}
+} */
 
 /* Keyboard focus */
-.case-nav:focus-visible {
+/* .case-nav:focus-visible {
   outline: none;
   text-shadow:
     0 0 8px rgba(58, 157, 247, 0.85),
     0 0 16px rgba(58, 157, 247, 0.55);
-}
+} */
 
-.case-nav:hover {
+/* .case-nav:hover {
   background: rgba(20, 24, 40, 0.95);
   transform: translateY(-1px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
@@ -980,39 +982,249 @@ main {
 .case-nav:focus-visible {
   outline: 2px solid #00e5ff;
   outline-offset: 2px;
-}
+} */
 
 /* Dots */
-.case-dots {
+/* .case-dots {
   display: flex;
   justify-content: center;
   gap: 0.5rem;
   margin-top: 3rem;
-}
+} */
 
 /* Slider dots base */
-.case-dot {
+/* .case-dot {
   border-color: #3A9DF7;
   background: transparent;
-}
+} */
 
 /* Active dot */
-.case-dot.is-active {
+/* .case-dot.is-active {
   background: #3A9DF7;
   border-color: #3A9DF7;
   box-shadow:
     0 0 6px rgba(58, 157, 247, 0.8),
     0 0 14px rgba(58, 157, 247, 0.55),
     0 0 22px rgba(58, 157, 247, 0.3);
-}
+} */
 
 /* Hover glow */
-.case-dot:hover {
+/* .case-dot:hover {
   background: rgba(58, 157, 247, 0.25);
   box-shadow:
     0 0 6px rgba(58, 157, 247, 0.6),
     0 0 14px rgba(58, 157, 247, 0.4);
+} */
+
+/* CASE STUDIES */
+.case-studies {
+  margin-top: 6rem;
 }
+
+.case-studies-header {
+  max-width: 48rem;
+  margin-bottom: 2.5rem;
+}
+
+.case-studies-title {
+  margin: 0.25rem 0 0.75rem;
+  /* Match the site's section heading scale */
+  font-size: 1.4rem;
+}
+
+.case-studies-intro {
+  margin: 0;
+  color: var(--text-muted);
+  /* Use the same body/description sizing as other sections */
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+/* Single, super-clean study block */
+
+/* Single, super-clean study block */
+
+.case-study-card {
+  padding: .5rem 2.5rem 2.75rem;
+  border-radius: 18px;
+  line-height: 2rem;
+
+  /* Match your system card background */
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.03),
+    rgba(255,255,255,0.015)
+  );
+
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+
+  margin-bottom: 2rem;
+  
+  /* Center content vertically */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  min-height: 300px; /* Adjust this value as needed */
+}
+
+/* Optional: soften divider since now it's a card */
+.case-study-card:last-child {
+  margin-bottom: 0;
+}
+
+
+.case-study-overline {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  /* align with other section kickers/eyebrows */
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin: 0 0 0.75rem;
+}
+
+.case-study-name {
+  /* margin: 0; */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  /* Use card/project heading size for consistency */
+  font-size: 1rem;
+}
+
+.case-study-subtitle {
+  margin: 0.3rem 0 0.9rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.case-study-meta {
+  margin: 0 0 1.25rem;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.case-study-description {
+  margin: 0;
+  max-width: 46rem;
+  /* match `.section-description` */
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+/* CTA – same color vibe as your mobile "Launch a project" button */
+
+.case-study-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1.75rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: rgba(0, 229, 255, 0.7); /* matches your CTA color */
+  color: var(--accent);
+}
+
+.case-study-cta::after {
+  content: "↗";
+  font-size: 0.9rem;
+  transform: translateY(1px);
+  opacity: 0.6;
+  transition: transform 0.18s ease, opacity 0.18s ease;
+}
+
+.case-study-card:hover .case-study-cta::after {
+  transform: translate(4px, -1px);
+  opacity: 1;
+}
+
+.case-study-card:hover {
+  box-shadow:
+    0 22px 60px rgba(0,0,0,0.55),
+    /* match hero logo cyan (rgb 0,183,255 / #00B7FF) for consistent glow */
+    inset 0 0 0 1px rgba(0,183,255,0.08);
+}
+
+.case-study-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin: 0.75rem 0 1.25rem;
+}
+
+/* The pill itself — styled to match the "Start a project" button */
+.case-study-tag {
+    padding: 0;
+    background: transparent;
+    border: none;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-transform: none;
+    letter-spacing: 0.02em;
+  }
+  
+  .case-study-tags {
+    gap: 0;
+  }
+  
+  /* Add separator between tags */
+  .case-study-tag:not(:last-child)::after {
+    content: " • ";
+    margin: 0 0.4rem;
+    opacity: 0.5;
+  }
+/* .case-study-tag {
+  padding: 0.3rem 0.7rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  border-radius: 999px;
+
+  
+  background: rgba(58,157,247,0.06);
+  border: 2px solid rgba(58,157,247,0.18);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+
+  backdrop-filter: blur(4px);
+} */
+
+
+/* Mobile: hide case study hero badges */
+@media (max-width: 768px) {
+  .hero-badges {
+    display: none;
+  }
+}
+
+/* Mobile: remove pill styling from case study tags */
+@media (max-width: 880px) {
+  .case-study-tag {
+    padding: 0;
+    background: transparent;
+    border: none;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-transform: none;
+    letter-spacing: 0.02em;
+  }
+  
+  .case-study-tags {
+    gap: 0;
+  }
+  
+  /* Add separator between tags */
+  .case-study-tag:not(:last-child)::after {
+    content: " • ";
+    margin: 0 0.4rem;
+    opacity: 0.5;
+  }
+}
+
 
 
 /* Responsive tweaks */
@@ -1030,6 +1242,23 @@ main {
   .case-viewport {
     min-height: 300px;
   }
+
+/* Mobile: keep case study icon inline and sized consistently */
+@media (max-width: 600px) {
+  .case-study-name {
+    /* prefer a single-line inline layout for icon + title on narrow screens */
+    flex-wrap: nowrap;
+    gap: 0.4rem;
+    align-items: center;
+  }
+
+  .icon_rep {
+    width: 40px;
+    height: 40px;
+    margin-right: 0;
+    flex-shrink: 0;
+  }
+}
 }
 
 /* Updated viewport for internal arrows */
@@ -1372,8 +1601,9 @@ main {
 
 /* Mobile: slightly reduce case study section title size */
 @media (max-width: 768px) {
-  .section-case-studies .section-title {
-    font-size: .8rem; /* was ~1.4rem */
+  /* Ensure case studies heading uses the same responsive rhythm */
+  .case-studies .case-studies-title {
+    font-size: 1.1rem;
     line-height: 1.25;
   }
 }
@@ -2030,6 +2260,7 @@ body.no-scroll {
 
    .mobile-nav a.mobile-disable {  /* ← More specific now */
     color: #7dd3fc;
+    color: grey;
     opacity: 0.5;
     pointer-events: none;
   }
@@ -2042,10 +2273,10 @@ body.no-scroll {
 }
 
 /* Mobile active link */
-.mobile-nav a.nav-link-active {
+/* .mobile-nav a.nav-link-active {
   color: #7dd3fc;
   border-bottom-color: rgba(125, 211, 252, 0.8);
-}
+} */
 
 
 /*******************************************************************************************/
