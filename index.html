@@ -162,31 +162,32 @@
 
     <!-- CASE STUDIES -->
      <section class="case-studies">
-      <div class="container">
-        <header class="case-studies-header section-header-with-nav-case-studies">
+  <div class="container">
+    <header class="case-studies-header section-header-with-nav-case-studies">
 
-          <div class="case-studies-columned">
-            <p class="section-kicker">Case studies</p>
-            <h2 class="case-studies-title">Selected client ecosystems</h2>
-            <p class="case-studies-intro">
-              A rotating look at the digital systems, brands, and storyworlds CourDevelops has
-              designed and engineered.
-            </p>
-          </div>
-            
+      <div class="case-studies-columned">
+        <p class="section-kicker">Case studies</p>
+        <h2 class="case-studies-title">Selected client ecosystems</h2>
+        <p class="case-studies-intro">
+          A rotating look at the digital systems, brands, and storyworlds CourDevelops has
+          designed and engineered.
+        </p>
+      </div>
 
-            <div class="section-header-nav" aria-label="Ecosystem navigation">
-              <button class="section-nav-btn ecosystem-nav-prev glow-1" aria-label="Previous ecosystem">←</button>
-              <button class="section-nav-btn ecosystem-nav-next glow-1" aria-label="Next ecosystem">→</button>
-            </div>
-          
-        </header>
+      <div class="section-header-nav" aria-label="Ecosystem navigation">
+        <button class="section-nav-btn ecosystem-nav-prev glow-1" aria-label="Previous ecosystem">←</button>
+        <button class="section-nav-btn ecosystem-nav-next glow-1" aria-label="Next ecosystem">→</button>
+      </div>
 
-        <div class="case-card">
+    </header>
 
+    <!-- NEW: list wrapper -->
+    <div class="case-card-list">
+
+      <!-- Case Study 01 (Dream Agent) -->
+      <article class="case-card is-active">
         <div class="case-header">
           <img src="./img/dream_agent_logos/DreamAgentBlue.jpg" alt="Dream Agent" class="case-logo" />
-
           <div class="case-title-group">
             <span class="case-study">Study 01</span>
             <h3 class="case-title">Dream Agent — AI-Centric Artist</h3>
@@ -197,7 +198,6 @@
           <span class="case-tag">Public Site</span>
           <span class="case-tag">Dream OS</span>
           <span class="case-tag">NFT System</span>
-          <!-- <span class="case-tag">Lore Engine</span> -->
         </div>
 
         <p class="case-subhead">
@@ -205,7 +205,8 @@
         </p>
 
         <p class="case-desc">
-          From public-facing galleries to a private Dream OS console for managing collections, publishing drops, and curating digital identity.
+          From public-facing galleries to a private Dream OS console for managing collections,
+          publishing drops, and curating digital identity.
         </p>
 
         <div class="case-footer">
@@ -213,11 +214,78 @@
             View case study →
           </a>
         </div>
+      </article>
 
-      </div>
+      <!-- Case Study 02 (example) -->
+      <article class="case-card">
+        <div class="case-header">
+          <img src="./img/logos/light_blue_logo.png" alt="CourDevelops Internal" class="case-logo" />
+          <div class="case-title-group">
+            <span class="case-study">Study 02</span>
+            <h3 class="case-title">Viking Ice — Staff Timeclock System</h3>
+          </div>
+        </div>
 
-      </div>
-    </section>
+        <div class="case-tags">
+          <span class="case-tag">Custom Web App</span>
+          <span class="case-tag">Scheduling</span>
+          <span class="case-tag">Operations</span>
+        </div>
+
+        <p class="case-subhead">
+          A timeclock and scheduling system for rink staff.
+        </p>
+
+        <p class="case-desc">
+          Designed a browser-based staff clock-in system with roles, manager dashboards, and
+          weekly scheduling — replacing paper workflows with a digital operations hub.
+        </p>
+
+        <div class="case-footer">
+          <a href="projects.html" class="case-link">
+            View case study →
+          </a>
+        </div>
+      </article>
+
+      <!-- Case Study 03 (example) -->
+      <article class="case-card">
+        <div class="case-header">
+          <img src="./img/logos/neo_logo.png" alt="Studio Site" class="case-logo" />
+          <div class="case-title-group">
+            <span class="case-study">Study 03</span>
+            <h3 class="case-title">CourDevelops Studio — Flagship Site</h3>
+          </div>
+        </div>
+
+        <div class="case-tags">
+          <span class="case-tag">Cinematic Front-End</span>
+          <span class="case-tag">AI Copy Systems</span>
+          <span class="case-tag">Portfolio OS</span>
+        </div>
+
+        <p class="case-subhead">
+          A living homepage for creative technology work.
+        </p>
+
+        <p class="case-desc">
+          Built a multi-page experience that showcases case studies, studio philosophy,
+          and AI-integrated services, with room to plug in future dashboards and tools.
+        </p>
+
+        <div class="case-footer">
+          <a href="projects.html" class="case-link">
+            View case study →
+          </a>
+        </div>
+      </article>
+
+    </div>
+    <!-- /case-card-list -->
+
+  </div>
+</section>
+
 
 
      <!-- Dots -->
@@ -320,6 +388,37 @@
       link.classList.add('nav-link-active');
     }
   });
+
+  // ===== CASE STUDY CAROUSEL LOGIC =====
+    // existing JS (year, mobile nav, active link code)...
+
+  // ===== CASE STUDIES CAROUSEL =====
+  const caseCards = document.querySelectorAll('.case-card-list .case-card');
+  const casePrevBtn = document.querySelector('.ecosystem-nav-prev');
+  const caseNextBtn = document.querySelector('.ecosystem-nav-next');
+
+  let currentCaseIndex = 0;
+
+  function updateCaseCards() {
+    caseCards.forEach((card, index) => {
+      card.classList.toggle('is-active', index === currentCaseIndex);
+    });
+  }
+
+  if (caseCards.length > 0 && casePrevBtn && caseNextBtn) {
+    // ensure first card is active
+    updateCaseCards();
+
+    caseNextBtn.addEventListener('click', () => {
+      currentCaseIndex = (currentCaseIndex + 1) % caseCards.length;
+      updateCaseCards();
+    });
+
+    casePrevBtn.addEventListener('click', () => {
+      currentCaseIndex = (currentCaseIndex - 1 + caseCards.length) % caseCards.length;
+      updateCaseCards();
+    });
+  }
 
 </script>
 

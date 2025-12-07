@@ -391,6 +391,13 @@ main {
   pointer-events: auto;
 }
 
+/* Make the case study carousel container own some height */
+.case-card-list {
+  position: relative;
+  min-height: 240px; /* tweak based on your content */
+}
+
+
 @media (max-width: 640px) {
   .case-studies-header-top {
     flex-direction: column;
@@ -1267,7 +1274,7 @@ main {
 }
 
 /* DEBUG / FIX – make sure case study is visible on mobile */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .case-studies,
   .case-card {
     display: block !important;
@@ -1281,7 +1288,7 @@ main {
     margin: 16px 0 !important;
     height: auto !important;
   }
-}
+} */
 
 @media (max-width: 768px) {
   .projects-grid,
@@ -1958,7 +1965,7 @@ main {
 }
 
 /* Small arrow buttons */
-.section-nav-btn {
+/* .section-nav-btn {
   border: 1px solid rgba(255, 255, 255, 0.16);
   background: rgba(10, 12, 20, 0.9);
   border-radius: 999px;
@@ -1988,12 +1995,12 @@ main {
 .section-nav-btn:active {
   transform: translateY(0);
   box-shadow: none;
-}
+} */
 
-.section-nav-btn:focus-visible {
+/* .section-nav-btn:focus-visible {
   outline: 2px solid #00e5ff;
   outline-offset: 2px;
-}
+} */
 
 /* Mobile: keep things simple & stacked */
 @media (max-width: 768px) {
@@ -2026,153 +2033,7 @@ main {
 }
 
 
-/* PROJECT NAV ARROWS — minimal brand style */
-.section-nav-btn {
-  background: transparent;
-  border: none;
-  width: auto;
-  height: auto;
-  padding: 0.15rem 0.4rem;
 
-  font-size: 1.4rem;
-  font-weight: 600;
-  line-height: 1;
-
-  color: #3A9DF7;
-  cursor: pointer;
-
-  transition:
-    transform 0.2s ease,
-    opacity 0.2s ease,
-    text-shadow 0.2s ease;
-}
-
-/* Hover pulse */
-.section-nav-btn:hover {
-  opacity: 0.95;
-  transform: translateY(-1px);
-  text-shadow:
-    0 0 6px rgba(58, 157, 247, 0.7),
-    0 0 14px rgba(58, 157, 247, 0.4);
-}
-
-/* Active click */
-.section-nav-btn:active {
-  transform: translateY(0);
-}
-
-/* Keyboard focus */
-.section-nav-btn:focus-visible {
-  outline: none;
-  text-shadow:
-    0 0 8px rgba(58, 157, 247, 0.85),
-    0 0 16px rgba(58, 157, 247, 0.55);
-}
-
-
-/* CASE STUDY ARROWS — minimal brand blue, no circles */
-.section-case-studies .case-nav.inside {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 20;
-
-  /* strip button chrome */
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
-  backdrop-filter: none;
-
-  /* size/spacing */
-  width: auto;
-  height: auto;
-  padding: 0.1rem 0.4rem;
-
-  /* typography */
-  font-size: 1.4rem;
-  font-weight: 600;
-  line-height: 1;
-  color: #3A9DF7;
-  cursor: pointer;
-
-  transition:
-    transform 0.2s ease,
-    opacity 0.2s ease,
-    text-shadow 0.2s ease;
-}
-
-/* Positioning left/right */
-.section-case-studies .case-nav-prev.inside {
-  left: 0.75rem;
-}
-
-.section-case-studies .case-nav-next.inside {
-  right: 0.75rem;
-}
-
-/* Hover glow */
-.section-case-studies .case-nav.inside:hover {
-  opacity: 0.95;
-  transform: translateY(-50%) translateY(-1px);
-  text-shadow:
-    0 0 6px rgba(58, 157, 247, 0.7),
-    0 0 14px rgba(58, 157, 247, 0.4);
-}
-
-/* Active click */
-.section-case-studies .case-nav.inside:active {
-  transform: translateY(-50%);
-}
-
-/* Keyboard focus */
-.section-case-studies .case-nav.inside:focus-visible {
-  outline: none;
-  text-shadow:
-    0 0 8px rgba(58, 157, 247, 0.85),
-    0 0 16px rgba(58, 157, 247, 0.55);
-}
-
-/* CASE STUDY ARROWS — OUTSIDE CARD */
-.section-case-studies .case-nav.outside {
-  position: relative;
-  top: auto;
-  transform: none;
-
-  background: transparent;
-  border: none;
-  padding: 0.2rem 0.4rem;
-
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #3A9DF7;
-  cursor: pointer;
-
-  transition:
-    transform 0.2s ease,
-    opacity 0.2s ease,
-    text-shadow 0.2s ease;
-}
-
-/* Align vertically next to cards */
-.section-case-studies .case-carousel {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-/* Hover glow */
-.section-case-studies .case-nav.outside:hover {
-  text-shadow:
-    0 0 6px rgba(58, 157, 247, 0.7),
-    0 0 14px rgba(58, 157, 247, 0.4);
-  transform: translateY(-1px);
-}
-
-/* Active */
-.section-case-studies .case-nav.outside:active {
-  transform: translateY(0);
-}
 
 /* =========================================
    ECOSYSTEM HEADER NAV — MATCH CASE NAV STYLE
@@ -2618,59 +2479,55 @@ body.no-scroll {
 }
 
 
-.glow-1:hover {
-  /* background: rgba(0, 183, 255, 0.08); */
-  border-color: rgba(0, 183, 255, 0.6);
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.45);
+/* =================================================
+   UNIFIED ARROW STYLE — Projects & Case Studies
+================================================= */
+
+.section-nav-btn,
+.section-case-studies .case-nav {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+
+  color: #3A9DF7;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.15rem 0.4rem;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.18s ease,
+    opacity 0.18s ease,
+    text-shadow 0.18s ease,
+    filter 0.18s ease;
+}
+
+/* Hover glow — EXACT match */
+.section-nav-btn:hover,
+.section-case-studies .case-nav:hover {
+  opacity: 0.95;
   transform: translateY(-1px);
-  /* neon glow used across project nav buttons */
+  filter: brightness(1.08);
+
   text-shadow:
     0 0 6px rgba(58, 157, 247, 0.7),
     0 0 14px rgba(58, 157, 247, 0.4);
 }
 
-.glow-1:active {
+/* Active click */
+.section-nav-btn:active,
+.section-case-studies .case-nav:active {
   transform: translateY(0);
-  box-shadow: none;
 }
-.glow-1:focus-visible {
+
+/* Focus outline */
+.section-nav-btn:focus-visible,
+.section-case-studies .case-nav:focus-visible {
   outline: none;
-  outline-offset: 0;
   text-shadow:
     0 0 8px rgba(58, 157, 247, 0.85),
     0 0 16px rgba(58, 157, 247, 0.55);
-}
-
-/* Base helper for glow elements to match project nav buttons */
-.glow-1 {
-  background: transparent;
-  border: none;
-  color: #3A9DF7;
-  padding: 0.15rem 0.4rem;
-  font-size: 1.4rem;
-  font-weight: 600;
-  line-height: 1;
-  cursor: pointer;
-  transition: transform 0.2s ease, opacity 0.2s ease, text-shadow 0.2s ease;
-}
-
-/* Strong override for Case Studies header arrows to ensure glow appears */
-.section-header-with-nav-case-studies .section-nav-btn.glow-1:hover {
-  opacity: 0.95 !important;
-  transform: translateY(-1px) !important;
-  /* keep neon glow but remove any hover background */
-  background: transparent !important;
-  border: none !important;
-  text-shadow: 0 0 6px rgba(58, 157, 247, 0.85) !important,
-               0 0 14px rgba(58, 157, 247, 0.6) !important;
-  z-index: 3 !important;
-}
-
-.section-header-with-nav-case-studies .section-nav-btn.glow-1:focus-visible {
-  outline: none !important;
-  background: transparent !important;
-  border: none !important;
-  text-shadow: 0 0 8px rgba(58, 157, 247, 0.95) !important,
-               0 0 18px rgba(58, 157, 247, 0.7) !important;
 }
 
