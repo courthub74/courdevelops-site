@@ -340,6 +340,65 @@ main {
   margin-bottom: 0.35rem;
 }
 
+/* Case studies header: kicker + inline nav */
+  .case-studies-header-top {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.75rem;
+  }
+
+.section-header-nav {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.section-nav-btn {
+  background: transparent;
+  border: 1px solid var(--border-soft);
+  color: var(--text-main);
+  padding: 0.45rem 0.6rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.section-nav-btn:hover {
+  background: rgba(255,255,255,0.02);
+  transform: translateY(-1px);
+}
+
+.section-nav-btn:focus {
+  outline: 2px solid rgba(58,157,247,0.22);
+  outline-offset: 2px;
+}
+
+/* Hide all cards by default; show the active one */
+.case-card-list .case-card {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 360ms cubic-bezier(.2,.9,.3,1), transform 360ms cubic-bezier(.2,.9,.3,1);
+  pointer-events: none;
+}
+
+.case-card-list .case-card.is-active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+@media (max-width: 640px) {
+  .case-studies-header-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
 .section-title {
   font-size: 1.4rem;
   margin-bottom: 0.4rem;
@@ -1022,8 +1081,9 @@ main {
 }
 
 .case-studies-header {
-  max-width: 48rem;
+  /* max-width: 48rem; */
   margin-bottom: 2.5rem;
+  width: 100%;
 }
 
 .case-studies-title {
@@ -1734,6 +1794,46 @@ main {
 
 /* PROJECTS SWIPE STYLES */
 /* Header with inline navigation (Projects page) */
+.section-header-with-nav-case-studies {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  /* gap: 1.5rem; */
+}
+
+.section-header-with-nav-case-studies .section-nav-btn {
+  background: transparent;
+  border: none;
+  width: auto;
+  height: auto;
+  padding: 0.15rem 0.4rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1;
+  color: #3A9DF7;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease, text-shadow 0.2s ease;
+}
+
+.section-nav-btn:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+  text-shadow:
+    0 0 6px rgba(58, 157, 247, 0.7),
+    0 0 14px rgba(58, 157, 247, 0.4);
+}
+
+.section-nav-btn:active {
+  transform: translateY(0);
+}
+
+.section-nav-btn:focus-visible {
+  outline: none;
+  text-shadow:
+    0 0 8px rgba(58, 157, 247, 0.85),
+    0 0 16px rgba(58, 157, 247, 0.55);
+}
+
 .section-header-with-nav {
   display: flex;
   justify-content: space-between;
@@ -1768,6 +1868,7 @@ main {
     border-color 0.2s ease;
 }
 
+/* ARROW GLOWS */
 .section-nav-btn:hover {
   background: rgba(0, 183, 255, 0.18);
   border-color: rgba(0, 183, 255, 0.6);
@@ -1784,6 +1885,8 @@ main {
   outline: 2px solid #00e5ff;
   outline-offset: 2px;
 }
+
+
 
 /* Highlight the currently "focused" project */
 .project-card.is-current-project {
@@ -2515,6 +2618,59 @@ body.no-scroll {
 }
 
 
+.glow-1:hover {
+  /* background: rgba(0, 183, 255, 0.08); */
+  border-color: rgba(0, 183, 255, 0.6);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.45);
+  transform: translateY(-1px);
+  /* neon glow used across project nav buttons */
+  text-shadow:
+    0 0 6px rgba(58, 157, 247, 0.7),
+    0 0 14px rgba(58, 157, 247, 0.4);
+}
 
+.glow-1:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+.glow-1:focus-visible {
+  outline: none;
+  outline-offset: 0;
+  text-shadow:
+    0 0 8px rgba(58, 157, 247, 0.85),
+    0 0 16px rgba(58, 157, 247, 0.55);
+}
 
+/* Base helper for glow elements to match project nav buttons */
+.glow-1 {
+  background: transparent;
+  border: none;
+  color: #3A9DF7;
+  padding: 0.15rem 0.4rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease, text-shadow 0.2s ease;
+}
+
+/* Strong override for Case Studies header arrows to ensure glow appears */
+.section-header-with-nav-case-studies .section-nav-btn.glow-1:hover {
+  opacity: 0.95 !important;
+  transform: translateY(-1px) !important;
+  /* keep neon glow but remove any hover background */
+  background: transparent !important;
+  border: none !important;
+  text-shadow: 0 0 6px rgba(58, 157, 247, 0.85) !important,
+               0 0 14px rgba(58, 157, 247, 0.6) !important;
+  z-index: 3 !important;
+}
+
+.section-header-with-nav-case-studies .section-nav-btn.glow-1:focus-visible {
+  outline: none !important;
+  background: transparent !important;
+  border: none !important;
+  text-shadow: 0 0 8px rgba(58, 157, 247, 0.95) !important,
+               0 0 18px rgba(58, 157, 247, 0.7) !important;
+}
 
