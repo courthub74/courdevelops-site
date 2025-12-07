@@ -1468,7 +1468,19 @@ main {
 /* SMALLEST SCREENS MOBILE */
 @media (max-width: 768px) {
   .case-card {
-    padding: 1.1rem 1.1rem;
+    padding: 2.8rem 2.2rem;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .case-card-list {
+    min-height: 300px;
+  }
+
+  .case-studies {
+    margin-bottom: 3rem;
   }
 }
 
@@ -1485,8 +1497,8 @@ main {
   .case-nav-next.inside { right: 0.5rem; }
 
   .case-card {
-    padding-left: .6rem;
-    padding-right: .6rem;
+    padding-left: 3.2rem;
+    padding-right: 2.2rem;
   }
 }
 
