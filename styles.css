@@ -1449,6 +1449,20 @@ main {
   .case-card:not(.is-active) {
     display: none;
   }
+
+  /* Prevent text from overflowing the card on small screens */
+  .case-card,
+  .case-card .case-title,
+  .case-card .case-subhead,
+  .case-card .case-desc,
+  .case-card .case-tags,
+  .case-card .case-tag {
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    hyphens: auto;
+  }
 }
 
 /* SMALLEST SCREENS MOBILE */
@@ -1471,8 +1485,8 @@ main {
   .case-nav-next.inside { right: 0.5rem; }
 
   .case-card {
-    padding-left: 2.6rem;
-    padding-right: 2.6rem;
+    padding-left: .6rem;
+    padding-right: .6rem;
   }
 }
 
