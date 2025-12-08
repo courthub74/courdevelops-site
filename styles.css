@@ -740,6 +740,16 @@ main {
   gap: 1.5rem;
 }
 
+/* Increase vertical spacing specifically for the Dream Agent (first) ecosystem panel */
+.ecosystem-panel[data-index="0"] .project-list {
+  gap: 3.6rem; /* larger spacing between project cards */
+}
+
+/* Also apply the same increased spacing to the Viking Ice Arena (second) ecosystem */
+.ecosystem-panel[data-index="1"] .project-list {
+  gap: 3.6rem;
+}
+
 .project-card {
   background: var(--bg-soft);
   border-radius: var(--radius-lg);
@@ -1087,7 +1097,7 @@ main {
 
 /* CASE STUDIES */
 .case-studies {
-  margin-top: 6rem;
+  margin-top: 3rem; /* reduced from 6rem to tighten top spacing */
 }
 
 .case-studies-header {
@@ -1310,6 +1320,13 @@ main {
   }
 }
 
+/* Mobile-specific spacing for case studies */
+@media (max-width: 768px) {
+  .case-studies {
+    margin-top: 2.5rem; /* tighter spacing on mobile */
+  }
+}
+
 /* Mobile: remove pill styling from case study tags */
 @media (max-width: 880px) {
   .case-study-tag {
@@ -1468,7 +1485,7 @@ main {
 /* SMALLEST SCREENS MOBILE */
 @media (max-width: 768px) {
   .case-card {
-    padding: 2.8rem 2.2rem;
+    padding: 1rem 1rem;
     min-height: 200px;
     display: flex;
     flex-direction: column;
