@@ -2441,6 +2441,7 @@ body.no-scroll {
   /* border-left-width: 3px; */
   position: relative;
   padding: 32px 40px;
+  font-style: oblique;
 }
 
 .quote-label {
@@ -2572,9 +2573,24 @@ body.no-scroll {
     0 0 16px rgba(58, 157, 247, 0.55);
 }
 
+/* STUDIO QUOTE NO SHOW */
+.studio-quote-short-version {
+  display: none;
+}
+
+/* STUDIO QUOTE */
 @media (max-width: 900px) {
   .studio-quote {
     display: none;
+  }
+
+  /* Shorter version */
+  .studio-quote-short-version {
+    display: block;
+    margin-top: 32px;
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.85);
+    font-style: oblique;
   }
 }
 
