@@ -379,6 +379,69 @@
       link.classList.add('nav-link-active');
     }
   });
+
+  // ===== MOBILE NAV BACKDROP + CLICK TO CLOSE =====
+(function(){
+  const mobileNav = document.querySelector('.mobile-nav');
+  const toggleBtn = document.querySelector('.mobile-menu-btn');
+  const closeBtn  = document.querySelector('.mobile-menu-close');
+
+  if (!mobileNav || !toggleBtn) return;
+
+  // Create backdrop once
+  let backdrop = document.querySelector('.nav-backdrop');
+  if (!backdrop) {
+    backdrop = document.createElement('div');
+    backdrop.className = 'nav-backdrop';
+    document.body.appendChild(backdrop);
+  }
+
+  const openMenu = () => {
+    mobileNav.classList.add('is-open');
+    backdrop.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeMenu = () => {
+    mobileNav.classList.remove('is-open');
+    backdrop.classList.remove('is-open');
+    document.body.style.overflow = '';
+  };
+
+  // Toggle button
+  toggleBtn.addEventListener('click', () => {
+    const isOpen = mobileNav.classList.contains('is-open');
+    isOpen ? closeMenu() : openMenu();
+  });
+
+  // Close button (if present)
+  if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+
+  // Click backdrop closes menu
+  backdrop.addEventListener('click', closeMenu);
+
+  // ESC closes menu
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenu();
+  });
+})();
+
+
+// ===== ACTIVE NAV LINK (DESKTOP + MOBILE) =====
+(function(){
+  const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+
+  document.querySelectorAll('nav a').forEach(a => {
+    const href = (a.getAttribute('href') || '').toLowerCase();
+    if (!href) return;
+
+    // mark exact match, plus index fallback
+    if (href === path || (path === '' && href.includes('index.html'))) {
+      a.classList.add('is-active');
+    }
+  });
+})();
+
 </script>
 
 

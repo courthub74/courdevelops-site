@@ -1223,7 +1223,7 @@ main {
   transition: all .2s ease;
 }
 
-.case-link a.hover {
+.view-link:hover {
   color: rgba(0,200,255,.95);
   text-decoration: underline;
 }
@@ -2681,8 +2681,7 @@ textarea:focus-visible {
 .card,
 .case-card,
 .project-card,
-.contact-card,
-.sidebar-block {
+.contact-card {
   transition:
     transform var(--dur-med) var(--ease-out),
     box-shadow var(--dur-med) var(--ease-out),
@@ -2690,13 +2689,6 @@ textarea:focus-visible {
   will-change: transform;
 }
 
-.card:hover,
-.case-card:hover,
-.project-card:hover,
-.contact-card:hover,
-.sidebar-block:hover {
-  transform: translateY(-3px);
-}
 
 /* Inputs feel “alive” */
 input,
@@ -2804,6 +2796,130 @@ textarea:focus {
   from { opacity: 0; transform: translateY(10px); filter: blur(2px); }
   to   { opacity: 1; transform: translateY(0); filter: blur(0); }
 }
+
+/* ===========================
+   Mobile Nav Polish
+   =========================== */
+
+/* Backdrop overlay behind the menu */
+.nav-backdrop{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--dur-slow) var(--ease-soft);
+  z-index: 60; /* must sit below the mobile nav panel */
+}
+
+/* When open */
+.nav-backdrop.is-open{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Mobile nav panel: smoother entrance */
+.mobile-nav{
+  transform: translateY(-10px) scale(0.995);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    transform var(--dur-slow) var(--ease-soft),
+    opacity var(--dur-slow) var(--ease-soft);
+  z-index: 70; /* above backdrop */
+  will-change: transform, opacity;
+}
+
+.mobile-nav.is-open{
+  transform: translateY(0) scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Optional: soften the panel edge a bit */
+.mobile-nav{
+  box-shadow: 0 24px 70px rgba(0,0,0,.55);
+}
+
+
+/* ===========================
+   Nav underline sweep
+   =========================== */
+
+.site-nav a,
+.mobile-nav a{
+  position: relative;
+  text-decoration: none;
+}
+
+/* underline element using pseudo */
+.site-nav a::after,
+.mobile-nav a::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  height: 2px;
+  width: 100%;
+  background: rgba(58, 157, 247, 0.75);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur-med) var(--ease-out), opacity var(--dur-med) var(--ease-out);
+  opacity: 0;
+  border-radius: 999px;
+}
+
+/* On hover */
+.site-nav a:hover::after,
+.mobile-nav a:hover::after{
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+/* Active link class: keep it visible */
+.site-nav a.is-active::after,
+.mobile-nav a.is-active::after{
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+/* Optional: keep active link text slightly brighter */
+.site-nav a.is-active,
+.mobile-nav a.is-active{
+  color: rgba(234,240,255,0.95);
+}
+
+.nav-cta,
+.btn-primary{
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-cta::before,
+.btn-primary::before{
+  content:"";
+  position:absolute;
+  inset:-40% -60%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.18), transparent 55%);
+  opacity: 0;
+  transition: opacity var(--dur-med) var(--ease-out);
+}
+
+.nav-cta:hover::before,
+.btn-primary:hover::before{
+  opacity: 1;
+}
+
+
+/* View-Link */
+.case-link.view-link:hover {
+  color: rgba(0,200,255,.95);
+  text-decoration: underline;
+}
+
+
 
 
 
