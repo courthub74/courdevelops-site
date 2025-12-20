@@ -7,14 +7,22 @@
   <link rel="stylesheet" href="styles.css">
   <!-- CSS -->
    <style>
-    .case-card {
-      display: none;
-    }
+.case-card {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
 
-    .case-card.is-active {
-      display: block;
-    }
-    </style>
+.case-card.is-active {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  height: auto !important;
+  overflow: visible !important;
+}
+</style>
 </head>
 <body>
 <div class="site-wrapper">
