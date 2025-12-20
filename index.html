@@ -420,6 +420,42 @@
     });
   }
 
+  // ===== SUBTLE SCROLL REVEALS =====
+(function(){
+  const prefersReduced =
+    window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Pick elements that make sense to reveal (no need to edit HTML)
+  const targets = document.querySelectorAll(
+    '.section-header, .hero-grid > div, .card, .case-studies-header, .case-card, .project-card, .sidebar-block, .studio-quote, .contact-card'
+  );
+
+  // If reduced motion, just show everything
+  if (prefersReduced) {
+    targets.forEach(el => el.classList.add('is-visible'));
+    return;
+  }
+
+  // Mark them with the attribute our CSS uses
+  targets.forEach((el, i) => {
+    el.setAttribute('data-reveal', 'up');
+    // gentle stagger: first items show sooner
+    el.style.setProperty('--reveal-delay', `${Math.min(i * 45, 240)}ms`);
+  });
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -10% 0px' });
+
+  targets.forEach(el => io.observe(el));
+})();
+
+
 </script>
 
 </body>

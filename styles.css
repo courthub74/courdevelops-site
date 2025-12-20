@@ -132,7 +132,7 @@ img {
 
 .nav-links a:hover {
   color: var(--text-main);
-  border-bottom-color: var(--accent-soft);
+  /* border-bottom-color: var(--accent-soft); */
 }
 
 .nav-cta {
@@ -265,11 +265,16 @@ main {
   border: 1px solid var(--border-soft);
   background: rgba(15, 23, 42, 0.9);
   color: var(--text-muted);
+  color: var(--accent-soft);
 }
 
 .btn-ghost:hover {
-  border-color: rgba(148, 163, 184, 0.7);
+  /* border-color: rgba(148, 163, 184, 0.7); */
+  /* border-color: rgba(79, 120, 182, 0.7); */
+  filter: drop-shadow(0 0 6px rgba(0, 183, 255, 0.35))
+        drop-shadow(0 0 12px rgba(0, 183, 255, 0.1));
   color: var(--text-main);
+  color: var(--accent-blue);
 }
 
 /* Hero - right panel */
@@ -2593,4 +2598,210 @@ body.no-scroll {
     font-style: oblique;
   }
 }
+
+/* ===========================
+   Subtle Motion System (Pro)
+   =========================== */
+
+/* Motion tokens */
+:root{
+  --ease-out: cubic-bezier(.2,.8,.2,1);
+  --ease-soft: cubic-bezier(.22, 1, .36, 1);
+  --dur-fast: 140ms;
+  --dur-med: 260ms;
+  --dur-slow: 520ms;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  *{
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---- Hover + focus micro-interactions ---- */
+
+/* Buttons, links that should feel “tactile” */
+.nav-cta,
+.btn-primary,
+.btn-ghost,
+.case-link,
+.mobile-menu-cta,
+.section-nav-btn,
+.project-links a {
+  transition:
+    transform var(--dur-med) var(--ease-out),
+    box-shadow var(--dur-med) var(--ease-out),
+    background-color var(--dur-med) var(--ease-out),
+    border-color var(--dur-med) var(--ease-out),
+    color var(--dur-med) var(--ease-out),
+    opacity var(--dur-med) var(--ease-out);
+  will-change: transform;
+}
+
+.nav-cta:hover,
+.btn-primary:hover,
+.btn-ghost:hover,
+.case-link:hover,
+.mobile-menu-cta:hover,
+.section-nav-btn:hover,
+.project-links a:hover {
+  transform: translateY(-2px);
+}
+
+.nav-cta:active,
+.btn-primary:active,
+.btn-ghost:active,
+.section-nav-btn:active {
+  transform: translateY(0px) scale(0.99);
+}
+
+/* Clear keyboard focus without being neon */
+.nav-cta:focus-visible,
+.btn-primary:focus-visible,
+.btn-ghost:focus-visible,
+.case-link:focus-visible,
+.mobile-menu-cta:focus-visible,
+.section-nav-btn:focus-visible,
+.project-links a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(58, 157, 247, 0.22);
+  border-color: rgba(58, 157, 247, 0.55);
+}
+
+/* Cards get a tiny lift on hover */
+.card,
+.case-card,
+.project-card,
+.contact-card,
+.sidebar-block {
+  transition:
+    transform var(--dur-med) var(--ease-out),
+    box-shadow var(--dur-med) var(--ease-out),
+    border-color var(--dur-med) var(--ease-out);
+  will-change: transform;
+}
+
+.card:hover,
+.case-card:hover,
+.project-card:hover,
+.contact-card:hover,
+.sidebar-block:hover {
+  transform: translateY(-3px);
+}
+
+/* Inputs feel “alive” */
+input,
+select,
+textarea {
+  transition:
+    border-color var(--dur-med) var(--ease-out),
+    box-shadow var(--dur-med) var(--ease-out),
+    transform var(--dur-med) var(--ease-out);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  transform: translateY(-1px);
+}
+
+/* ---- Scroll reveal system ---- */
+[data-reveal]{
+  opacity: 0;
+  transform: translateY(10px);
+  filter: blur(2px);
+  transition:
+    opacity var(--dur-slow) var(--ease-soft),
+    transform var(--dur-slow) var(--ease-soft),
+    filter var(--dur-slow) var(--ease-soft);
+  will-change: opacity, transform, filter;
+}
+
+/* Reveal visible */
+[data-reveal].is-visible{
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* Optional variants */
+[data-reveal="up"]{ transform: translateY(14px); }
+[data-reveal="down"]{ transform: translateY(-14px); }
+[data-reveal="left"]{ transform: translateX(14px); }
+[data-reveal="right"]{ transform: translateX(-14px); }
+
+/* Stagger helper (set via JS as inline style delay) */
+[data-reveal]{ transition-delay: var(--reveal-delay, 0ms); }
+
+/* ---- Case study + ecosystem transitions (swap cards/panels smoothly) ---- */
+
+/* Index: case-study cards (you toggle .is-active) */
+.case-card {
+  opacity: 0;
+  transform: translateY(8px) scale(0.995);
+  pointer-events: none;
+}
+
+.case-card.is-active{
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+  transition:
+    opacity var(--dur-slow) var(--ease-soft),
+    transform var(--dur-slow) var(--ease-soft);
+}
+
+/* Projects: ecosystem panels */
+.ecosystem-panel {
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  transition:
+    opacity var(--dur-slow) var(--ease-soft),
+    transform var(--dur-slow) var(--ease-soft);
+}
+
+.ecosystem-panel.is-active{
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Mobile nav: polish the slide */
+.mobile-nav {
+  transition:
+    transform var(--dur-slow) var(--ease-soft),
+    opacity var(--dur-slow) var(--ease-soft);
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+.mobile-nav.is-open{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* HERO ANIMATIONS */
+.hero-title, .hero-subtitle, .hero-actions, .hero-image img {
+  animation: heroIn var(--dur-slow) var(--ease-soft) both;
+}
+
+.hero-subtitle { animation-delay: 90ms; }
+.hero-actions { animation-delay: 160ms; }
+.hero-image img { animation-delay: 220ms; }
+
+@keyframes heroIn {
+  from { opacity: 0; transform: translateY(10px); filter: blur(2px); }
+  to   { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+
+
 
