@@ -12,23 +12,45 @@
     <div class="container">
       <div class="nav-bar">
         <a href="index.html" class="brand">
-          <div class="brand-mark"><img src="./img/light_blue_logo.png" alt="CourDevelops"></div>
+          <div class="brand-mark"><img src="./img/logos/light_blue_logo.png" alt="CourDevelops"></div>
           <div class="brand-text">
             <div class="brand-name">CourDevelops</div>
             <div class="brand-tagline">Creative Technology Studio</div>
           </div>
         </a>
 
+        <!-- Nav with mobile burger -->
         <nav class="nav-links">
+          <a href="index.html">Home</a>
           <a href="studio.html">Studio</a>
           <a href="projects.html">Projects</a>
-          <a href="contact.html">Contact</a>
+          <a href="#" class="disabled">Contact</a>
         </nav>
 
+        <button class="mobile-nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+
         <a class="nav-cta" href="contact.html">Start a project</a>
+
       </div>
     </div>
   </header>
+
+  <!-- NAV MENU -->
+  <nav class="mobile-nav" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="studio.html">Studio</a>
+    <a href="projects.html">Projects</a>
+    <a href="#" class="disabled mobile-disable">Contact</a>
+    <a href="contact.html" class="mobile-menu-cta">
+      <span>Launch a project</span>
+      <span class="mobile-menu-cta-arrow">→</span>
+    </a>
+  </nav>
+
 
   <main>
     <section class="section">
@@ -54,21 +76,21 @@
           <form class="contact-form" action="YOUR_FORM_ENDPOINT_HERE" method="POST">
             <div class="contact-row">
               <div class="field-group">
-                <label for="name"><strong>Name</strong></label>
+                <label for="name"><p>Name</p></label>
                 <input type="text" id="name" name="name" required placeholder="Your name">
               </div>
             </div>
 
             <div class="contact-row">
               <div class="field-group">
-                <label for="email"><strong>Email</strong></label>
+                <label for="email"><p>Email</p></label>
                 <input type="email" id="email" name="email" required placeholder="you@example.com">
               </div>
             </div>
 
             <div class="contact-row">
               <div class="field-group">
-                <label for="project-type"><strong>Project type</strong></label>
+                <label for="project-type"><p>Project type</p></label>
                 <select id="project-type" name="project_type" required>
                   <option value="">Select one</option>
                   <option value="artist-experience">Artist / portfolio experience</option>
@@ -82,21 +104,21 @@
 
             <div class="contact-row">
               <div class="field-group">
-                <label for="timeline"><strong>Timeline</strong></label>
+                <label for="timeline"><p>Timeline</p></label>
                 <input type="text" id="timeline" name="timeline" placeholder="e.g. 4–8 weeks, flexible, ASAP">
               </div>
             </div>
 
             <div class="contact-row">
               <div class="field-group">
-                <label for="budget"><strong>Rough budget range</strong></label>
+                <label for="budget"><p>Rough budget range</p></label>
                 <input type="text" id="budget" name="budget" placeholder="e.g. $3k–$5k, $10k+, exploring">
               </div>
             </div>
 
             <div class="contact-row">
               <div class="field-group">
-                <label for="message"><strong>Project details & links</strong></label>
+                <label for="message"><p>Project details & links</p></label>
                 <textarea
                   id="message"
                   name="message"
@@ -125,8 +147,9 @@
 
           <div class="contact-row" style="margin-top:1.2rem;">
             <strong>LinkedIn</strong>
-            <a href="https://www.linkedin.com/in/courtney-jacobs-b85438365/" target="_blank" rel="noreferrer">
-              Courtney&nbsp;Jacobs
+            <a href="https://www.linkedin.com/in/courdevelops" target="_blank" rel="noreferrer">
+              <!-- Courtney&nbsp;Jacobs -->
+               CourDevelops
             </a>
           </div>
         </div>
@@ -146,6 +169,83 @@
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  // ===== MOBILE NAV LOGIC =====
+  const mobileToggle = document.querySelector('.mobile-nav-toggle');
+  const mobileNav = document.querySelector('.mobile-nav');
+  const bodyEl = document.body;
+
+  function openMobileNav() {
+    mobileNav.classList.add('is-open');
+    mobileToggle.classList.add('is-open');
+    mobileToggle.setAttribute('aria-expanded', 'true');
+    bodyEl.classList.add('no-scroll');
+  }
+
+  function closeMobileNav() {
+    mobileNav.classList.remove('is-open');
+    mobileToggle.classList.remove('is-open');
+    mobileToggle.setAttribute('aria-expanded', 'false');
+    bodyEl.classList.remove('no-scroll');
+  }
+
+  if (mobileToggle && mobileNav) {
+    // Toggle on button click
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation(); // don't trigger click-outside
+      if (mobileNav.classList.contains('is-open')) {
+        closeMobileNav();
+      } else {
+        openMobileNav();
+      }
+    });
+
+    // Auto-close when a link is clicked
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        closeMobileNav();
+      });
+    });
+
+    // Click outside to close
+    document.addEventListener('click', (e) => {
+      if (!mobileNav.classList.contains('is-open')) return;
+
+      const clickInsideNav = mobileNav.contains(e.target);
+      const clickToggle = mobileToggle.contains(e.target);
+
+      if (!clickInsideNav && !clickToggle) {
+        closeMobileNav();
+      }
+    });
+
+    // ESC to close
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileNav.classList.contains('is-open')) {
+        closeMobileNav();
+      }
+    });
+  }
+
+  // ===== ACTIVE LINK HIGHLIGHT (desktop + mobile) =====
+  const allNavLinks = document.querySelectorAll('.nav-links a, .mobile-nav a');
+  const currentPath = window.location.pathname;
+
+  allNavLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (!href) return;
+
+    const isHome =
+      href === '#' && (currentPath.endsWith('/') || currentPath.endsWith('/index.html'));
+
+    const matchesPath =
+      href !== '#' && currentPath.endsWith('/' + href);
+
+    if (isHome || matchesPath) {
+      link.classList.add('nav-link-active');
+    }
+  });
+
 </script>
 </body>
 </html>

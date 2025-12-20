@@ -7,6 +7,7 @@
   --accent-soft: #2e78c8;
   --text-main: #ffffff;
   --text-muted: #9ca3af;
+  --on-page: #60646c;
   --border-soft: rgba(255, 255, 255, 0.08);
   --radius-lg: 16px;
   --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.6);
@@ -36,6 +37,7 @@ img {
   max-width: 100%;
   display: block;
 }
+
 
 /* Layout */
 
@@ -69,6 +71,14 @@ img {
   justify-content: space-between;
   padding: 0.9rem 0;
 }
+
+.nav-links a.disabled {
+  color: #ffffff55;
+  cursor: default;
+  pointer-events: none;
+  border-bottom: 1px solid var(--accent-soft);
+}
+
 
 .brand {
   display: flex;
@@ -122,7 +132,7 @@ img {
 
 .nav-links a:hover {
   color: var(--text-main);
-  border-bottom-color: var(--accent-soft);
+  /* border-bottom-color: var(--accent-soft); */
 }
 
 .nav-cta {
@@ -162,6 +172,20 @@ main {
   align-items: center;
 }
 
+/* Desktop hero image sizing */
+.hero-image {
+  display: flex;
+  justify-content: center;   /* center it in its column */
+  align-items: center;
+}
+
+.hero-image img {
+  width: 300px;              /* 🔧 change this to the size you want */
+  max-width: 100%;           /* don't overflow on smaller screens */
+  height: auto;
+}
+
+
 .hero-kicker {
   font-size: 0.8rem;
   letter-spacing: 0.16em;
@@ -193,6 +217,7 @@ main {
   color: #e5e7eb;
 }
 
+/* HERO BUTTONS */
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -213,6 +238,17 @@ main {
   text-decoration: none;
 }
 
+/* CHANGE SIZING FOR HERO BUTTONS ON MOBILE */
+@media (max-width: 800px) {
+  .btn-primary,
+  .btn-ghost {
+    padding: .5rem .8rem;
+    font-size: .8rem;
+    /* width: 100%;
+    justify-content: center; */
+  }
+}
+
 .btn-primary {
   background: linear-gradient(135deg, var(--accent), #7dd3fc);
   color: #020617;
@@ -229,15 +265,19 @@ main {
   border: 1px solid var(--border-soft);
   background: rgba(15, 23, 42, 0.9);
   color: var(--text-muted);
+  color: var(--accent-soft);
 }
 
 .btn-ghost:hover {
-  border-color: rgba(148, 163, 184, 0.7);
+  /* border-color: rgba(148, 163, 184, 0.7); */
+  /* border-color: rgba(79, 120, 182, 0.7); */
+  filter: drop-shadow(0 0 6px rgba(0, 183, 255, 0.35))
+        drop-shadow(0 0 12px rgba(0, 183, 255, 0.1));
   color: var(--text-main);
+  color: var(--accent-blue);
 }
 
 /* Hero - right panel */
-
 .hero-panel {
   background: radial-gradient(circle at 20% 0%, rgba(148, 163, 253, 0.16), transparent),
               linear-gradient(to bottom right, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.7));
@@ -290,7 +330,7 @@ main {
 /* Section layouts */
 
 .section {
-  padding: 3rem 0 3.5rem;
+  padding: 3rem 0 .5rem;
 }
 
 .section-header {
@@ -305,6 +345,75 @@ main {
   margin-bottom: 0.35rem;
 }
 
+/* Case studies header: kicker + inline nav */
+  .case-studies-header-top {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.75rem;
+  }
+
+.section-header-nav {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.section-nav-btn {
+  background: transparent;
+  border: 1px solid var(--border-soft);
+  color: var(--text-main);
+  padding: 0.45rem 0.6rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.section-nav-btn:hover {
+  background: rgba(255,255,255,0.02);
+  transform: translateY(-1px);
+}
+
+.section-nav-btn:focus {
+  outline: none;
+}
+
+.section-nav-btn:active {
+  outline: none;
+}
+
+/* Hide all cards by default; show the active one */
+.case-card-list .case-card {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 360ms cubic-bezier(.2,.9,.3,1), transform 360ms cubic-bezier(.2,.9,.3,1);
+  pointer-events: none;
+}
+
+.case-card-list .case-card.is-active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Make the case study carousel container own some height */
+.case-card-list {
+  position: relative;
+  min-height: 240px; /* tweak based on your content */
+}
+
+
+@media (max-width: 640px) {
+  .case-studies-header-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
 .section-title {
   font-size: 1.4rem;
   margin-bottom: 0.4rem;
@@ -315,6 +424,268 @@ main {
   color: var(--text-muted);
   max-width: 34rem;
 }
+
+/* Studio */
+.section-studio-intro {
+  /* Reduce top spacing on the studio page so content sits higher under header */
+  margin-top: 5px;
+  padding-top: 12px;
+}
+
+/* main two-column grid */
+.studio-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2.2fr) minmax(0, 1fr);
+  gap: 72px;
+  align-items: flex-start;
+}
+
+.studio-copy p {
+  max-width: 44rem;
+}
+
+/* meta column */
+.studio-meta {
+  padding-left: 32px;
+  border-left: 1px solid rgba(255, 255, 255, 0.06);
+  border-left: 1px solid rgba(0,183,255,0.05);
+  font-size: 0.9rem;
+}
+
+/* small icon */
+.studio-meta-icon {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 20px;
+}
+
+.studio-meta-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: rgba(0, 229, 255, 0.9);
+  stroke-width: 1.4;
+}
+
+/* groups inside meta column */
+.studio-meta-group + .studio-meta-group {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06); /* subtle divider */
+  border-top: 1px solid rgba(255, 255, 255, 0.04);; /* subtle divider */
+}
+
+/* label */
+.studio-meta-label {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 10px;
+}
+
+/* list */
+.studio-meta-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.studio-meta-list li {
+  margin-bottom: 8px;
+  color: rgba(255, 255, 255, 0.82);
+  position: relative;
+  padding-left: 14px;
+}
+
+/* tiny tick as bullet */
+.studio-meta-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.4em;
+  width: 6px;
+  height: 1px;
+  background: rgba(0, 229, 255, 0.7);
+}
+
+
+/* responsive stacking */
+@media (max-width: 900px) {
+  .studio-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .studio-meta {
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 24px;
+  }
+
+  .studio-meta-icon {
+    margin-bottom: 16px;
+  }
+}
+
+/* CAPABILIIES LIST */
+/* Capabilities — card grid */
+.capabilities-list {
+  list-style: none;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.9rem;
+}
+
+.capabilities-list li {
+  position: relative;
+  padding: 0.9rem 1.1rem;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(0, 229, 255, 0.18);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  color: #e7f5ff;
+  overflow: hidden;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    opacity 0.2s ease;
+}
+
+/* subtle cyan highlight sweep */
+.capabilities-list li::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left,
+    rgba(0, 229, 255, 0.16),
+    transparent 55%);
+  opacity: 0.7;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+/* hover / focus effect */
+.capabilities-list li:hover,
+.capabilities-list li:focus-within {
+  transform: translateY(-3px);
+  background: rgba(7, 20, 40, 0.95);
+  border-color: #00e5ff;
+  box-shadow:
+    0 14px 35px rgba(0, 0, 0, 0.65),
+    0 0 18px rgba(0, 229, 255, 0.35);
+}
+
+/* tiny leading bullet accent */
+.capabilities-list li::marker {
+  /* no default bullet */
+  content: "";
+}
+
+/* optional left accent bar */
+.capabilities-list li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 18%;
+  bottom: 18%;
+  width: 3px;
+  border-radius: 999px;
+  background: linear-gradient(
+    to bottom,
+    #00e5ff,
+    #9b5fff
+  );
+  opacity: 0.75;
+}
+
+/* Responsive: two-column grid on wider screens */
+@media (min-width: 960px) {
+  .capabilities-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* main two-column grid */
+.bottom-info-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 56px;
+  padding-top: 40px;
+  /* margin-top: 48px; */
+  /* border-top: 1px solid rgba(255, 255, 255, 0.06); */
+  box-shadow: inset 0 1px 0 rgba(0,183,255,0.05);
+}
+
+/* columns */
+.bottom-column {
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* subtle vertical divider for right column */
+.bottom-column--right {
+  border-left: 1px solid rgba(255, 255, 255, 0.04);
+  padding-left: 32px;
+}
+
+/* eyebrow heading */
+.section-eyebrow {
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 12px;
+}
+
+/* list styling */
+.bottom-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.bottom-list li {
+  position: relative;
+  padding-left: 16px;
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+/* tiny chevron bullet */
+.bottom-list li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.8rem;
+}
+
+/* responsive: stack on mobile, adjust dividers */
+@media (max-width: 768px) {
+  .bottom-info-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .bottom-column--right {
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 24px;
+  }
+}
+
 
 /* Cards */
 
@@ -344,6 +715,7 @@ main {
 }
 
 .card-tagline {
+  display: flex;
   font-size: 0.75rem;
   color: var(--accent);
   text-transform: uppercase;
@@ -371,6 +743,16 @@ main {
 .project-list {
   display: grid;
   gap: 1.5rem;
+}
+
+/* Increase vertical spacing specifically for the Dream Agent (first) ecosystem panel */
+.ecosystem-panel[data-index="0"] .project-list {
+  gap: 3.6rem; /* larger spacing between project cards */
+}
+
+/* Also apply the same increased spacing to the Viking Ice Arena (second) ecosystem */
+.ecosystem-panel[data-index="1"] .project-list {
+  gap: 3.6rem;
 }
 
 .project-card {
@@ -510,7 +892,7 @@ main {
 
 .contact-form label {
   font-size: 0.8rem;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   letter-spacing: 0.06em;
   opacity: 0.8;
 }
@@ -532,6 +914,621 @@ main {
   outline: none;
   border-color: rgba(0, 229, 255, 0.7);
 }
+
+/* Img Icons */
+.icon_rep {
+  width: 50px;
+  height: 50px;
+  /* width: 1em;
+  height: 1em; */
+  border-radius: 50%; /* make circular */
+  object-fit: cover;
+  vertical-align: middle;
+  margin-right: 0; /* spacing handled by .case-study-name gap */
+  flex-shrink: 0; /* keep icon size inside flex layout */
+}
+
+/* Img Icons */
+.icon_rep_studio {
+  width: 55px;
+  height: 55px;
+  /* width: 1em;
+  height: 1em; */
+  border-radius: 50%; /* make circular */
+  object-fit: cover;
+  vertical-align: middle;
+  margin-right: 0.4rem;
+}
+
+.img_with_title {
+  display: flex;
+  align-items: center;
+}
+
+/* CASE STUDIES CAROUSEL */
+/* .section-case-studies .section-header {
+  text-align: left;
+  max-width: 640px;
+  margin-bottom: 2.5rem;
+}
+
+.case-carousel {
+  display: flex;
+  align-items: stretch;
+  gap: 1.5rem;
+}
+
+.case-viewport {
+  position: relative;
+  flex: 1;
+  min-height: 260px; /* adjust if you want it taller 
+} 
+
+/* Kaleidoscope-style card transitions */
+/* .case-card {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.96) translateY(6px) rotate(-1deg);
+  filter: blur(2px);
+  overflow-wrap: break-word;
+  min-height: 300px;
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s ease,
+    filter 0.45s ease;
+}
+
+.case-card.is-active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1) translateY(0) rotate(0deg);
+  filter: blur(0);
+} */
+
+/* CASE STUDIES CAROUSEL – arrows outside, brand blue text */
+
+/* Layout: arrows + viewport */
+/* .section-case-studies .case-carousel {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+} */
+
+/* Keep your existing viewport behavior */
+/* .case-viewport {
+  position: relative;
+  flex: 1;
+  min-height: 280px;
+} */
+
+/* Arrows */
+/* Base arrow buttons (outside card) */
+/* .case-nav {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+
+  color: #3A9DF7;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.15s ease,
+    text-shadow 0.15s ease,
+    filter 0.15s ease;
+} */
+
+
+/* .case-nav:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.2);
+  text-shadow:
+    0 0 4px  rgba(58, 157, 247, 1),
+    0 0 10px rgba(58, 157, 247, 0.95),
+    0 0 18px rgba(58, 157, 247, 0.75),
+    0 0 28px rgba(58, 157, 247, 0.55),
+    0 0 44px rgba(58, 157, 247, 0.35);
+} */
+
+
+
+
+/* Active click */
+/* .case-nav:active {
+  transform: translateY(0);
+} */
+
+/* Keyboard focus */
+/* .case-nav:focus-visible {
+  outline: none;
+  text-shadow:
+    0 0 8px rgba(58, 157, 247, 0.85),
+    0 0 16px rgba(58, 157, 247, 0.55);
+} */
+
+/* .case-nav:hover {
+  background: rgba(20, 24, 40, 0.95);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.case-nav:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.case-nav:focus-visible {
+  outline: 2px solid #00e5ff;
+  outline-offset: 2px;
+} */
+
+/* Dots */
+/* .case-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 3rem;
+} */
+
+/* Slider dots base */
+/* .case-dot {
+  border-color: #3A9DF7;
+  background: transparent;
+} */
+
+/* Active dot */
+/* .case-dot.is-active {
+  background: #3A9DF7;
+  border-color: #3A9DF7;
+  box-shadow:
+    0 0 6px rgba(58, 157, 247, 0.8),
+    0 0 14px rgba(58, 157, 247, 0.55),
+    0 0 22px rgba(58, 157, 247, 0.3);
+} */
+
+/* Hover glow */
+/* .case-dot:hover {
+  background: rgba(58, 157, 247, 0.25);
+  box-shadow:
+    0 0 6px rgba(58, 157, 247, 0.6),
+    0 0 14px rgba(58, 157, 247, 0.4);
+} */
+
+/* CASE STUDIES */
+.case-studies {
+  margin-top: 3rem; /* reduced from 6rem to tighten top spacing */
+}
+
+.case-studies-header {
+  /* max-width: 48rem; */
+  margin-bottom: 2.5rem;
+  width: 100%;
+}
+
+.case-studies-title {
+  margin: 0.25rem 0 0.75rem;
+  /* Match the site's section heading scale */
+  font-size: 1.4rem;
+}
+
+.case-studies-intro {
+  margin: 0;
+  color: var(--text-muted);
+  /* Use the same body/description sizing as other sections */
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+/* Single, super-clean study block */
+.case-card {
+  background: linear-gradient(180deg, #050b18, #020511);
+  border: 1px solid rgba(0,180,255,0.12);
+  border-radius: 20px;
+  padding: 22px;
+  transition: all 0.25s ease;
+}
+
+/* .case-card:hover {
+  border-color: rgba(0,200,255,.45);
+  cursor: pointer;
+  box-shadow: 0 0 0 1px rgba(0,160,255,.12),
+              0 18px 40px rgba(0,80,255,.25);
+} */
+
+/* HEADER */
+
+.case-header {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.case-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+}
+
+.case-study {
+  font-size: 11px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(0,180,255,.6);
+}
+
+.case-title {
+  font-size: 17px;
+  color: white;
+  margin: 2px 0 4px;
+  line-height: 1.2;
+}
+
+/* PILLS */
+
+.case-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0;
+}
+
+.case-tag {
+  font-size: 10px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(0,160,255,.08);
+  color: rgba(120,220,255,.85);
+  color: var(--accent);
+  border: 1px solid rgba(0,160,255,.25);
+}
+
+/* TEXT */
+
+.case-subhead {
+  font-size: 14px;
+  color: rgba(255,255,255,.9);
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.case-desc {
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(255,255,255,.55);
+}
+
+/* FOOTER */
+
+.case-footer {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+
+.case-link {
+  font-size: 13px;
+  /* color: rgba(0,200,255,.9); */
+  color: var(--accent);
+  /* color: red; */
+  font-weight: 500;
+  /* text-decoration: none; */
+  transition: all .2s ease;
+}
+
+.view-link:hover {
+  color: rgba(0,200,255,.95);
+  text-decoration: underline;
+}
+
+
+/* ===== MOBILE OPTIMIZATION ===== */
+@media (max-width: 600px) {
+
+  .case-card {
+    padding: 18px;
+  }
+
+  /* Stack logo above title */
+  .case-header {
+    align-items: center;
+    gap: 10px;
+  }
+
+  .case-logo {
+    width: 34px;
+    height: 34px;
+  }
+
+  /* Slightly smaller title */
+  .case-title {
+    font-size: 16px;
+    line-height: 1.3;
+  }
+
+  /* Keep Study label visible */
+  .case-study {
+    font-size: 10px;
+    opacity: .75;
+  }
+
+  /* Make pills feel tappable */
+  .case-tags {
+    gap: 6px;
+    margin: 12px 0;
+  }
+
+  .case-tag {
+    font-size: 9.5px;
+    padding: 4px 9px;
+  }
+
+  /* Improve paragraph rhythm */
+  .case-subhead {
+    font-size: 13px;
+    margin-bottom: 4px;
+  }
+
+  .case-desc {
+    font-size: 12.5px;
+    line-height: 1.5;
+  }
+
+  /* Larger hit zone for CTA */
+  .case-footer {
+    margin-top: 14px;
+    padding-top: 10px;
+  }
+
+  .case-link {
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+}
+
+/* DEBUG / FIX – make sure case study is visible on mobile */
+/* @media (max-width: 768px) {
+  .case-studies,
+  .case-card {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .case-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 16px 0 !important;
+    height: auto !important;
+  }
+} */
+
+@media (max-width: 768px) {
+  .projects-grid,
+  .case-studies,
+  .case-card {
+    display: block !important;
+  }
+}
+
+
+
+/* Mobile: hide case study hero badges */
+@media (max-width: 768px) {
+  .hero-badges {
+    display: none;
+  }
+}
+
+/* Mobile-specific spacing for case studies */
+@media (max-width: 768px) {
+  .case-studies {
+    margin-top: 2.5rem; /* tighter spacing on mobile */
+  }
+}
+
+/* Mobile: remove pill styling from case study tags */
+@media (max-width: 880px) {
+  .case-study-tag {
+    padding: 0;
+    background: transparent;
+    border: none;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-transform: none;
+    letter-spacing: 0.02em;
+  }
+  
+  .case-study-tags {
+    gap: 0;
+  }
+  
+  /* Add separator between tags */
+  .case-study-tag:not(:last-child)::after {
+    content: " • ";
+    margin: 0 0.4rem;
+    opacity: 0.5;
+  }
+}
+
+
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .case-carousel {
+    gap: 0.75rem;
+  }
+
+  .case-nav {
+    width: 2.2rem;
+    height: 2.2rem;
+    font-size: 1rem;
+  }
+
+  .case-viewport {
+    min-height: 300px;
+  }
+
+/* Mobile: keep case study icon inline and sized consistently */
+@media (max-width: 600px) {
+  .case-study-name {
+    /* prefer a single-line inline layout for icon + title on narrow screens */
+    flex-wrap: nowrap;
+    gap: 0.4rem;
+    align-items: center;
+  }
+
+  .icon_rep {
+    width: 40px;
+    height: 40px;
+    margin-right: 0;
+    flex-shrink: 0;
+  }
+}
+}
+
+/* Updated viewport for internal arrows */
+.case-viewport {
+  position: relative;
+  flex: 1;
+  min-height: 280px;
+}
+
+/* Updated nav arrows when INSIDE card */
+.case-nav.inside {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+
+  background: rgba(8, 10, 18, 0.75);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 999px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.1rem;
+  color: white;
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Left */
+.case-nav-prev.inside {
+  left: 0.75rem;
+}
+
+/* Right */
+.case-nav-next.inside {
+  right: 0.75rem;
+}
+
+/* Hover effect */
+.case-nav.inside:hover {
+  background: rgba(0, 229, 255, 0.25);
+  box-shadow: 0 8px 20px rgba(0, 229, 255, 0.15);
+  transform: translateY(-50%) scale(1.05);
+}
+
+/* Make sure arrows are above content but still subtle */
+.case-card {
+  padding-left: 3.5rem;  /* Leaves space for arrows */
+  padding-right: 3.5rem;
+}
+
+/* Mobile-friendly case studies */
+@media (max-width: 768px) {
+  /* Let the viewport grow with content */
+  .case-viewport {
+    min-height: auto;
+  }
+
+  /* Make the active card part of normal flow instead of absolutely positioned */
+  .case-card {
+    position: relative;
+    inset: auto;
+    transform: none;
+    filter: none;
+  }
+
+  /* Hide inactive cards entirely so only one shows */
+  .case-card:not(.is-active) {
+    display: none;
+  }
+
+  /* Prevent text from overflowing the card on small screens */
+  .case-card,
+  .case-card .case-title,
+  .case-card .case-subhead,
+  .case-card .case-desc,
+  .case-card .case-tags,
+  .case-card .case-tag {
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    hyphens: auto;
+  }
+}
+
+/* SMALLEST SCREENS MOBILE */
+@media (max-width: 768px) {
+  .case-card {
+    padding: 1rem 1rem;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .case-card-list {
+    min-height: 300px;
+  }
+
+  .case-studies {
+    margin-bottom: 3rem;
+  }
+}
+
+
+/* Mobile refinement */
+@media (max-width: 768px) {
+  .case-nav.inside {
+    width: 2.1rem;
+    height: 2.1rem;
+    font-size: 1rem;
+  }
+
+  .case-nav-prev.inside { left: 0.5rem; }
+  .case-nav-next.inside { right: 0.5rem; }
+
+  .case-card {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+  }
+}
+
+
 
 
 /* Responsive */
@@ -575,3 +1572,1354 @@ main {
     text-align: left;
   }
 }
+
+/* NEW OVERRIDES */
+.section-title {
+  letter-spacing: -0.015em;
+  max-width: 92%;
+}
+
+.section-studio-intro {
+  padding-top: 20px;
+  padding-bottom: 36px; /* was ~72–80, now tighter */
+}
+
+.section-process-focus {
+  padding-top: 10px; /* was 44 */
+}
+
+.section-process-focus {
+  /* border-top: 1px solid rgba(255,255,255,0.06); */
+  margin-top: -4px;
+}
+
+/* .section-process-focus {
+  box-shadow: inset 0 1px 0 rgba(0,183,255,0.05);
+} */
+
+
+.studio-copy .section-kicker {
+  margin-bottom: 18px;
+}
+
+.studio-copy .section-title {
+  margin-bottom: 18px;
+  line-height: 1.25;         /* a bit tighter for a hero heading */
+}
+
+.studio-copy p {
+  margin-top: 0;
+  margin-bottom: 14px;
+  line-height: 1.72;
+  max-width: 42rem;
+  font-size: 0.98rem;        /* micro bump for readability */
+  color: rgba(255, 255, 255, 0.86);
+}
+
+
+.studio-copy p:last-of-type {
+  margin-bottom: 0;          /* no extra gap at the bottom */
+}
+
+.studio-grid {
+  grid-template-columns: minmax(0, 2.1fr) minmax(0, 1fr);
+  gap: 64px;                 /* was 72 – pulls things together a bit */
+}
+
+.studio-meta {
+  padding-left: 40px;        /* slightly stronger inset */
+  border-left: 1px solid rgba(255, 255, 255, 0.085);
+  border-left: 1px solid rgba(255, 255, 255, 0.04);
+  margin-top: -4px; /* optically aligns with heading */
+}
+
+/* nudge the icon up so it visually lines with the heading */
+.studio-meta-icon {
+  width: 32px;
+  height: 32px;
+  /* margin-bottom: 22px;
+  margin-top: 4px; */
+  margin-top: 2px;
+  margin-bottom: 24px;
+}
+
+.studio-meta-label {
+  margin-bottom: 8px;        /* slightly tighter */
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+}
+
+/* group spacing */
+.studio-meta-group + .studio-meta-group {
+  margin-top: 16px;
+  /* padding-top: 18px; */
+}
+
+/* Sidebar blocks spacing */
+.sidebar-block + .sidebar-block {
+  margin-top: 1.8rem; /* increase or decrease as needed for the gap */
+}
+
+/* Label with inline icon */
+.studio-meta-label--with-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Tiny Industries/use-cases icon */
+.studio-meta-label--with-icon svg {
+  width: 14px;
+  height: 14px;
+  stroke: var(--accent-blue);
+  fill: none;
+  stroke-width: 1.5;
+}
+
+
+
+
+/* list text */
+.studio-meta-list li {
+  margin-bottom: 6px;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  margin-bottom: 7px;
+}
+
+/* subtle bullet + color unify with kicker */
+:root {
+  --accent-blue: #00B7FF;    /* or your exact kicker color */
+}
+
+.studio-meta-icon svg {
+  stroke: var(--accent-blue);
+  filter: drop-shadow(0 0 6px rgba(0, 183, 255, 0.35));
+}
+
+.studio-meta-label {
+  color: var(--accent-blue);
+}
+
+.studio-meta-list li::before {
+  background: var(--accent-blue);
+  opacity: 0.85;
+}
+
+@media (max-width: 900px) {
+  .section-studio-intro {
+    padding-top: 40px;
+    padding-bottom: 56px;
+  }
+
+  .studio-grid {
+    gap: 36px;
+  }
+
+  .studio-meta {
+    padding-top: 20px;
+  }
+
+  .studio-meta-group + .studio-meta-group {
+    margin-top: 18px;
+    padding-top: 16px;
+  }
+}
+
+
+/* HERO LOGO MOBILE */
+@media (max-width: 880px) {
+  .hero-grid,
+  .two-column,
+  .card-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero {
+    padding-top: 2.4rem;
+    padding-top: 20px;
+  }
+
+  .hero-panel {
+    margin-top: 1.8rem;
+  }
+
+  .card-grid {
+    gap: 1.2rem;
+  }
+
+  .nav-links {
+    display: none; /* simplify mobile for now */
+  }
+
+  /* 🔹 Hide hero image on mobile */
+  .hero-image {
+    display: none;
+  }
+}
+
+/* Mobile: slightly reduce case study section title size */
+@media (max-width: 768px) {
+  /* Ensure case studies heading uses the same responsive rhythm */
+  .case-studies .case-studies-title {
+    font-size: 1.1rem;
+    line-height: 1.25;
+  }
+}
+
+
+/* Mobile: show inline logo + adjust heading */
+@media (max-width: 880px) {
+  .hero-title {
+    font-size: clamp(1.6rem, 5vw, 2rem);
+    line-height: 1.2;
+  }
+
+  .hero-title-inline {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+  }
+
+  .hero-inline-logo {
+    display: block;
+    width: 100px;   /* adjust size here */
+    height: auto;
+    flex-shrink: 0;
+  }
+
+  /* Hide the big right-side hero image on mobile */
+  .hero-image {
+    display: none;
+  }
+}
+
+/* Default (desktop): show text-only title, hide inline logo version */
+.hero-title-desktop {
+  display: inline;
+}
+
+.hero-title-inline,
+.hero-inline-logo {
+  display: none;
+}
+
+/* Mobile: use logo + inline title instead */
+@media (max-width: 880px) {
+  .hero-title {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);  /* was 1.6rem, 5vw, 2rem */
+    line-height: 1.2;
+    }
+
+
+  /* Hide desktop-only title */
+  .hero-title-desktop {
+    display: none;
+  }
+
+  /* Show inline version with logo */
+  .hero-title-inline {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+  }
+
+  .hero-inline-logo {
+    display: block;
+    width: 110px;  /* tweak size here */
+    height: auto;
+    flex-shrink: 0;
+  }
+
+  /* Hide the big right-side hero image on mobile */
+  .hero-image {
+    display: none;
+  }
+}
+
+/* Mobile: tighten space under hero */
+@media (max-width: 880px) {
+  .hero {
+    padding-bottom: 1.2rem;  /* was ~3rem */
+  }
+}
+
+/* Subtle glow for hero logos */
+.hero-image img,
+.hero-inline-logo {
+  filter: drop-shadow(0 0 6px rgba(0, 183, 255, 0.35))
+        drop-shadow(0 0 12px rgba(0, 183, 255, 0.1));
+}
+
+
+/* PROJECTS SWIPE STYLES */
+/* Header with inline navigation (Projects page) */
+.section-header-with-nav-case-studies {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  /* gap: 1.5rem; */
+}
+
+@media (max-width: 768px) {
+  /* Keep header row, place arrows to the right of the kicker */
+  .section-header-with-nav-case-studies {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  /* Let the column with kicker/title take remaining space */
+  .case-studies-columned {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  /* Keep the arrows horizontally aligned and to the right of the kicker */
+  .section-header-nav {
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-left: 0.5rem;
+  }
+
+  /* Make sure the kicker sits on the same baseline as the nav visually */
+  .case-studies-columned .section-kicker {
+    margin: 0;
+  }
+}
+
+.section-header-with-nav-case-studies .section-nav-btn {
+  background: transparent;
+  border: none;
+  width: auto;
+  height: auto;
+  padding: 0.15rem 0.4rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1;
+  color: #3A9DF7;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease, text-shadow 0.2s ease;
+}
+
+.section-nav-btn:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+  text-shadow:
+    0 0 6px rgba(58, 157, 247, 0.7),
+    0 0 14px rgba(58, 157, 247, 0.4);
+}
+
+.section-nav-btn:active {
+  transform: translateY(0);
+}
+
+.section-nav-btn:focus-visible {
+  outline: none;
+  text-shadow:
+    0 0 8px rgba(58, 157, 247, 0.85),
+    0 0 16px rgba(58, 157, 247, 0.55);
+}
+
+.section-header-with-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.section-header-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Small arrow buttons next to header */
+.section-nav-btn {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(10, 12, 20, 0.9);
+  border-radius: 999px;
+  width: 2.1rem;
+  height: 2.1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding: 0;
+  color: #e5e7eb;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+/* ARROW GLOWS */
+.section-nav-btn:hover {
+  background: rgba(0, 183, 255, 0.18);
+  border-color: rgba(0, 183, 255, 0.6);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.45);
+  transform: translateY(-1px);
+}
+
+.section-nav-btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.section-nav-btn:focus-visible {
+  outline: 2px solid #00e5ff;
+  outline-offset: 2px;
+}
+
+
+
+/* Highlight the currently "focused" project */
+.project-card.is-current-project {
+  border-color: rgba(0, 183, 255, 0.7);
+  box-shadow:
+    0 0 0 1px rgba(0, 183, 255, 0.22),
+    0 18px 45px rgba(0, 0, 0, 0.8);
+}
+
+/* Mobile: stack header + nav nicely */
+@media (max-width: 768px) {
+  .section-header-with-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .section-header-nav {
+    align-self: flex-end;
+  }
+}
+
+/* PROJECT ECOSYSTEM KALEIDOSCOPE */
+/* PROJECT ECOSYSTEM KALEIDOSCOPE */
+.projects-viewport {
+  position: relative;
+}
+
+/* Base style: all panels are "slides" but only active one is in flow */
+.ecosystem-panel {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.97) translateY(8px) rotate(-0.75deg);
+  filter: blur(2px);
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s ease,
+    filter 0.45s ease;
+}
+
+/* Active slide: visible AND in normal flow so main gets correct height */
+.ecosystem-panel.is-active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1) translateY(0) rotate(0deg);
+  filter: blur(0);
+  position: relative;  /* stays in the normal layout */
+  z-index: 1;
+}
+
+/* Inactive slides: taken out of layout but kept stacked for transition */
+.ecosystem-panel:not(.is-active) {
+  position: absolute;
+  inset: 0;
+}
+
+/* Header + arrows row */
+.section-header-with-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.section-header-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+
+/* Mobile: keep things simple & stacked */
+@media (max-width: 768px) {
+  .section-header-with-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .section-header-nav {
+    align-self: flex-end;
+  }
+
+  .projects-viewport {
+    position: static;
+  }
+
+  .ecosystem-panel,
+  .ecosystem-panel.is-active {
+    position: static;
+    opacity: 1;
+    transform: none;
+    filter: none;
+    pointer-events: auto;
+  }
+
+  .ecosystem-panel:not(.is-active) {
+    display: none;
+  }
+}
+
+
+
+
+/* =========================================
+   ECOSYSTEM HEADER NAV — MATCH CASE NAV STYLE
+========================================= */
+
+.section-header .section-nav-btn {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+
+  color: #3A9DF7;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.15s ease,
+    text-shadow 0.15s ease,
+    filter 0.15s ease;
+}
+
+/* Hover neon */
+.section-header .section-nav-btn:hover {
+  transform: translateY(-1px);
+  text-shadow:
+    0 0 6px rgba(58, 157, 247, 0.7),
+    0 0 14px rgba(58, 157, 247, 0.45);
+}
+
+/* Active click */
+.section-header .section-nav-btn:active {
+  transform: translateY(0);
+  filter: brightness(1.05);
+}
+
+/* Keyboard focus */
+.section-header .section-nav-btn:focus-visible {
+  outline: none;
+  text-shadow:
+    0 0 12px rgba(58, 157, 247, 0.9),
+    0 0 22px rgba(58, 157, 247, 0.6);
+}
+
+.section-header .section-nav-btn:hover {
+  filter: brightness(1.08);
+}
+
+/* STUDIO STEPS */
+.studio-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 8px;
+  object-fit: cover;
+  vertical-align: middle;
+  margin-right: 0.6rem;
+}
+
+.card-tagline {
+  display: flex;
+  font-size: 0.75rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  margin-bottom: 0.5rem;
+  align-items: center;
+}
+
+/* Mobile: hide case study hero badges */
+@media (max-width: 768px) {
+  .hero-badges {
+    display: none;
+  }
+}
+
+
+/* SHOW MOBILE TOGGLE */
+@media (max-width: 880px) {
+  .mobile-nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+  }
+}
+
+/* ACTIVE MENU */
+.mobile-nav.is-open {
+  display: flex;
+}
+
+/*******************************************************************************************/
+/*******************************************************************************************/
+/*******************************************************************************************/
+
+/* Prevent scrolling when mobile nav is open */
+body.no-scroll {
+  overflow: hidden;
+}
+
+/* MOBILE NAV TOGGLE (classic hamburger) */
+.mobile-nav-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  padding: 0.15rem 0.4rem;
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+
+.mobile-nav-toggle .bar {
+  width: 20px;
+  height: 2px;
+  border-radius: 999px;
+  background: #3A9DF7;
+}
+
+/* Subtle glow on hover */
+.mobile-nav-toggle:hover .bar {
+  box-shadow:
+    0 0 6px rgba(58, 157, 247, 0.6),
+    0 0 12px rgba(58, 157, 247, 0.3);
+}
+
+/* MOBILE NAV */
+.mobile-nav-toggle {
+  display: none;
+  background: transparent;
+  color: #3A9DF7;
+  font-size: 1.4rem;
+  border: none;
+  cursor: pointer;
+  padding: 0.2rem 0.4rem;
+  transition: transform 0.2s ease, text-shadow 0.2s ease;
+}
+
+.mobile-nav-toggle:hover {
+  transform: translateY(-1px);
+  text-shadow:
+    0 0 6px rgba(58, 157, 247, 0.7),
+    0 0 14px rgba(58, 157, 247, 0.4);
+}
+
+.mobile-nav a:hover {
+  color: #7dd3fc;
+}
+
+/* Hamburger → X animation */
+.mobile-nav-toggle.is-open .bar:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.mobile-nav-toggle.is-open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-nav-toggle.is-open .bar:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* MOBILE NAV PANEL */
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  gap: 1.2rem;
+
+  position: fixed;
+  top: 62px; /* height of header */
+  left: 0;
+  right: 0;
+
+  padding: 1.4rem 1.5rem;
+
+  background: rgba(8, 12, 24, 0.96);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+
+  z-index: 15;
+  animation: slideDown 0.25s ease;
+}
+
+.mobile-nav a {
+  font-size: 0.95rem;
+  color: #e5e7eb;
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(255,255,255,0.2);
+  padding-bottom: 0.3rem;
+}
+
+.mobile-nav a:hover {
+  color: #7dd3fc;
+}
+
+/* When open */
+.mobile-nav.is-open {
+  display: flex;
+}
+
+/* Slide animation */
+@keyframes slideDown {
+  from {
+    transform: translateY(-12px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Show hamburger + hide desktop nav on mobile */
+@media (max-width: 880px) {
+  .mobile-nav-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+   .mobile-nav a.mobile-disable {  /* ← More specific now */
+    color: #7dd3fc;
+    color: grey;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+/* ACTIVE LINK HIGHLIGHT */
+/* .nav-links a.nav-link-active {
+  color: #ffffff;
+  border-bottom-color: var(--accent-soft);
+} */
+
+/* Mobile active link */
+/* .mobile-nav a.nav-link-active {
+  color: #7dd3fc;
+  border-bottom-color: rgba(125, 211, 252, 0.8);
+} */
+
+
+/*******************************************************************************************/
+/*******************************************************************************************/
+/*******************************************************************************************/
+
+
+/* ANIMATION */
+@keyframes slideDown {
+  from {
+    transform: translateY(-12px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 900px) {
+  .studio-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .studio-meta {
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 24px;
+    order: 2; /* Move meta below copy */
+  }
+
+  .studio-copy {
+    order: 1; /* Keep copy on top */
+  }
+
+  .studio-meta-icon {
+    margin-bottom: 16px;
+  }
+}
+
+/* Desktop: keep Capabilities + Industries lists single-column in sidebar */
+@media (min-width: 960px) {
+  .studio-meta .capabilities-list {
+    grid-template-columns: minmax(0, 1fr); /* override the global 2-col */
+  }
+}
+
+/* Slightly smaller cards inside the sidebar column */
+.studio-meta .capabilities-list li {
+  padding: 0.75rem 0.95rem;
+  font-size: 0.86rem;
+}
+
+
+/* Industries & Use Cases: violet / studio tone */
+.studio-meta .sidebar-block:last-child .capabilities-list li {
+  background: rgba(155, 95, 255, 0.06);
+  border: 1px solid rgba(155, 95, 255, 0.22);
+  color: #efeaff;
+}
+
+.studio-meta .sidebar-block:last-child .capabilities-list li:hover {
+  background: rgba(155, 95, 255, 0.12);
+}
+
+@media (min-width: 960px) {
+  /* Focus areas: 2-column layout on desktop for a more compact block */
+  .bottom-column--right .bottom-list {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 24px;
+  }
+
+  .bottom-column--right .bottom-list li {
+    margin-bottom: 8px;  /* slight spacing per item inside the grid */
+  }
+}
+
+/* Compact the Process / Focus wrapper */
+@media (min-width: 1024px) {
+  .section-process-focus {
+    padding-top: 2rem;
+    padding-bottom: 2rem; /* reduces vertical mass */
+  }
+
+  .bottom-info-grid {
+    gap: 2.25rem; /* tighter column spacing */
+    padding-top: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  /* Focus Areas grid */
+  .bottom-column--right .bottom-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1.75rem;
+    row-gap: 0.5rem;
+  }
+
+}
+
+.studio-quote {
+  margin-top: 40px;
+  padding: 20px 24px;
+  max-width: 680px;
+
+  border-radius: 14px;
+  background: radial-gradient(circle at top left, 
+               rgba(0, 229, 255, 0.12), 
+               rgba(3, 15, 30, 0.9));
+  border: 1px solid rgba(0, 229, 255, 0.18);
+
+  /* keep the left accent if you like */
+  /* border-left-width: 3px; */
+  position: relative;
+  padding: 32px 40px;
+  font-style: oblique;
+}
+
+.quote-label {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: rgba(0,229,255,0.7);
+  display: block;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.studio-quote blockquote {
+  margin: 0 0 8px;
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  line-height: 1.5;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.quote-sub {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.65);
+}
+
+.studio-quote::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 16%;
+  bottom: 16%;
+  width: 3px;
+  border-radius: 2px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,229,255,0.9),
+    rgba(0,229,255,0.05)
+  );
+}
+
+.studio-quote::before {
+  box-shadow: 0 0 12px rgba(0,229,255,0.35);
+}
+
+
+
+@media (min-width: 1024px) {
+  .studio-quote {
+  /* from above */
+   margin-top: 80px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .studio-quote {
+    padding: 36px 48px;
+  }
+}
+
+.studio-quote {
+  min-height: 140px;
+}
+
+@media (max-width: 880px) {
+  .nav-cta {
+    display: none;
+  }
+}
+
+
+.mobile-menu-cta {
+  font-weight: 700;
+  color: var(--accent-blue) !important;
+}
+
+.mobile-menu-cta-arrow {
+  color: rgba(0, 229, 255, 0.7);
+}
+
+
+/* =================================================
+   UNIFIED ARROW STYLE — Projects & Case Studies
+================================================= */
+
+.section-nav-btn,
+.section-case-studies .case-nav {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+
+  color: #3A9DF7;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.15rem 0.4rem;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.18s ease,
+    opacity 0.18s ease,
+    text-shadow 0.18s ease,
+    filter 0.18s ease;
+}
+
+/* Hover glow — EXACT match */
+.section-nav-btn:hover,
+.section-case-studies .case-nav:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+
+  text-shadow:
+    0 0 6px rgba(58, 157, 247, 0.7),
+    0 0 14px rgba(58, 157, 247, 0.4);
+}
+
+/* Active click */
+.section-nav-btn:active,
+.section-case-studies .case-nav:active {
+  transform: translateY(0);
+}
+
+/* Focus outline */
+.section-nav-btn:focus-visible,
+.section-case-studies .case-nav:focus-visible {
+  outline: none;
+  text-shadow:
+    0 0 8px rgba(58, 157, 247, 0.85),
+    0 0 16px rgba(58, 157, 247, 0.55);
+}
+
+/* STUDIO QUOTE NO SHOW */
+.studio-quote-short-version {
+  display: none;
+}
+
+/* STUDIO QUOTE */
+@media (max-width: 900px) {
+  .studio-quote {
+    display: none;
+  }
+
+  /* Shorter version */
+  .studio-quote-short-version {
+    display: block;
+    margin-top: 32px;
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.85);
+    font-style: oblique;
+  }
+}
+
+/* ===========================
+   Subtle Motion System (Pro)
+   =========================== */
+
+/* Motion tokens */
+:root{
+  --ease-out: cubic-bezier(.2,.8,.2,1);
+  --ease-soft: cubic-bezier(.22, 1, .36, 1);
+  --dur-fast: 140ms;
+  --dur-med: 260ms;
+  --dur-slow: 520ms;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  *{
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---- Hover + focus micro-interactions ---- */
+
+/* Buttons, links that should feel “tactile” */
+.nav-cta,
+.btn-primary,
+.btn-ghost,
+.mobile-menu-cta,
+.section-nav-btn,
+.project-links a {
+  transition:
+    transform var(--dur-med) var(--ease-out),
+    box-shadow var(--dur-med) var(--ease-out),
+    background-color var(--dur-med) var(--ease-out),
+    border-color var(--dur-med) var(--ease-out),
+    color var(--dur-med) var(--ease-out),
+    opacity var(--dur-med) var(--ease-out);
+  will-change: transform;
+}
+
+.nav-cta:hover,
+.btn-primary:hover,
+.btn-ghost:hover,
+.mobile-menu-cta:hover,
+.section-nav-btn:hover,
+.project-links a:hover {
+  transform: translateY(-2px);
+}
+
+.nav-cta:active,
+.btn-primary:active,
+.btn-ghost:active,
+.section-nav-btn:active {
+  transform: translateY(0px) scale(0.99);
+}
+
+/* Clear keyboard focus without being neon */
+.nav-cta:focus-visible,
+.btn-primary:focus-visible,
+.btn-ghost:focus-visible,
+
+.mobile-menu-cta:focus-visible,
+.section-nav-btn:focus-visible,
+.project-links a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(58, 157, 247, 0.22);
+  border-color: rgba(58, 157, 247, 0.55);
+}
+
+/* Cards get a tiny lift on hover */
+.card,
+.case-card,
+.project-card,
+.contact-card {
+  transition:
+    transform var(--dur-med) var(--ease-out),
+    box-shadow var(--dur-med) var(--ease-out),
+    border-color var(--dur-med) var(--ease-out);
+  will-change: transform;
+}
+
+
+/* Inputs feel “alive” */
+input,
+select,
+textarea {
+  transition:
+    border-color var(--dur-med) var(--ease-out),
+    box-shadow var(--dur-med) var(--ease-out),
+    transform var(--dur-med) var(--ease-out);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  transform: translateY(-1px);
+}
+
+/* ---- Scroll reveal system ---- */
+[data-reveal]{
+  opacity: 0;
+  transform: translateY(10px);
+  filter: blur(2px);
+  transition:
+    opacity var(--dur-slow) var(--ease-soft),
+    transform var(--dur-slow) var(--ease-soft),
+    filter var(--dur-slow) var(--ease-soft);
+  will-change: opacity, transform, filter;
+}
+
+/* Reveal visible */
+[data-reveal].is-visible{
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* Optional variants */
+[data-reveal="up"]{ transform: translateY(14px); }
+[data-reveal="down"]{ transform: translateY(-14px); }
+[data-reveal="left"]{ transform: translateX(14px); }
+[data-reveal="right"]{ transform: translateX(-14px); }
+
+/* Stagger helper (set via JS as inline style delay) */
+[data-reveal]{ transition-delay: var(--reveal-delay, 0ms); }
+
+/* ---- Case study + ecosystem transitions (swap cards/panels smoothly) ---- */
+
+/* Index: case-study cards (you toggle .is-active) */
+.case-card {
+  opacity: 0;
+  transform: translateY(8px) scale(0.995);
+  pointer-events: none;
+}
+
+.case-card.is-active{
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+  transition:
+    opacity var(--dur-slow) var(--ease-soft),
+    transform var(--dur-slow) var(--ease-soft);
+}
+
+/* Projects: ecosystem panels */
+.ecosystem-panel {
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  transition:
+    opacity var(--dur-slow) var(--ease-soft),
+    transform var(--dur-slow) var(--ease-soft);
+}
+
+.ecosystem-panel.is-active{
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Mobile nav: polish the slide */
+.mobile-nav {
+  transition:
+    transform var(--dur-slow) var(--ease-soft),
+    opacity var(--dur-slow) var(--ease-soft);
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+.mobile-nav.is-open{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* HERO ANIMATIONS */
+.hero-title, .hero-subtitle, .hero-actions, .hero-image img {
+  animation: heroIn var(--dur-slow) var(--ease-soft) both;
+}
+
+.hero-subtitle { animation-delay: 90ms; }
+.hero-actions { animation-delay: 160ms; }
+.hero-image img { animation-delay: 220ms; }
+
+@keyframes heroIn {
+  from { opacity: 0; transform: translateY(10px); filter: blur(2px); }
+  to   { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+
+/* ===========================
+   Mobile Nav Polish
+   =========================== */
+
+/* Backdrop overlay behind the menu */
+.nav-backdrop{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--dur-slow) var(--ease-soft);
+  z-index: 60; /* must sit below the mobile nav panel */
+}
+
+/* When open */
+.nav-backdrop.is-open{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Mobile nav panel: smoother entrance */
+.mobile-nav{
+  transform: translateY(-10px) scale(0.995);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    transform var(--dur-slow) var(--ease-soft),
+    opacity var(--dur-slow) var(--ease-soft);
+  z-index: 70; /* above backdrop */
+  will-change: transform, opacity;
+}
+
+.mobile-nav.is-open{
+  transform: translateY(0) scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Optional: soften the panel edge a bit */
+.mobile-nav{
+  box-shadow: 0 24px 70px rgba(0,0,0,.55);
+}
+
+
+/* ===========================
+   Nav underline sweep
+   =========================== */
+
+.site-nav a,
+.mobile-nav a{
+  position: relative;
+  text-decoration: none;
+}
+
+/* underline element using pseudo */
+.site-nav a::after,
+.mobile-nav a::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  height: 2px;
+  width: 100%;
+  background: rgba(58, 157, 247, 0.75);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur-med) var(--ease-out), opacity var(--dur-med) var(--ease-out);
+  opacity: 0;
+  border-radius: 999px;
+}
+
+/* On hover */
+.site-nav a:hover::after,
+.mobile-nav a:hover::after{
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+/* Active link class: keep it visible */
+.site-nav a.is-active::after,
+.mobile-nav a.is-active::after{
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+/* Optional: keep active link text slightly brighter */
+.site-nav a.is-active,
+.mobile-nav a.is-active{
+  color: rgba(234,240,255,0.95);
+}
+
+.nav-cta,
+.btn-primary{
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-cta::before,
+.btn-primary::before{
+  content:"";
+  position:absolute;
+  inset:-40% -60%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.18), transparent 55%);
+  opacity: 0;
+  transition: opacity var(--dur-med) var(--ease-out);
+}
+
+.nav-cta:hover::before,
+.btn-primary:hover::before{
+  opacity: 1;
+}
+
+
+/* View-Link */
+.case-link.view-link:hover {
+  color: rgba(0,200,255,.95);
+  text-decoration: underline;
+}
+
+
+
+
+

@@ -12,63 +12,216 @@
     <div class="container">
       <div class="nav-bar">
         <a href="index.html" class="brand">
-          <div class="brand-mark"><img src="./img/light_blue_logo.png" alt="CourDevelops"></div>
+          <div class="brand-mark"><img src="./img/logos/light_blue_logo.png" alt="CourDevelops"></div>
           <div class="brand-text">
             <div class="brand-name">CourDevelops</div>
             <div class="brand-tagline">Creative Technology Studio</div>
           </div>
         </a>
 
+        <!-- Nav with mobile burger -->
         <nav class="nav-links">
-          <a href="studio.html">Studio</a>
+          <a href="index.html">Home</a>
+          <a href="#" class="disabled">Studio</a>
           <a href="projects.html">Projects</a>
           <a href="contact.html">Contact</a>
         </nav>
+
+        <button class="mobile-nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
 
         <a class="nav-cta" href="contact.html">Start a project</a>
       </div>
     </div>
   </header>
 
+  <!-- NAV MENU -->
+  <nav class="mobile-nav" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="#" class="disabled mobile-disable">Studio</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+     <a href="contact.html" class="mobile-menu-cta">
+      <span>Launch a project</span>
+      <span class="mobile-menu-cta-arrow">→</span>
+    </a>
+  </nav>
+  
+
   <main>
-    <section class="section">
-      <div class="container two-column">
-        <div>
-          <div class="section-kicker">Studio</div>
-          <h1 class="section-title">A creative technology practice led by a digital experience developer</h1>
-          <p class="lead">
-            CourDevelops is the creative technology studio of <strong>Courtney Jacobs</strong>,
-            working at the intersection of <strong>web development, AI, and visual storytelling</strong>.
-            Rather than treating websites as static brochures, we treat them as interactive chapters
-            in a larger storyworld.
-          </p>
-          <p class="lead">
-            Our specialty is translating complex, imaginative concepts—like an anonymous AI surrealist
-            persona—into clear, navigable digital experiences that feel cohesive from front-end to backend.
-          </p>
+    <!-- STUDIO HEADER -->
+  <section class="section section-studio-intro">
+  <div class="container studio-grid">
+
+    <!-- LEFT: Studio copy -->
+    <div class="studio-copy">
+      <div class="section-kicker">Studio</div>
+      <h1 class="section-title">
+        Where Art and AI converge
+      </h1>
+      <p>
+        CourDevelops is a creative technology studio focused on building tools,
+        systems, and experiences for digital artists, creators, and forward-thinking brands.
+        We engineer the invisible layers behind modern creativity: the infrastructure,
+        interfaces, and intelligence that power digital worlds.
+        <!-- CourDevelops is the creative technology studio of
+        <strong>Courtney Jacobs</strong>, working at the intersection of
+        <strong>web development, AI, and visual storytelling.</strong>
+        Rather than treating websites as static brochures, we treat them
+        as interactive chapters in a larger storyworld. -->
+      </p>
+      <!-- <p>
+        Our specialty is translating complex, imaginative concepts into clear,
+        navigable digital experiences that feel cohesive from front-end to
+        backend.
+      </p> -->
+
+   
+         <div class="studio-quote">
+            <span class="quote-label">STUDIO PHILOSOPHY</span>
+            <blockquote>
+            We architect systems where creativity and automation converge.
+            </blockquote>
+            <div class="quote-sub">
+              We help artists. studios and brands move beyond static websites
+              into living digital ecosystems — where design, automation, and intelligence
+              work together.
+              <!-- Creative technology for artists, studios, and brands who want more than templates. -->
+            </div>
+            <div class="quote-sub">
+              
+                To us, creative work is not decoration. It is engineering. 
+                Every project is a living system with identity, intent, and room to grow.
+             
+            </div>
+          </div>
+
+          <!-- SHORTER VERSION -->
+         <div class="studio-quote studio-quote-short-version">
+            <span class="quote-label">STUDIO PHILOSOPHY</span>
+            <blockquote>
+            We architect systems where creativity and automation converge.
+            </blockquote>
+            <div class="quote-sub">
+              We help artists. studios and brands move beyond static websites
+              into living digital ecosystems. 
+            </div>
+        
+          </div>
         </div>
+     
 
-        <div>
-          <h2 class="section-title">How we think</h2>
-          <ul class="list">
-            <li><strong>Story first.</strong> Every product has a narrative. We clarify it, then design around it.</li>
-            <li><strong>Systems second.</strong> We build tools—dashboards, automations, integrations—that support the story long-term.</li>
-            <li><strong>AI as collaborator.</strong> We use AI to extend human creativity, not to replace it.</li>
-            <li><strong>Judgment calls built-in.</strong> Every project is shaped by practical choices about UX, scope, and tech stack.</li>
-          </ul>
 
-          <h3 class="section-title" style="margin-top:1.8rem; font-size:1.05rem;">
-            Focus areas
-          </h3>
-          <ul class="list">
-            <li>AI-integrated web experiences for artists, studios, and creative brands</li>
-            <li>Custom “backroom” tools for managing artworks, collections, and content</li>
-            <li>Interactive narrative experiences and lore-driven sites</li>
-            <li>Technical strategy for NFT ecosystems and digital drops</li>
-          </ul>
+    <!-- RIGHT: meta column -->
+    <aside class="studio-meta">
+
+     
+      <!-- group 1: Capabilities -->
+      <div class="sidebar-block">
+      <h3 class="studio-meta-label">Capabilities</h3>
+      <ul class="capabilities-list">
+        <li>AI-integrated web experiences</li>
+        <li>Creative dashboards & backroom tools</li>
+        <li>Interactive narrative & storyworld sites</li>
+        <li>Technical strategy for NFT ecosystems</li>
+        <li>Automation & AI-assisted workflows</li>
+      </ul>
+    </div>
+
+
+      <!-- group 2: Industries / use cases -->
+      <div class="sidebar-block">
+        <div class="studio-meta-label">Industries &amp; use cases</div>
+        <ul class="capabilities-list">
+          <li>Artists, studios, and creative brands</li>
+          <li>NFT and digital content ecosystems</li>
+          <li>Design-forward small businesses</li>
+          <li>Story-driven media & narrative projects</li>
+        </ul>
+      </div>
+
+
+    </aside>
+
+  </div>
+</section>
+
+
+
+        <!-- PROCESS + FOCUS AREAS -->
+    <section class="section section-process-focus">
+      <div class="container">
+        <div class="bottom-info-grid">
+
+          <!-- Our Process -->
+          <div class="bottom-column">
+            <div class="section-kicker">Our process</div>
+            <ul class="bottom-list">
+              <li>
+                <strong>Story first.</strong>
+                Every product has a narrative. We clarify it, then design around it.
+              </li>
+              <li>
+                <strong>Systems second.</strong>
+                We build tools—dashboards, automations, integrations—that support the story long-term.
+              </li>
+              <li>
+                <strong>AI as collaborator.</strong>
+                We use AI to extend human creativity, not to replace it.
+              </li>
+              <li>
+                <strong>Judgment calls built-in.</strong>
+                Every project is shaped by practical choices about UX, scope, and tech stack.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Focus Areas -->
+          <div class="bottom-column bottom-column--right">
+            <div class="section-kicker">Focus areas</div>
+            <ul class="bottom-list">
+              <li>AI-integrated web experiences for artists, studios, and creative brands</li>
+              <li>Custom “backroom” tools for managing artworks, collections, and content</li>
+              <li>Interactive narrative experiences and lore-driven sites</li>
+              <li>Technical strategy for NFT ecosystems and digital drops</li>
+            </ul>
+          </div>
+
         </div>
       </div>
     </section>
+
+
+    <!-- <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="think_focus">
+            <div>
+              <div class="section-kicker">Our Process</div>
+                <ul class="list">
+                  <li><strong>Story first.</strong> Every product has a narrative. We clarify it, then design around it.</li>
+                  <li><strong>Systems second.</strong> We build tools—dashboards, automations, integrations—that support the story long-term.</li>
+                  <li><strong>AI as collaborator.</strong> We use AI to extend human creativity, not to replace it.</li>
+                  <li><strong>Judgment calls built-in.</strong> Every project is shaped by practical choices about UX, scope, and tech stack.</li>
+                </ul>
+              </div>
+            
+            <div>
+              <div class="section-kicker">Focus Areas</div>
+              <ul class="list">
+                <li>AI-integrated web experiences for artists, studios, and creative brands</li>
+                <li>Custom “backroom” tools for managing artworks, collections, and content</li>
+                <li>Interactive narrative experiences and lore-driven sites</li>
+                <li>Technical strategy for NFT ecosystems and digital drops</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
 
     <section class="section">
       <div class="container">
@@ -81,25 +234,37 @@
           </p>
         </div>
 
+        
         <div class="card-grid">
+          <!-- CARD ONE -->
           <div class="card">
-            <div class="card-tagline">01 — Discover</div>
-            <h3 class="card-title">Concept & creative direction</h3>
+            <div class="card-tagline">01 — Discover
+              <img src="./img/icons/discover.png" alt="Discovery Icon" class="studio-icon">
+            </div>
+            <h3 class="card-title card-title-with-icon">
+              Concept & creative direction
+            </h3>
             <p class="card-body">
               We map the core idea—persona, story, or product—and identify how it should show up
               online: tone, visual language, and how AI will support it.
             </p>
           </div>
+          <!-- CARD TWO -->
           <div class="card">
-            <div class="card-tagline">02 — Design</div>
+            <div class="card-tagline">02 — Design
+              <img src="./img/icons/design.png" alt="Design Icon" class="studio-icon">
+            </div>
             <h3 class="card-title">Experience & interface design</h3>
             <p class="card-body">
               We sketch flows and interfaces for both the public-facing experience and the
               internal tools. This keeps the “front of house” and “backroom” aligned.
             </p>
           </div>
+          <!-- CARD THREE -->
           <div class="card">
-            <div class="card-tagline">03 — Build</div>
+            <div class="card-tagline">03 — Build
+              <img src="./img/icons/build.png" alt="Development Icon" class="studio-icon">
+            </div>
             <h3 class="card-title">Development & integration</h3>
             <p class="card-body">
               We implement the experience using modern web stacks and integrate AI models
@@ -119,10 +284,150 @@
       </div>
     </div>
   </footer>
-</div>
+
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Mobile nav toggle
+  // ===== MOBILE NAV LOGIC =====
+  const mobileToggle = document.querySelector('.mobile-nav-toggle');
+  const mobileNav = document.querySelector('.mobile-nav');
+  const bodyEl = document.body;
+
+  function openMobileNav() {
+    mobileNav.classList.add('is-open');
+    mobileToggle.classList.add('is-open');
+    mobileToggle.setAttribute('aria-expanded', 'true');
+    bodyEl.classList.add('no-scroll');
+  }
+
+  function closeMobileNav() {
+    mobileNav.classList.remove('is-open');
+    mobileToggle.classList.remove('is-open');
+    mobileToggle.setAttribute('aria-expanded', 'false');
+    bodyEl.classList.remove('no-scroll');
+  }
+
+  if (mobileToggle && mobileNav) {
+    // Toggle on button click
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation(); // don't trigger click-outside
+      if (mobileNav.classList.contains('is-open')) {
+        closeMobileNav();
+      } else {
+        openMobileNav();
+      }
+    });
+
+    // Auto-close when a link is clicked
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        closeMobileNav();
+      });
+    });
+
+    // Click outside to close
+    document.addEventListener('click', (e) => {
+      if (!mobileNav.classList.contains('is-open')) return;
+
+      const clickInsideNav = mobileNav.contains(e.target);
+      const clickToggle = mobileToggle.contains(e.target);
+
+      if (!clickInsideNav && !clickToggle) {
+        closeMobileNav();
+      }
+    });
+
+    // ESC to close
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileNav.classList.contains('is-open')) {
+        closeMobileNav();
+      }
+    });
+  }
+
+  // ===== ACTIVE LINK HIGHLIGHT (desktop + mobile) =====
+  const allNavLinks = document.querySelectorAll('.nav-links a, .mobile-nav a');
+  const currentPath = window.location.pathname;
+
+  allNavLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (!href) return;
+
+    const isHome =
+      href === '#' && (currentPath.endsWith('/') || currentPath.endsWith('/index.html'));
+
+    const matchesPath =
+      href !== '#' && currentPath.endsWith('/' + href);
+
+    if (isHome || matchesPath) {
+      link.classList.add('nav-link-active');
+    }
+  });
+
+  // ===== MOBILE NAV BACKDROP + CLICK TO CLOSE =====
+(function(){
+  const mobileNav = document.querySelector('.mobile-nav');
+  const toggleBtn = document.querySelector('.mobile-menu-btn');
+  const closeBtn  = document.querySelector('.mobile-menu-close');
+
+  if (!mobileNav || !toggleBtn) return;
+
+  // Create backdrop once
+  let backdrop = document.querySelector('.nav-backdrop');
+  if (!backdrop) {
+    backdrop = document.createElement('div');
+    backdrop.className = 'nav-backdrop';
+    document.body.appendChild(backdrop);
+  }
+
+  const openMenu = () => {
+    mobileNav.classList.add('is-open');
+    backdrop.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeMenu = () => {
+    mobileNav.classList.remove('is-open');
+    backdrop.classList.remove('is-open');
+    document.body.style.overflow = '';
+  };
+
+  // Toggle button
+  toggleBtn.addEventListener('click', () => {
+    const isOpen = mobileNav.classList.contains('is-open');
+    isOpen ? closeMenu() : openMenu();
+  });
+
+  // Close button (if present)
+  if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+
+  // Click backdrop closes menu
+  backdrop.addEventListener('click', closeMenu);
+
+  // ESC closes menu
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenu();
+  });
+})();
+
+// ===== ACTIVE NAV LINK (DESKTOP + MOBILE) =====
+(function(){
+  const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+
+  document.querySelectorAll('nav a').forEach(a => {
+    const href = (a.getAttribute('href') || '').toLowerCase();
+    if (!href) return;
+
+    // mark exact match, plus index fallback
+    if (href === path || (path === '' && href.includes('index.html'))) {
+      a.classList.add('is-active');
+    }
+  });
+})();
+
+
 </script>
 </body>
 </html>

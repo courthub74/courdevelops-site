@@ -20,6 +20,10 @@ Focus: Lock in who you are professionally + solidify your brand ecosystem.
 
 \* ~Set up GitHub repos for Dream Agent + Dream OS~
 
+\* Add Icons to the courdevelops site
+
+\* Post the courdevelops site to Netlify
+
 ### 📌 MONTH 2 — Dream OS MVP
 
 Focus: Ship the first version of the creative backend.

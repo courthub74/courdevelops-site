@@ -12,132 +12,439 @@
     <div class="container">
       <div class="nav-bar">
         <a href="index.html" class="brand">
-          <div class="brand-mark"><img src="./img/light_blue_logo.png" alt="CourDevelops"></div>
+          <div class="brand-mark"><img src="./img/logos/light_blue_logo.png" alt="CourDevelops"></div>
           <div class="brand-text">
             <div class="brand-name">CourDevelops</div>
             <div class="brand-tagline">Creative Technology Studio</div>
           </div>
         </a>
 
+        <!-- Nav with mobile burger -->
         <nav class="nav-links">
+          <a href="index.html">Home</a>
           <a href="studio.html">Studio</a>
-          <a href="projects.html">Projects</a>
+          <a href="#" class="disabled">Projects</a>
           <a href="contact.html">Contact</a>
         </nav>
 
+        <button class="mobile-nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
         <a class="nav-cta" href="contact.html">Start a project</a>
       </div>
     </div>
   </header>
 
-  <main>
+  <!-- NAV MENU -->
+  <nav class="mobile-nav" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="studio.html">Studio</a>
+    <a href="#" class="disabled mobile-disable">Projects</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="mobile-menu-cta">
+      <span>Launch a project</span>
+      <span class="mobile-menu-cta-arrow">→</span>
+    </a>
+  </nav>
+
+
+    <main>
     <section class="section">
       <div class="container">
-        <div class="section-header">
-          <div class="section-kicker">Selected work</div>
-          <h1 class="section-title">Dream Agent ecosystem</h1>
-          <p class="section-description">
-            A long-term collaboration turning an anonymous AI surrealist into a fully
-            realized digital presence—with public web experiences, internal tools,
-            and systems for NFT drops and lore.
-          </p>
-        </div>
 
-        <div class="project-list">
-          <article class="project-card">
-            <header class="project-header">
-              <div>
-                <h2 class="project-name">Dream Agent — Public Website</h2>
-                <div class="project-role">Role: Creative Technologist & Digital Experience Developer</div>
-              </div>
-              <div class="project-meta">
-                <div>Deliverables: Multi-page site</div>
-                <div>Focus: Brand, UX, storytelling</div>
-              </div>
-            </header>
-            <div class="project-body">
-              A cinematic web experience for an anonymous AI-assisted surrealist artist.
-              The site frames each painting as a portal into a larger storyworld, with
-              collections like <em>Signals &amp; Ascensions</em> and <em>Industrial Myths</em>
-              organized into carefully curated galleries.
-            </div>
-            <div class="project-body">
-              The interface uses layered layouts, subtle motion, and rich copy to communicate
-              both the lore and the underlying technology—without ever breaking the mystique
-              of Dream Agent’s anonymity.
-            </div>
-            <div class="project-links">
-              <!-- Replace with real URL -->
-              <a href="https://dreamagent.art" target="_blank" rel="noreferrer">dreamagent.art</a>
-            </div>
-          </article>
+        <!-- Viewport that holds all ecosystems -->
+        <div class="projects-viewport">
 
-          <article class="project-card">
-            <header class="project-header">
-              <div>
-                <h2 class="project-name">Dream OS — Command Console</h2>
-                <div class="project-role">Role: Product Designer, Front-end & Backend Developer</div>
-              </div>
-              <div class="project-meta">
-                <div>Deliverables: Web app dashboard</div>
-                <div>Focus: Tools, workflow, automation</div>
-              </div>
-            </header>
-            <div class="project-body">
-              An internal “backroom” web application that powers Dream Agent’s world behind the scenes.
-              Dream OS allows the artist to upload new paintings, manage collections, prepare NFT drops,
-              and eventually auto-post to platforms from a single command console.
-            </div>
-            <div class="project-body">
-              The system is designed as a creative partner: integrating AI to analyze artworks,
-              suggest pricing ranges, generate descriptions, and help plan releases across marketplaces.
-            </div>
-            <div class="project-links">
-              <a href="#" target="_blank" rel="noreferrer">View interface preview (coming soon)</a>
-            </div>
-          </article>
+          <!-- ECOSYSTEM 1: Dream Agent (active by default) -->
+          <div class="ecosystem-panel is-active" data-index="0">
 
-          <article class="project-card">
-            <header class="project-header">
+            <!-- SECTION HEADER + ARROWS FOR THIS ECOSYSTEM -->
+            <div class="section-header section-header-with-nav">
               <div>
-                <h2 class="project-name">Dream Agent — Lore & NFT Systems</h2>
-                <div class="project-role">Role: Narrative Systems Designer & Technical Strategist</div>
+                <div class="section-kicker">Selected work</div>
+                <h1 class="section-title img_with_title">
+                  <img class="icon_rep_studio" src="./img/dream_agent_logos/DreamAgentBlue.jpg" alt="Dream Agent">
+                  Dream Agent ecosystem
+                </h1>
+                <p class="section-description">
+                  A long-term collaboration turning an anonymous AI surrealist into a fully
+                  realized digital presence—with public web experiences, internal tools,
+                  and systems for NFT drops and lore.
+                </p>
               </div>
-              <div class="project-meta">
-                <div>Deliverables: Drop framework</div>
-                <div>Focus: Metadata, copy, collector UX</div>
+
+              <!-- Header-level ecosystem navigation -->
+              <div class="section-header-nav" aria-label="Ecosystem navigation">
+                <button class="section-nav-btn ecosystem-nav-prev" aria-label="Previous ecosystem">←</button>
+                <button class="section-nav-btn ecosystem-nav-next" aria-label="Next ecosystem">→</button>
               </div>
-            </header>
-            <div class="project-body">
-              Beyond visuals and code, CourDevelops helps architect the narrative and collector
-              experience for Dream Agent’s drops: naming conventions, tiering, unlockable content,
-              and cross-platform presentation for marketplaces like XRP Café, OpenSea, and beyond.
             </div>
-            <div class="project-body">
-              Each piece is supported by lore, descriptions, and metadata that make the work feel
-              like part of an unfolding mythos—not just a single image.
+
+            <!-- PROJECT LIST FOR THIS ECOSYSTEM -->
+            <div class="project-list">
+              <article class="project-card">
+                <header class="project-header">
+                  <div>
+                    <h2 class="project-name">Dream Agent — Public Website</h2>
+                    <div class="project-role">Role: Creative Technologist & Digital Experience Developer</div>
+                  </div>
+                  <div class="project-meta">
+                    <div>Deliverables: Multi-page site</div>
+                    <div>Focus: Brand, UX, storytelling</div>
+                  </div>
+                </header>
+                <div class="project-body">
+                  A cinematic web experience for an anonymous AI-assisted surrealist artist.
+                  The site frames each painting as a portal into a larger storyworld, with
+                  collections like <em>Signals &amp; Ascensions</em> and <em>Industrial Myths</em>
+                  organized into carefully curated galleries.
+                </div>
+                <div class="project-body">
+                  The interface uses layered layouts, subtle motion, and rich copy to communicate
+                  both the lore and the underlying technology—without ever breaking the mystique
+                  of Dream Agent’s anonymity.
+                </div>
+                <div class="project-links">
+                  <a href="https://dreamagent.art" target="_blank" rel="noreferrer">dreamagent.art</a>
+                </div>
+              </article>
+
+              <article class="project-card">
+                <header class="project-header">
+                  <div>
+                    <h2 class="project-name">Dream OS — Command Console</h2>
+                    <div class="project-role">Role: Product Designer, Front-end & Backend Developer</div>
+                  </div>
+                  <div class="project-meta">
+                    <div>Deliverables: Web app dashboard</div>
+                    <div>Focus: Tools, workflow, automation</div>
+                  </div>
+                </header>
+                <div class="project-body">
+                  An internal “backroom” web application that powers Dream Agent’s world behind the scenes.
+                  Dream OS allows the artist to upload new paintings, manage collections, prepare NFT drops,
+                  and eventually auto-post to platforms from a single command console.
+                </div>
+                <div class="project-body">
+                  The system is designed as a creative partner: integrating AI to analyze artworks,
+                  suggest pricing ranges, generate descriptions, and help plan releases across marketplaces.
+                </div>
+                <div class="project-links">
+                  <a href="#" target="_blank" rel="noreferrer">View interface preview (coming soon)</a>
+                </div>
+              </article>
+
+              <article class="project-card">
+                <header class="project-header">
+                  <div>
+                    <h2 class="project-name">Dream Agent — Lore & NFT Systems</h2>
+                    <div class="project-role">Role: Narrative Systems Designer & Technical Strategist</div>
+                  </div>
+                  <div class="project-meta">
+                    <div>Deliverables: Drop framework</div>
+                    <div>Focus: Metadata, copy, collector UX</div>
+                  </div>
+                </header>
+                <div class="project-body">
+                  Beyond visuals and code, CourDevelops helps architect the narrative and collector
+                  experience for Dream Agent’s drops: naming conventions, tiering, unlockable content,
+                  and cross-platform presentation for marketplaces like XRP Café, OpenSea, and beyond.
+                </div>
+                <div class="project-body">
+                  Each piece is supported by lore, descriptions, and metadata that make the work feel
+                  like part of an unfolding mythos—not just a single image.
+                </div>
+                <div class="project-links">
+                  <a href="#" target="_blank" rel="noreferrer">Sample NFT metadata (coming soon)</a>
+                </div>
+              </article>
             </div>
-            <div class="project-links">
-              <a href="#" target="_blank" rel="noreferrer">Sample NFT metadata (coming soon)</a>
+          </div> <!-- /ecosystem-panel 0 -->
+
+          <!-- 🔁 ECOSYSTEM 2 (EXAMPLE / PLACEHOLDER) -->
+          <!-- Duplicate this block for Viking Ice Arena, CourDevelops Studio, etc. -->
+          <div class="ecosystem-panel is-active" data-index="1">
+            <div class="section-header section-header-with-nav">
+              <div>
+                <div class="section-kicker">Selected work</div>
+                <h1 class="section-title img_with_title">
+                  <img class="icon_rep_studio" src="./img/logos/hazel_park_logo.png" alt="Viking Ice Arena">
+                  Viking Ice Arena ecosystem
+                </h1>
+                <p class="section-description">
+                  An internal operations ecosystem for a local ice arena—scheduling, time tracking,
+                  and staff tooling to replace spreadsheets and manual processes.
+                </p>
+              </div>
+
+              <div class="section-header-nav" aria-label="Ecosystem navigation">
+                <button class="section-nav-btn ecosystem-nav-prev" aria-label="Previous ecosystem">←</button>
+                <button class="section-nav-btn ecosystem-nav-next" aria-label="Next ecosystem">→</button>
+              </div>
             </div>
-          </article>
-        </div>
+
+            <div class="project-list">
+              <!-- You can add Viking OS / scheduler projects here later -->
+              <article class="project-card">
+                <header class="project-header">
+                  <div>
+                    <h2 class="project-name">Viking Ice Arena — Staff Timeclock & Scheduling</h2>
+                    <div class="project-role">Role: Product Designer & Full-stack Developer</div>
+                  </div>
+                  <div class="project-meta">
+                    <div>Deliverables: Web app</div>
+                    <div>Focus: Scheduling, operations</div>
+                  </div>
+                </header>
+                <div class="project-body">
+                  Intuitive frontend for the Blackbear Sports Ice Arenas. Replace this with your real case-study text
+                  once you're ready to feature it.
+                </div>
+              </article>
+
+              <article class="project-card">
+                <header class="project-header">
+                  <div>
+                    <h2 class="project-name">Viking Ice Arena — Backend Database</h2>
+                    <div class="project-role">Role: Product Designer & Full-stack Developer</div>
+                  </div>
+                  <div class="project-meta">
+                    <div>Deliverables: Web app</div>
+                    <div>Focus: Scheduling, operations</div>
+                  </div>
+                </header>
+                <div class="project-body">
+                  The backend Database for Blackbear Sports Ice Arenas. Replace this with your real case-study text
+                  once you're ready to feature it.
+                </div>
+              </article>
+            </div>
+          </div> <!-- /ecosystem-panel 1 -->
+
+        </div> <!-- /projects-viewport -->
+
       </div>
     </section>
   </main>
+
 
   <footer class="site-footer">
     <div class="container footer-inner">
       <div>© <span id="year"></span> CourDevelops. All rights reserved.</div>
       <div class="footer-right">
-        Dream Agent is one of several ongoing creative technology collaborations.
+        Creative technology collaborations.
       </div>
     </div>
   </footer>
 </div>
 
 <script>
+  // Footer year
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Ecosystem kaleidoscope navigation
+  const ecosystemPanels = document.querySelectorAll('.ecosystem-panel');
+  const prevButtons = document.querySelectorAll('.ecosystem-nav-prev');
+  const nextButtons = document.querySelectorAll('.ecosystem-nav-next');
+  const viewport = document.querySelector('.projects-viewport');
+
+  let currentEcosystemIndex = 0;
+
+  function setViewportMinHeight() {
+    if (!viewport || !ecosystemPanels.length) return;
+    let maxHeight = 0;
+
+    ecosystemPanels.forEach(panel => {
+      const h = panel.offsetHeight;
+      if (h > maxHeight) maxHeight = h;
+    });
+
+    if (maxHeight > 0) {
+      viewport.style.minHeight = maxHeight + 'px';
+    }
+  }
+
+  function showEcosystem(index) {
+    if (!ecosystemPanels.length) return;
+
+    const total = ecosystemPanels.length;
+    if (index < 0) index = total - 1;
+    if (index >= total) index = 0;
+
+    currentEcosystemIndex = index;
+
+    ecosystemPanels.forEach(panel => panel.classList.remove('is-active'));
+    ecosystemPanels[currentEcosystemIndex].classList.add('is-active');
+
+    // ❌ removed scrollIntoView to avoid jumpy feeling
+    // We just rely on stable height instead
+  }
+
+  // Attach handlers to all arrow buttons (each panel has its own pair)
+  prevButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      showEcosystem(currentEcosystemIndex - 1);
+    });
+  });
+
+  nextButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      showEcosystem(currentEcosystemIndex + 1);
+    });
+  });
+
+  // Initialize
+  showEcosystem(0);
+  setViewportMinHeight();
+
+  // Recalculate on resize so it stays solid on different viewports
+  window.addEventListener('resize', () => {
+    setViewportMinHeight();
+  });
+
+  // ===== MOBILE NAV LOGIC =====
+  const mobileToggle = document.querySelector('.mobile-nav-toggle');
+  const mobileNav = document.querySelector('.mobile-nav');
+  const bodyEl = document.body;
+
+  function openMobileNav() {
+    mobileNav.classList.add('is-open');
+    mobileToggle.classList.add('is-open');
+    mobileToggle.setAttribute('aria-expanded', 'true');
+    bodyEl.classList.add('no-scroll');
+  }
+
+  function closeMobileNav() {
+    mobileNav.classList.remove('is-open');
+    mobileToggle.classList.remove('is-open');
+    mobileToggle.setAttribute('aria-expanded', 'false');
+    bodyEl.classList.remove('no-scroll');
+  }
+
+  if (mobileToggle && mobileNav) {
+    // Toggle on button click
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation(); // don't trigger click-outside
+      if (mobileNav.classList.contains('is-open')) {
+        closeMobileNav();
+      } else {
+        openMobileNav();
+      }
+    });
+
+    // Auto-close when a link is clicked
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        closeMobileNav();
+      });
+    });
+
+    // Click outside to close
+    document.addEventListener('click', (e) => {
+      if (!mobileNav.classList.contains('is-open')) return;
+
+      const clickInsideNav = mobileNav.contains(e.target);
+      const clickToggle = mobileToggle.contains(e.target);
+
+      if (!clickInsideNav && !clickToggle) {
+        closeMobileNav();
+      }
+    });
+
+    // ESC to close
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileNav.classList.contains('is-open')) {
+        closeMobileNav();
+      }
+    });
+  }
+
+  // ===== ACTIVE LINK HIGHLIGHT (desktop + mobile) =====
+  const allNavLinks = document.querySelectorAll('.nav-links a, .mobile-nav a');
+  const currentPath = window.location.pathname;
+
+  allNavLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (!href) return;
+
+    const isHome =
+      href === '#' && (currentPath.endsWith('/') || currentPath.endsWith('/index.html'));
+
+    const matchesPath =
+      href !== '#' && currentPath.endsWith('/' + href);
+
+    if (isHome || matchesPath) {
+      link.classList.add('nav-link-active');
+    }
+  });
+
+  // ===== MOBILE NAV BACKDROP + CLICK TO CLOSE =====
+(function(){
+  const mobileNav = document.querySelector('.mobile-nav');
+  const toggleBtn = document.querySelector('.mobile-menu-btn');
+  const closeBtn  = document.querySelector('.mobile-menu-close');
+
+  if (!mobileNav || !toggleBtn) return;
+
+  // Create backdrop once
+  let backdrop = document.querySelector('.nav-backdrop');
+  if (!backdrop) {
+    backdrop = document.createElement('div');
+    backdrop.className = 'nav-backdrop';
+    document.body.appendChild(backdrop);
+  }
+
+  const openMenu = () => {
+    mobileNav.classList.add('is-open');
+    backdrop.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeMenu = () => {
+    mobileNav.classList.remove('is-open');
+    backdrop.classList.remove('is-open');
+    document.body.style.overflow = '';
+  };
+
+  // Toggle button
+  toggleBtn.addEventListener('click', () => {
+    const isOpen = mobileNav.classList.contains('is-open');
+    isOpen ? closeMenu() : openMenu();
+  });
+
+  // Close button (if present)
+  if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+
+  // Click backdrop closes menu
+  backdrop.addEventListener('click', closeMenu);
+
+  // ESC closes menu
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenu();
+  });
+})();
+
+
+// ===== ACTIVE NAV LINK (DESKTOP + MOBILE) =====
+(function(){
+  const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+
+  document.querySelectorAll('nav a').forEach(a => {
+    const href = (a.getAttribute('href') || '').toLowerCase();
+    if (!href) return;
+
+    // mark exact match, plus index fallback
+    if (href === path || (path === '' && href.includes('index.html'))) {
+      a.classList.add('is-active');
+    }
+  });
+})();
+
 </script>
+
+
+
 </body>
 </html>
