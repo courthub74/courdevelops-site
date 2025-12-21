@@ -1782,6 +1782,8 @@ main {
     display: flex;
     align-items: center;
     gap: 0.65rem;
+    font-size: 1.6rem;
+    /* font-size: small; */
   }
 
   .hero-inline-logo {
