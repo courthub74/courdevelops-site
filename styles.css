@@ -99,6 +99,7 @@ img {
   letter-spacing: 0.06em;
 }
 
+
 .brand-text {
   display: flex;
   flex-direction: column;
@@ -274,7 +275,7 @@ main {
   filter: drop-shadow(0 0 6px rgba(0, 183, 255, 0.35))
         drop-shadow(0 0 12px rgba(0, 183, 255, 0.1));
   color: var(--text-main);
-  color: var(--accent-blue);
+  color: var(--accent);
 }
 
 /* Hero - right panel */
@@ -2652,6 +2653,7 @@ body.no-scroll {
 .section-nav-btn:hover,
 .project-links a:hover {
   transform: translateY(-2px);
+  cursor: pointer;
 }
 
 .nav-cta:active,
@@ -2787,15 +2789,35 @@ textarea:focus {
 .hero-title, .hero-subtitle, .hero-actions, .hero-image img {
   animation: heroIn var(--dur-slow) var(--ease-soft) both;
 }
-
 .hero-subtitle { animation-delay: 90ms; }
 .hero-actions { animation-delay: 160ms; }
 .hero-image img { animation-delay: 220ms; }
+
+/* Hero inline logo with glow */
+.hero-inline-logo {
+  animation: heroLogoIn var(--dur-slow) var(--ease-soft) both;
+  animation-delay: 220ms;
+}
 
 @keyframes heroIn {
   from { opacity: 0; transform: translateY(10px); filter: blur(2px); }
   to   { opacity: 1; transform: translateY(0); filter: blur(0); }
 }
+
+@keyframes heroLogoIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(10px); 
+    filter: blur(2px); 
+  }
+  to   { 
+    opacity: 1; 
+    transform: translateY(0); 
+    filter: drop-shadow(0 0 6px rgba(0, 183, 255, 0.35))
+           drop-shadow(0 0 12px rgba(0, 183, 255, 0.1)); 
+  }
+}
+
 
 /* ===========================
    Mobile Nav Polish
@@ -2920,6 +2942,12 @@ textarea:focus {
 }
 
 
+/* FINAL OVERRIDE: hero glow always on */
+.hero-image img,
+.hero-inline-logo {
+  filter: drop-shadow(0 0 6px rgba(0, 183, 255, 0.35))
+        drop-shadow(0 0 12px rgba(0, 183, 255, 0.1)) !important;
+}
 
 
 
