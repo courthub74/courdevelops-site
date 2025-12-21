@@ -2949,5 +2949,16 @@ textarea:focus {
         drop-shadow(0 0 12px rgba(0, 183, 255, 0.1)) !important;
 }
 
+/* OVERRIDE: keep CTAs visible inside content on mobile */
+@media (max-width: 880px) {
+  main .nav-cta,
+  .contact-card .nav-cta,
+  .contact-form .nav-cta {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 
 

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Thanks — CourDevelops Creative Technology Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+
+</head>
+<body>
+<div class="site-wrapper">
+
+  <header class="site-header">
+    <div class="container">
+      <div class="nav-bar">
+        <a href="index.html" class="brand">
+          <div class="brand-mark"><img src="./img/logos/light_blue_logo.png" alt="CourDevelops"></div>
+          <div class="brand-text">
+            <div class="brand-name">CourDevelops</div>
+            <div class="brand-tagline">Creative Technology Studio</div>
+          </div>
+        </a>
+
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="studio.html">Studio</a>
+          <a href="projects.html">Projects</a>
+          <a href="#" class="disabled">Contact</a>
+        </nav>
+
+        <button class="mobile-nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+
+        <a class="nav-cta" href="contact.html">Start a project</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- NAV MENU -->
+  <nav class="mobile-nav" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="studio.html">Studio</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="mobile-menu-cta">
+      <span>Launch a project</span>
+      <span class="mobile-menu-cta-arrow">→</span>
+    </a>
+  </nav>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Message received</div>
+          <h1 class="section-title">Your note is in the system.</h1>
+          <p class="section-description">
+            Thanks for reaching out. If you included links, timelines, and constraints, even better.
+            We’ll respond as soon as we can.
+          </p>
+        </div>
+
+        <div class="contact-card">
+          <h2 class="section-title" style="font-size:1.05rem;">What happens next</h2>
+          <p class="lead" style="font-size:0.9rem;">
+            We’ll review your message and reply with either a few clarifying questions or a proposed next step.
+          </p>
+
+          <div class="contact-row" style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:1.1rem;">
+            <a class="nav-cta" href="projects.html">View projects</a>
+            <a class="nav-cta" href="index.html">Back to home</a>
+          </div>
+
+          <p class="lead" style="margin-top:1.2rem; font-size:0.88rem;">
+            Didn’t mean to submit? Just go back to the contact page and send an updated message.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> CourDevelops. All rights reserved.</div>
+      <div class="footer-right">
+        Powered by CourDevelops — creative technology studio.
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // ===== MOBILE NAV LOGIC =====
+  const mobileToggle = document.querySelector('.mobile-nav-toggle');
+  const mobileNav = document.querySelector('.mobile-nav');
+  const bodyEl = document.body;
+
+  function openMobileNav() {
+    mobileNav.classList.add('is-open');
+    mobileToggle.classList.add('is-open');
+    mobileToggle.setAttribute('aria-expanded', 'true');
+    bodyEl.classList.add('no-scroll');
+  }
+
+  function closeMobileNav() {
+    mobileNav.classList.remove('is-open');
+    mobileToggle.classList.remove('is-open');
+    mobileToggle.setAttribute('aria-expanded', 'false');
+    bodyEl.classList.remove('no-scroll');
+  }
+
+  if (mobileToggle && mobileNav) {
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (mobileNav.classList.contains('is-open')) closeMobileNav();
+      else openMobileNav();
+    });
+
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => closeMobileNav());
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!mobileNav.classList.contains('is-open')) return;
+      const clickInsideNav = mobileNav.contains(e.target);
+      const clickToggle = mobileToggle.contains(e.target);
+      if (!clickInsideNav && !clickToggle) closeMobileNav();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileNav.classList.contains('is-open')) closeMobileNav();
+    });
+  }
+</script>
+</body>
+</html>

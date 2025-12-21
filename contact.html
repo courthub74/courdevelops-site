@@ -73,7 +73,23 @@
           </p>
 
           <!-- Contact Form -->
-          <form class="contact-form" action="YOUR_FORM_ENDPOINT_HERE" method="POST">
+          <!-- Contact Form (Netlify Forms) -->
+          <form
+            class="contact-form"
+            name="courdevelops-contact"
+            method="POST"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            action="/thanks.html"
+          >
+            <!-- Required hidden input for Netlify -->
+            <input type="hidden" name="form-name" value="courdevelops-contact" />
+
+            <!-- Honeypot (spam trap) -->
+            <p style="display:none;">
+              <label>Don’t fill this out: <input name="bot-field" /></label>
+            </p>
+
             <div class="contact-row">
               <div class="field-group">
                 <label for="name"><p>Name</p></label>
@@ -135,6 +151,7 @@
               </button>
             </div>
           </form>
+
 
           <p class="lead" style="margin-top:1.4rem; font-size:0.88rem;">
             Helpful details to include:
