@@ -1782,7 +1782,7 @@ main {
     display: flex;
     align-items: center;
     gap: 0.65rem;
-    font-size: 1.3rem;
+    font-size: .9rem;
     /* font-size: small; */
   }
 
