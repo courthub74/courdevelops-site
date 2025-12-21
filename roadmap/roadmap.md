@@ -20,9 +20,11 @@ Focus: Lock in who you are professionally + solidify your brand ecosystem.
 
 \* ~Set up GitHub repos for Dream Agent + Dream OS~
 
-\* Add Icons to the courdevelops site
+\* ~Add Icons to the courdevelops site~
 
-\* Post the courdevelops site to Netlify
+\* ~Post the courdevelops site to Netlify~
+
+\* Position the kalidescope arrows correctly
 
 ### 📌 MONTH 2 — Dream OS MVP
 
