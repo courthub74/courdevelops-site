@@ -3008,3 +3008,226 @@ textarea:focus {
   filter: none !important;
   transition: none !important;
 }
+
+
+/* =========================================
+   CASE STUDIES: NO CARD ANIMATIONS
+========================================= */
+
+/* Ensure the carousel still stacks cards, but without transitions */
+.case-card-list .case-card {
+  position: absolute;
+  inset: 0;
+
+  /* no motion */
+  opacity: 0;
+  transform: none !important;
+  transition: none !important;
+  animation: none !important;
+
+  pointer-events: none;
+}
+
+/* Active card shows instantly */
+.case-card-list .case-card.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Container can keep its height */
+.case-card-list {
+  position: relative;
+  min-height: 320px; /* slightly taller for the new content */
+}
+
+/* FINAL OVERRIDE: no transitions on case study cards anywhere */
+.case-card,
+.case-card * {
+  animation: none !important;
+}
+
+.case-card {
+  transition: none !important;
+  transform: none !important;
+}
+
+
+/* =========================================
+   CASE CARD: SPEC SHEET LAYOUT
+========================================= */
+
+.case-top {
+  display: grid;
+  gap: 10px;
+}
+
+.case-meta {
+  margin-top: 10px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+.case-meta-label {
+  font-size: 10px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(0,180,255,.6);
+}
+
+.case-meta-value {
+  font-size: 13px;
+  color: rgba(255,255,255,.78);
+}
+
+.case-outcomes {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+
+  display: grid;
+  gap: 8px;
+}
+
+.case-outcomes li {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 10px;
+  align-items: start;
+
+  padding: 10px 12px;
+  border-radius: 14px;
+
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(0,160,255,0.14);
+}
+
+.case-outcomes li span:first-child {
+  font-size: 10px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(120,220,255,.85);
+  color: var(--accent);
+  opacity: .9;
+}
+
+.case-outcomes li span:last-child {
+  font-size: 13px;
+  line-height: 1.45;
+  color: rgba(255,255,255,.72);
+}
+
+.case-modules {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.case-modules-label {
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(0,180,255,.6);
+  margin-bottom: 8px;
+}
+
+.case-modules-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.case-module {
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(0,160,255,.06);
+  border: 1px solid rgba(0,160,255,.18);
+  color: rgba(255,255,255,.78);
+}
+
+@media (max-width: 600px) {
+  .case-outcomes li {
+    grid-template-columns: 62px 1fr;
+    padding: 9px 10px;
+  }
+}
+
+.case-link:hover {
+  color: rgba(0,200,255,.95);
+  text-decoration: underline;
+}
+
+
+.case-card::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:14%;
+  bottom:14%;
+  width:3px;
+  border-radius: 999px;
+  background: linear-gradient(to bottom, rgba(0,229,255,0.75), rgba(0,229,255,0.05));
+  opacity:.55;
+}
+
+.case-card{
+  position: relative; /* needed for the ::before spine */
+}
+
+
+  /* CASE CARDS: no animation, no transitions */
+  .case-card {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    height: auto !important;
+    overflow: hidden !important;
+
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
+  }
+
+  .case-card.is-active {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    overflow: visible !important;
+  }
+
+/* =========================================
+   CASE TOP: HEADER + TAGS SIDE-BY-SIDE
+========================================= */
+
+.case-top-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.case-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0; /* prevents overflow */
+}
+
+.case-title-group {
+  min-width: 0;
+}
+
+.case-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-end;
+  max-width: 45%;
+}
