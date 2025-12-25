@@ -7,6 +7,7 @@
   --accent-soft: #2e78c8;
   --text-main: #ffffff;
   --text-muted: #9ca3af;
+  --text-more-muted: #9ca3af94;
   --on-page: #60646c;
   --border-soft: rgba(255, 255, 255, 0.08);
   --radius-lg: 16px;
@@ -197,6 +198,7 @@ main {
 
 .hero-title {
   font-size: clamp(2.2rem, 3vw + 1rem, 3.2rem);
+  font-size: clamp(1.8rem, 3vw + 1rem, 2.8rem);
   line-height: 1.1;
   margin-bottom: 1rem;
 }
@@ -237,6 +239,12 @@ main {
   align-items: center;
   gap: 0.5rem;
   text-decoration: none;
+}
+
+.hero-support {
+  margin-top: 2.5rem;
+  font-size: 0.85rem;
+  color: var(--text-more-muted);
 }
 
 /* CHANGE SIZING FOR HERO BUTTONS ON MOBILE */
@@ -2961,6 +2969,3 @@ textarea:focus {
     justify-content: center;
   }
 }
-
-
-
