@@ -1860,8 +1860,12 @@ main {
 /* Subtle glow for hero logos */
 .hero-image img,
 .hero-inline-logo {
-  filter: drop-shadow(0 0 6px rgba(0, 183, 255, 0.35))
-        drop-shadow(0 0 12px rgba(0, 183, 255, 0.1));
+  /* filter: drop-shadow(0 0 6px rgba(0, 183, 255, 0.35))
+        drop-shadow(0 0 12px rgba(0, 183, 255, 0.1)); */
+
+  filter: drop-shadow(0 0 4px rgba(0, 183, 255, 0.28))
+        drop-shadow(0 0 10px rgba(0, 183, 255, 0.08));
+
 }
 
 
@@ -2957,6 +2961,9 @@ textarea:focus {
 .hero-inline-logo {
   filter: drop-shadow(0 0 6px rgba(0, 183, 255, 0.35))
         drop-shadow(0 0 12px rgba(0, 183, 255, 0.1)) !important;
+
+    filter: drop-shadow(0 0 4px rgba(0, 183, 255, 0.28))
+        drop-shadow(0 0 10px rgba(0, 183, 255, 0.08)) !important;
 }
 
 /* OVERRIDE: keep CTAs visible inside content on mobile */
@@ -2968,4 +2975,36 @@ textarea:focus {
     align-items: center;
     justify-content: center;
   }
+}
+
+/* =========================================
+   NO ANIMATION — WHAT WE DO CARDS ONLY
+========================================= */
+
+/* Target only the cards inside the main card grid */
+.card-grid .card {
+  transition: none !important;
+  transform: none !important;
+  animation: none !important;
+  will-change: auto !important;
+}
+
+/* Kill all interactive states */
+.card-grid .card:hover,
+.card-grid .card:active,
+.card-grid .card:focus,
+.card-grid .card:focus-within {
+  transform: none !important;
+  box-shadow: inherit !important;
+  border-color: inherit !important;
+  filter: none !important;
+}
+
+/* Disable scroll-reveal if applied to section or cards */
+.card-grid [data-reveal],
+.card-grid .card[data-reveal] {
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+  transition: none !important;
 }
