@@ -3287,3 +3287,135 @@ textarea:focus {
   justify-content: flex-end;
   max-width: 45%;
 }
+
+@media (max-width: 768px) {
+
+  .case-header {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .case-title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .case-study {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    opacity: 0.75;
+  }
+
+  .case-title {
+    font-size: 1.05rem;
+    line-height: 1.25;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .case-top {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .case-tags {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .case-tag {
+    font-size: 9.5px;
+    padding: 4px 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .case-card::before {
+    top: 24%;
+    bottom: 24%;
+    opacity: 0.45;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .case-meta,
+  .case-outcomes {
+    padding: 0.6rem 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .case-outcomes li {
+    grid-template-columns: 70px 1fr;
+    gap: 0.6rem;
+  }
+
+  .case-outcomes span:first-child {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .case-title {
+    font-size: .9rem;
+    line-height: 1.3;
+  }
+
+  .case-tags {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+
+  /* Stack label above the list */
+  .case-modules {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  /* Keep label visible but subtle */
+  .case-modules-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(0, 183, 255, 0.75);
+  }
+
+  /* Inline sentence-style list */
+  .case-modules-list {
+    display: block;
+    line-height: 1;
+  }
+
+  /* Convert pills to plain inline text */
+  .case-module {
+    display: inline;
+    padding: 0;
+    border: none;
+    background: none;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  /* Dot separators */
+  .case-module::after {
+    content: " · ";
+    opacity: 0.5;
+  }
+
+  .case-module:last-child::after {
+    content: "";
+  }
+}
+
