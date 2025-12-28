@@ -115,7 +115,9 @@ img {
 
 .brand-tagline {
   font-size: 0.7rem;
+  font-weight: normal;
   color: var(--text-muted);
+  color: var(--accent);
   opacity: 0.85;
 }
 
