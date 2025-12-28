@@ -74,7 +74,7 @@ img {
 }
 
 .nav-links a.disabled {
-  color: #ffffff55;
+  
   cursor: default;
   pointer-events: none;
   border-bottom: 1px solid var(--accent-soft);
@@ -114,11 +114,16 @@ img {
 }
 
 .brand-tagline {
-  font-size: 0.7rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  /* margin-bottom: 0.6rem; */
+  /* font-size: 0.7rem;
   font-weight: normal;
   color: var(--text-muted);
   color: var(--accent);
-  opacity: 0.85;
+  opacity: 0.85; */
 }
 
 .nav-links {
@@ -139,6 +144,8 @@ img {
   color: var(--text-main);
   /* border-bottom-color: var(--accent-soft); */
 }
+
+
 
 .nav-cta {
   padding: 0.45rem 0.9rem;
