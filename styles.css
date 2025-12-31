@@ -1827,6 +1827,7 @@ main {
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.45);
+    opacity: .7;
   }
 }
 
@@ -2043,6 +2044,12 @@ main {
 
   .section-header-nav {
     align-self: flex-end;
+  }
+}
+
+@media (max-width: 880px) {
+  .section {
+    margin-top: 8px;
   }
 }
 
