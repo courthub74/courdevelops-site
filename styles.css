@@ -118,12 +118,7 @@ img {
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.45);
-  /* margin-bottom: 0.6rem; */
-  /* font-size: 0.7rem;
-  font-weight: normal;
-  color: var(--text-muted);
-  color: var(--accent);
-  opacity: 0.85; */
+  opacity: .7;
 }
 
 .nav-links {
