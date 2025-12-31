@@ -438,9 +438,10 @@ main {
   margin-bottom: 0.4rem;
 }
 
+/* Section title adjustments */
 @media (max-width: 880px) {
   .section-title {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -1807,6 +1808,8 @@ main {
     align-items: center;
     gap: 0.65rem;
     font-size: 1.2rem;
+    font-size: 1.4rem;
+    flex-wrap: nowrap;
     /* font-size: small; */
   }
 
@@ -3024,6 +3027,17 @@ textarea:focus {
   will-change: auto !important;
 }
 
+/* For Mobile */
+@media (max-width: 880px) {
+  .card-grid .card {
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
+    will-change: auto !important;
+    margin-top: 10px !important;
+  }
+}
+
 /* Kill all interactive states */
 .card-grid .card:hover,
 .card-grid .card:active,
@@ -3043,6 +3057,7 @@ textarea:focus {
   filter: none !important;
   transition: none !important;
 }
+
 
 
 /* =========================================
