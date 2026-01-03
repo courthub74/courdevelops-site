@@ -3522,3 +3522,32 @@ textarea:focus {
   }
 }
 
+/* PROJECTS ARROWS */
+.section-header-with-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.section-header-nav {
+  display: flex;
+  gap: .35rem;
+  margin-top: .35rem; /* optical align with title */
+  margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+  .section-header-with-nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .section-header-nav {
+    align-self: flex-end;
+    margin-top: -1.2rem;
+  }
+}
+
+
+
