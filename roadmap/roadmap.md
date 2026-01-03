@@ -24,7 +24,7 @@ Focus: Lock in who you are professionally + solidify your brand ecosystem.
 
 \* ~Post the courdevelops site to Netlify~
 
-\* Position the kalidescope arrows correctly
+\* ~Position the kalidescope arrows correctly~
 
 ### 📌 MONTH 2 — Dream OS MVP
 
