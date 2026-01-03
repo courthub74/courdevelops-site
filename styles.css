@@ -384,10 +384,10 @@ main {
   line-height: 1;
 }
 
-.section-nav-btn:hover {
+/* .section-nav-btn:hover {
   background: rgba(255,255,255,0.02);
   transform: translateY(-1px);
-}
+} */
 
 .section-nav-btn:focus {
   outline: none;
@@ -1226,28 +1226,60 @@ main {
   color: rgba(255,255,255,.55);
 }
 
-/* FOOTER */
+/* DESKTOP CASE STUDY FOOTER */
 
 .case-footer {
-  margin-top: 16px;
-  padding-top: 12px;
-  border-top: 1px solid rgba(255,255,255,.06);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(234, 240, 255, 0.08);
 }
 
 .case-link {
-  font-size: 13px;
-  /* color: rgba(0,200,255,.9); */
+  font-size: 0.9rem;
   color: var(--accent);
-  /* color: red; */
-  font-weight: 500;
-  /* text-decoration: none; */
-  transition: all .2s ease;
+  text-decoration: none;
+  white-space: nowrap;
 }
 
+.case-nav {
+  background: none;
+  border: none;
+  color: rgba(234, 240, 255, 0.65);
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 0.25rem;
+  line-height: 1;
+}
+
+.case-nav:hover,
+.case-nav:focus {
+  color: rgba(234, 240, 255, 0.95);
+}
+
+
+/* VIEW CASE STUDY HOVER */
 .view-link:hover {
   color: rgba(0,200,255,.95);
+  color: var(--accent-blue);
   text-decoration: underline;
 }
+
+@media (max-width: 768px) {
+  .case-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* .case-link {
+    margin: 0 auto;
+  } */
+}
+
 
 
 /* ===== MOBILE OPTIMIZATION ===== */
@@ -1953,7 +1985,7 @@ main {
 
 .section-nav-btn:hover {
   opacity: 0.95;
-  transform: translateY(-1px);
+  /* transform: translateY(-1px); */
   text-shadow:
     0 0 6px rgba(58, 157, 247, 0.7),
     0 0 14px rgba(58, 157, 247, 0.4);
@@ -1968,6 +2000,15 @@ main {
   text-shadow:
     0 0 8px rgba(58, 157, 247, 0.85),
     0 0 16px rgba(58, 157, 247, 0.55);
+}
+
+
+.case-link:hover {
+  /* color: rgba(0,200,255,.95); */
+  text-shadow:
+    0 0 8px rgba(58, 156, 247, 0.62),
+    0 0 16px rgba(58, 156, 247, 0.39);
+  /* text-decoration: underline; */
 }
 
 .section-header-with-nav {
@@ -2005,11 +2046,11 @@ main {
 }
 
 /* ARROW GLOWS */
-.section-nav-btn:hover {
+.section-nav-btn:hover, .case-link.a:hover {
   background: rgba(0, 183, 255, 0.18);
   border-color: rgba(0, 183, 255, 0.6);
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.45);
-  transform: translateY(-1px);
+  /* transform: translateY(-1px); */
 }
 
 .section-nav-btn:active {
@@ -2017,10 +2058,24 @@ main {
   box-shadow: none;
 }
 
-.section-nav-btn:focus-visible {
-  outline: 2px solid #00e5ff;
-  outline-offset: 2px;
+/* For Mobile Nav text arrows */
+@media (max-width: 880px) {
+  .section-nav-btn {
+    width: auto;
+    height: auto;
+    /* padding: 0.15rem 0.4rem; */
+    font-size: 1.2rem;
+    font-size: smaller;
+  }
+
+  /* Assuming this is within the relevant media query (e.g., for mobile devices) */
+/* ...existing code... */
+.case-arrows .section-nav-btn {
+  margin-right: 0.1rem; /* Adjust this value to bring buttons closer */
 }
+/* ...existing code... */
+}
+
 
 
 
@@ -2603,11 +2658,25 @@ body.no-scroll {
     filter 0.18s ease;
 }
 
+.section-nav-btn{
+  font-weight: lighter;
+}
+
+/* Case Arrows Desktop */
+.case-arrows {
+  display: flex;
+  gap: 4rem;
+}
+
+.glow-1 {
+  font-size: small;
+}
+
 /* Hover glow — EXACT match */
 .section-nav-btn:hover,
 .section-case-studies .case-nav:hover {
   opacity: 0.95;
-  transform: translateY(-1px);
+  /* transform: translateY(-1px); */
   filter: brightness(1.08);
 
   text-shadow:
@@ -2681,7 +2750,7 @@ body.no-scroll {
 .btn-primary,
 .btn-ghost,
 .mobile-menu-cta,
-.section-nav-btn,
+/* .section-nav-btn, */
 .project-links a {
   transition:
     transform var(--dur-med) var(--ease-out),
@@ -2697,18 +2766,18 @@ body.no-scroll {
 .btn-primary:hover,
 .btn-ghost:hover,
 .mobile-menu-cta:hover,
-.section-nav-btn:hover,
+/* .section-nav-btn:hover, */
 .project-links a:hover {
   transform: translateY(-2px);
   cursor: pointer;
 }
 
-.nav-cta:active,
+/* .nav-cta:active,
 .btn-primary:active,
 .btn-ghost:active,
 .section-nav-btn:active {
   transform: translateY(0px) scale(0.99);
-}
+} */
 
 /* Clear keyboard focus without being neon */
 .nav-cta:focus-visible,
@@ -2982,12 +3051,6 @@ textarea:focus {
 }
 
 
-/* View-Link */
-.case-link.view-link:hover {
-  color: rgba(0,200,255,.95);
-  text-decoration: underline;
-}
-
 
 /* FINAL OVERRIDE: hero glow always on */
 .hero-image img,
@@ -3257,11 +3320,6 @@ textarea:focus {
     grid-template-columns: 62px 1fr;
     padding: 9px 10px;
   }
-}
-
-.case-link:hover {
-  color: rgba(0,200,255,.95);
-  text-decoration: underline;
 }
 
 
