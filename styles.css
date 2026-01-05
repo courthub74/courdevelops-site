@@ -2362,6 +2362,7 @@ body.no-scroll {
 
   position: fixed;
   top: 62px; /* height of header */
+  top: 50px;
   left: 0;
   right: 0;
 
