@@ -3554,8 +3554,59 @@ textarea:focus {
   .section-nav-btn {
     font-size: .7rem;
     /* background-color: red; */
+  }
 }
 
+/* PROJECTS ARROWS */
+.section-header-nav {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
 
+/* button stays minimal */
+.section-nav-btn {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 999px; /* soft, brand-like */
+}
 
+/* the chevron itself */
+.section-nav-btn .chev {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: rgba(120, 190, 255, 0.85); /* your accent vibe */
+  stroke: var(--accent);
+  stroke-width: 2;                   /* thin on iPhone */
+  stroke-linecap: round;             /* echoes curved logo */
+  stroke-linejoin: round;
+  opacity: 0.9;
+  transition: transform .18s ease, opacity .18s ease, stroke .18s ease;
+}
+
+/* hover/focus: subtle, minimal */
+.section-nav-btn:hover .chev {
+  opacity: 1;
+  transform: translateX(-1px);
+}
+
+.section-nav-btn.ecosystem-nav-next:hover .chev {
+  transform: translateX(1px);
+}
+
+.section-nav-btn:focus-visible {
+  outline: 2px solid rgba(120, 190, 255, 0.35);
+  outline-offset: 3px;
+}
+
+/* optional: pressed feel */
+.section-nav-btn:active .chev {
+  transform: scale(0.98);
 }
