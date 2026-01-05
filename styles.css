@@ -3537,6 +3537,8 @@ textarea:focus {
   margin-top: 3rem;
 }
 
+
+
 @media (max-width: 768px) {
   .section-header-with-nav {
     flex-direction: column;
@@ -3546,8 +3548,14 @@ textarea:focus {
   .section-header-nav {
     align-self: flex-end;
     margin-top: -1.2rem;
+    /* background-color: red; */
   }
+
+  .section-nav-btn {
+    font-size: .7rem;
+    /* background-color: red; */
 }
 
 
 
+}
