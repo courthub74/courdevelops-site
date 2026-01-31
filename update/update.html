@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CourDevelops — AI-Integrated Creative Technology</title>
+  <style>
+    :root{
+      --bg: #05060a;
+      --panel: rgba(255,255,255,0.045);
+      --panel2: rgba(255,255,255,0.03);
+      --stroke: rgba(255,255,255,0.10);
+      --stroke2: rgba(255,255,255,0.16);
+
+      --text: rgba(255,255,255,0.90);
+      --muted: rgba(255,255,255,0.62);
+      --muted2: rgba(255,255,255,0.42);
+
+      --accent: #b4cf6a;          /* olive */
+      --accent2: rgba(180,207,106,0.20);
+      --blue: #00e5ff;
+
+      --shadow: 0 22px 70px rgba(0,0,0,0.55);
+      --radius: 18px;
+      --radius-lg: 26px;
+
+      --max: 1120px;
+    }
+
+    *{ box-sizing: border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial;
+      color: var(--text);
+      background:
+        radial-gradient(1200px 900px at 15% 10%, rgba(0,229,255,0.12), transparent 55%),
+        radial-gradient(900px 700px at 85% 20%, rgba(180,207,106,0.14), transparent 52%),
+        radial-gradient(900px 700px at 50% 85%, rgba(179,136,255,0.10), transparent 55%),
+        linear-gradient(180deg, #03040a 0%, #060712 55%, #04050b 100%);
+      overflow-x:hidden;
+    }
+
+    a{ color: inherit; text-decoration:none; }
+    .wrap{ width:min(var(--max), calc(100% - 40px)); margin:0 auto; }
+
+    /* Nav */
+    header{
+      position: sticky; top:0; z-index: 20;
+      backdrop-filter: blur(12px);
+      background: rgba(5,6,10,0.55);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 16px 0;
+      gap: 14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap: 12px;
+      min-width: 220px;
+    }
+    .mark{
+      width: 38px; height: 38px;
+      border-radius: 12px;
+      background:
+        radial-gradient(12px 12px at 30% 30%, rgba(0,229,255,0.9), transparent 55%),
+        radial-gradient(18px 18px at 70% 70%, rgba(180,207,106,0.9), transparent 55%),
+        linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow: 0 18px 45px rgba(0,0,0,0.35);
+    }
+    .brand h1{ margin:0; font-size: 14px; letter-spacing: 0.6px; text-transform: uppercase; }
+    .brand p{ margin:2px 0 0; font-size: 12px; color: var(--muted2); }
+
+    .links{
+      display:flex; align-items:center; gap: 18px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .links a{ padding: 8px 10px; border-radius: 10px; }
+    .links a:hover{
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+    }
+
+    .nav-cta{
+      display:flex; align-items:center; gap: 10px;
+    }
+
+    /* Buttons */
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap: 10px;
+      padding: 11px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      box-shadow: 0 18px 45px rgba(0,0,0,0.25);
+      font-size: 13px;
+      transition: transform 140ms ease, background 140ms ease, border 140ms ease;
+      cursor: pointer;
+      user-select:none;
+      white-space: nowrap;
+    }
+    .btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.18); }
+    .btn:active{ transform: translateY(0px); }
+    .btn.primary{
+      border-color: rgba(180,207,106,0.40);
+      background: linear-gradient(180deg, rgba(180,207,106,0.22), rgba(255,255,255,0.04));
+    }
+    .btn.ghost{
+      background: transparent;
+      border-color: rgba(255,255,255,0.12);
+      box-shadow: none;
+    }
+    .pill{
+      display:inline-flex; align-items:center; gap: 10px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.035);
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .dot{
+      width: 8px; height: 8px; border-radius: 99px;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(180,207,106,0.14);
+    }
+
+    /* Layout */
+    main{ padding: 36px 0 80px; }
+    section{ padding: 54px 0; }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+      align-items: start;
+    }
+
+    .panel{
+      background: linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.025));
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .panel.inner{ padding: 22px; border-radius: var(--radius-lg); }
+    .panel.soft{
+      background: rgba(255,255,255,0.03);
+      border-color: rgba(255,255,255,0.09);
+      box-shadow: none;
+    }
+
+    .kicker{
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted2);
+    }
+    h2{
+      margin: 10px 0 10px;
+      font-size: clamp(22px, 3vw, 34px);
+      letter-spacing: -0.02em;
+      line-height: 1.08;
+    }
+    h3{
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    p{
+      margin: 0 0 12px;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 14px;
+    }
+    .muted{ color: var(--muted2); }
+    .tiny{ font-size: 12px; color: var(--muted2); }
+
+    /* Hero */
+    .hero{
+      padding-top: 26px;
+    }
+    .hero-left{ grid-column: 1 / span 7; }
+    .hero-right{ grid-column: 8 / span 5; }
+
+    .hero-title{
+      margin: 10px 0 12px;
+      font-size: clamp(34px, 5vw, 56px);
+      letter-spacing: -0.03em;
+      line-height: 1.02;
+    }
+    .hero-sub{
+      font-size: 15px;
+      color: rgba(255,255,255,0.68);
+      max-width: 56ch;
+    }
+    .cta-row{ display:flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+
+    .hero-card{
+      padding: 18px;
+    }
+    .hero-card .row{
+      display:flex; align-items:center; justify-content:space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .badge{
+      display:inline-flex; align-items:center; gap: 8px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(0,229,255,0.08);
+      border: 1px solid rgba(0,229,255,0.22);
+      color: rgba(255,255,255,0.78);
+      font-size: 12px;
+    }
+    .badge .spark{
+      width: 8px; height: 8px; border-radius: 99px;
+      background: var(--blue);
+      box-shadow: 0 0 0 6px rgba(0,229,255,0.12);
+    }
+    .specs{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .spec{
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+      border-radius: 14px;
+      padding: 12px;
+    }
+    .spec b{ display:block; font-size: 12px; color: rgba(255,255,255,0.80); margin-bottom: 4px; }
+    .spec span{ font-size: 12px; color: var(--muted2); }
+
+    /* Feature list */
+    .list{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .li{
+      padding: 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.09);
+      background: rgba(255,255,255,0.03);
+      display:flex;
+      gap: 10px;
+      align-items:flex-start;
+    }
+    .li .ic{
+      width: 26px; height: 26px;
+      border-radius: 10px;
+      border: 1px solid rgba(180,207,106,0.30);
+      background: rgba(180,207,106,0.10);
+      flex: 0 0 auto;
+    }
+    .li b{ display:block; font-size: 13px; }
+    .li span{ display:block; margin-top: 2px; font-size: 12px; color: var(--muted2); line-height: 1.35; }
+
+    /* Demo */
+    .demo-left{ grid-column: 1 / span 7; }
+    .demo-right{ grid-column: 8 / span 5; }
+
+    .demo-frame{
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background:
+        radial-gradient(800px 280px at 15% 20%, rgba(0,229,255,0.12), transparent 55%),
+        radial-gradient(700px 260px at 85% 60%, rgba(180,207,106,0.12), transparent 55%),
+        rgba(255,255,255,0.02);
+      height: 320px;
+      overflow:hidden;
+      position: relative;
+    }
+    .demo-frame .overlay{
+      position:absolute; inset:0;
+      display:flex; align-items:flex-end; justify-content:space-between;
+      padding: 14px;
+      gap: 12px;
+      background: linear-gradient(180deg, transparent, rgba(0,0,0,0.55));
+    }
+
+    /* Services cards */
+    .cards{ grid-column: 1 / span 12; display:grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .card{
+      padding: 18px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.03);
+    }
+    .price{
+      margin-top: 12px;
+      display:flex; align-items:center; justify-content:space-between;
+      color: rgba(255,255,255,0.80);
+      font-size: 13px;
+    }
+    .price .tag{
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.03);
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* Footer */
+    footer{
+      border-top: 1px solid rgba(255,255,255,0.06);
+      background: rgba(0,0,0,0.18);
+      padding: 28px 0;
+      color: var(--muted2);
+      font-size: 12px;
+    }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero-left{ grid-column: 1 / span 12; }
+      .hero-right{ grid-column: 1 / span 12; }
+      .demo-left{ grid-column: 1 / span 12; }
+      .demo-right{ grid-column: 1 / span 12; }
+      .cards{ grid-template-columns: 1fr; }
+      .links{ display:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap">
+      <div class="nav">
+        <a class="brand" href="#">
+          <div class="mark" aria-hidden="true"></div>
+          <div>
+            <h1>CourDevelops</h1>
+            <p>AI-integrated creative technology</p>
+          </div>
+        </a>
+
+        <nav class="links" aria-label="Primary">
+          <a href="#demo">Demo</a>
+          <a href="#services">Services</a>
+          <a href="#work">Work</a>
+          <a href="#responsible">Responsible AI</a>
+        </nav>
+
+        <div class="nav-cta">
+          <a class="btn ghost" href="#demo">View demo</a>
+          <a class="btn primary" href="#start">Start a project</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap">
+        <div class="grid">
+          <div class="hero-left">
+            <div class="pill"><span class="dot"></span> Production-grade AI systems for creative brands</div>
+            <h2 class="hero-title">AI-Integrated Digital Experiences, Built with Intent.</h2>
+            <p class="hero-sub">
+              CourDevelops designs and engineers web platforms where automation enhances human judgment
+              rather than replacing it. Scalable. Explainable. Built to last.
+            </p>
+
+            <div class="cta-row">
+              <a class="btn primary" href="#demo">View live AI demo</a>
+              <a class="btn" href="#services">Explore services</a>
+            </div>
+
+            <p class="tiny" style="margin-top:10px;">
+              Ideal for artists, studios, and creative businesses that want AI without losing taste or control.
+            </p>
+          </div>
+
+          <div class="hero-right">
+            <div class="panel hero-card">
+              <div class="row">
+                <div class="badge"><span class="spark"></span> Signature capability</div>
+                <span class="tiny">RAG • Guardrails • Monitoring</span>
+              </div>
+
+              <h3>We don’t add AI.</h3>
+              <p class="muted">We design systems that use it responsibly.</p>
+
+              <div class="specs">
+                <div class="spec">
+                  <b>Traceable outputs</b>
+                  <span>Citations + source-aware responses</span>
+                </div>
+                <div class="spec">
+                  <b>Human oversight</b>
+                  <span>Editable outputs + approvals</span>
+                </div>
+                <div class="spec">
+                  <b>Cost controls</b>
+                  <span>Usage tracking + caching</span>
+                </div>
+                <div class="spec">
+                  <b>Safe by default</b>
+                  <span>Role permissions + boundaries</span>
+                </div>
+              </div>
+
+              <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+                <a class="btn" href="#responsible">Responsible AI</a>
+                <a class="btn ghost" href="#work">See work</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIFFERENTIATORS -->
+    <section>
+      <div class="wrap">
+        <div class="grid">
+          <div class="panel inner" style="grid-column: 1 / span 12;">
+            <div class="kicker">What makes CourDevelops different</div>
+            <h2>Systems that stay stable after the demo ends.</h2>
+            <p>
+              AI is expensive, probabilistic, and easy to bolt on badly. We treat it like core infrastructure:
+              designed for reliability, accountability, and real-world use.
+            </p>
+
+            <div class="list">
+              <div class="li">
+                <div class="ic" aria-hidden="true"></div>
+                <div>
+                  <b>AI-aware UX</b>
+                  <span>Streaming responses, editability, and clear states (thinking, retrying, failed).</span>
+                </div>
+              </div>
+              <div class="li">
+                <div class="ic" aria-hidden="true"></div>
+                <div>
+                  <b>RAG with citations</b>
+                  <span>Answers are grounded in your real content, not guesswork.</span>
+                </div>
+              </div>
+              <div class="li">
+                <div class="ic" aria-hidden="true"></div>
+                <div>
+                  <b>Backend orchestration</b>
+                  <span>Queues, caching, rate limits, and audit logs built in.</span>
+                </div>
+              </div>
+              <div class="li">
+                <div class="ic" aria-hidden="true"></div>
+                <div>
+                  <b>Responsible AI guardrails</b>
+                  <span>Data boundaries, role permissions, and safe defaults.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEMO -->
+    <section id="demo">
+      <div class="wrap">
+        <div class="grid">
+          <div class="demo-left">
+            <div class="kicker">Signature demo</div>
+            <h2>Creative Brand AI Concierge</h2>
+            <p>
+              An assistant trained on real brand knowledge (press kit, catalog, FAQ, archive),
+              designed to answer with citations, respect boundaries, and stay on-message.
+            </p>
+
+            <div class="demo-frame" role="img" aria-label="Demo placeholder">
+              <div class="overlay">
+                <div class="pill"><span class="dot"></span> Live demo area (embed here)</div>
+                <a class="btn primary" href="#start">Get this for your brand</a>
+              </div>
+            </div>
+
+            <p class="tiny" style="margin-top:10px;">
+              Replace this placeholder with an iframe, Loom/Vimeo embed, or a short autoplay MP4.
+            </p>
+          </div>
+
+          <div class="demo-right">
+            <div class="panel inner soft">
+              <div class="kicker">What it proves</div>
+              <h3 style="margin-top:10px;">Production signals, not gimmicks</h3>
+              <p class="muted">
+                This demo exists to show how CourDevelops builds AI that can live inside real products.
+              </p>
+
+              <div class="list" style="grid-template-columns: 1fr;">
+                <div class="li">
+                  <div class="ic" aria-hidden="true"></div>
+                  <div><b>Citations</b><span>Every claim can point back to source material.</span></div>
+                </div>
+                <div class="li">
+                  <div class="ic" aria-hidden="true"></div>
+                  <div><b>Admin controls</b><span>What the AI can see and do is permissioned.</span></div>
+                </div>
+                <div class="li">
+                  <div class="ic" aria-hidden="true"></div>
+                  <div><b>Cost monitoring</b><span>Usage tracking and caching to control spend.</span></div>
+                </div>
+                <div class="li">
+                  <div class="ic" aria-hidden="true"></div>
+                  <div><b>Fallback behavior</b><span>Clear “I don’t know” instead of confident noise.</span></div>
+                </div>
+              </div>
+
+              <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+                <a class="btn" href="#services">See service tiers</a>
+                <a class="btn ghost" href="#responsible">Responsible AI policy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <div class="wrap">
+        <div class="grid">
+          <div style="grid-column: 1 / span 12;">
+            <div class="kicker">Services</div>
+            <h2>Productized offers with clear outcomes</h2>
+            <p>Less ambiguity. Faster delivery. Better systems.</p>
+          </div>
+
+          <div class="cards">
+            <div class="card">
+              <h3>AI Feature Sprint</h3>
+              <p>One production-ready AI feature integrated into your site or app with guardrails and monitoring.</p>
+              <div class="price">
+                <span><b>$4.5k–$8k</b></span>
+                <span class="tag">2–4 weeks</span>
+              </div>
+              <div style="margin-top:14px;">
+                <a class="btn primary" href="#start">Start sprint</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3>AI-Ready Platform Build</h3>
+              <p>A complete web platform with secure AI orchestration, RAG, admin controls, and deployment.</p>
+              <div class="price">
+                <span><b>$12k–$25k</b></span>
+                <span class="tag">6–10 weeks</span>
+              </div>
+              <div style="margin-top:14px;">
+                <a class="btn primary" href="#start">Build a platform</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3>Creative Tool MVP</h3>
+              <p>A bespoke digital instrument for creative workflows: unique UX, co-creation features, and launch support.</p>
+              <div class="price">
+                <span><b>$18k–$40k</b></span>
+                <span class="tag">8–12 weeks</span>
+              </div>
+              <div style="margin-top:14px;">
+                <a class="btn primary" href="#start">Scope an MVP</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK (placeholder) -->
+    <section id="work">
+      <div class="wrap">
+        <div class="grid">
+          <div class="panel inner" style="grid-column: 1 / span 12;">
+            <div class="kicker">Selected work</div>
+            <h2>Case studies that show decisions, not just screenshots</h2>
+            <p class="muted">Add 2–3 strong projects here. Include: problem → architecture → AI choices → outcome.</p>
+
+            <div class="list">
+              <div class="li">
+                <div class="ic" aria-hidden="true"></div>
+                <div>
+                  <b>Case Study #1 (Placeholder)</b>
+                  <span>Outcome-focused summary with one concrete metric.</span>
+                </div>
+              </div>
+              <div class="li">
+                <div class="ic" aria-hidden="true"></div>
+                <div>
+                  <b>Case Study #2 (Placeholder)</b>
+                  <span>Explainable AI design choice: why RAG, why citations, why guardrails.</span>
+                </div>
+              </div>
+              <div class="li">
+                <div class="ic" aria-hidden="true"></div>
+                <div>
+                  <b>Case Study #3 (Placeholder)</b>
+                  <span>Creative tech angle: interactive tool, generative UX, or storytelling mechanic.</span>
+                </div>
+              </div>
+              <div class="li">
+                <div class="ic" aria-hidden="true"></div>
+                <div>
+                  <b>Build Log</b>
+                  <span>One post that documents tradeoffs: cost, latency, UX, and what you refused to automate.</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESPONSIBLE AI -->
+    <section id="responsible">
+      <div class="wrap">
+        <div class="grid">
+          <div class="panel inner" style="grid-column: 1 / span 12;">
+            <div class="kicker">Responsible AI</div>
+            <h2>Trust is a feature.</h2>
+            <p>
+              CourDevelops builds AI with explicit boundaries: what data is used, how outputs are reviewed,
+              and how systems behave when they’re uncertain.
+            </p>
+
+            <div class="list">
+              <div class="li">
+                <div class="ic" aria-hidden="true"></div>
+                <div><b>Data boundaries</b><span>Not everything goes to the model. Sensitive inputs are minimized.</span></div>
+              </div>
+              <div class="li">
+                <div class="ic" aria-hidden="true"></div>
+                <div><b>No mystery outputs</b><span>Citations and provenance where it matters.</span></div>
+              </div>
+              <div class="li">
+                <div class="ic" aria-hidden="true"></div>
+                <div><b>Human oversight</b><span>Editable outputs and approvals for critical workflows.</span></div>
+              </div>
+              <div class="li">
+                <div class="ic" aria-hidden="true"></div>
+                <div><b>Monitoring</b><span>Cost, latency, and error visibility built in.</span></div>
+              </div>
+            </div>
+
+            <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+              <a class="btn" href="#start">Discuss your use case</a>
+              <a class="btn ghost" href="#demo">See it in action</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- START (simple CTA anchor) -->
+    <section id="start">
+      <div class="wrap">
+        <div class="grid">
+          <div class="panel inner" style="grid-column: 1 / span 12;">
+            <div class="kicker">Start a project</div>
+            <h2>Tell us what you’re building</h2>
+            <p class="muted">
+              Replace this with your intake form or a single CTA button to your contact page.
+              Keep it short, high-signal, and scoped.
+            </p>
+            <div class="cta-row">
+              <a class="btn primary" href="#">Open project intake</a>
+              <a class="btn" href="mailto:hello@courdevelops.com">Email</a>
+            </div>
+            <p class="tiny" style="margin-top:10px;">Tip: ask for timeline, budget range, and data sensitivity.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap" style="display:flex; justify-content:space-between; gap: 12px; flex-wrap:wrap;">
+      <div>© <span id="y"></span> CourDevelops</div>
+      <div class="muted">AI-integrated creative technology • built with intent</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
