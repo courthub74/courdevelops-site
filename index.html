@@ -203,7 +203,8 @@
         </header>
 
 
-     
+     <!-- The Case Study Dards -->
+        <div class="case-card-list">
 
           <!-- Case Study 01 -->
           <article class="case-card is-active">
@@ -220,8 +221,8 @@
 
               <div class="case-tags">
                 <span class="case-tag">Public Site</span>
-                <span class="case-tag">Dream OS</span>
-                <span class="case-tag">NFT System</span>
+                <span class="case-tag">Artist</span>
+                <span class="case-tag">Surrealist</span>
               </div>
 
               </div>
@@ -276,10 +277,72 @@
             </div>
           </article>
 
-           <!-- Case Study 02 -->
+          <!-- Case Study 02 -->
           <article class="case-card">
-            <!-- add the same structure here -->
+            <div class="case-top">
+              <div class="case-top-row">
+
+                <div class="case-header">
+                  <img src="./img/origin_os_logos/origin-os.png" alt="Origin OS" class="case-logo" />
+                  <div class="case-title-group">
+                    <span class="case-study">Study 02</span>
+                    <h3 class="case-title">Origin OS • Creative Platform</h3>
+                  </div>
+                </div>
+
+                <div class="case-tags">
+                  <span class="case-tag">Platform</span>
+                  <span class="case-tag">Creative OS</span>
+                  <span class="case-tag">NFT System</span>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="case-meta">
+              <span class="case-meta-label">System</span>
+              <span class="case-meta-value">Creative OS • Workflow Engine • Publishing Stack</span>
+            </div>
+
+            <div class="case-rows">
+              <div class="case-row">
+                <span class="case-row-label">Built</span>
+                <span class="case-row-value">Modular creative operating system for artists and brands</span>
+              </div>
+
+              <div class="case-row">
+                <span class="case-row-label">Enabled</span>
+                <span class="case-row-value">Structured prompts, AI image generation, and asset pipelines</span>
+              </div>
+
+              <div class="case-row">
+                <span class="case-row-label">Designed</span>
+                <span class="case-row-value">Scalable UI system + creator-first workflows</span>
+              </div>
+            </div>
+
+            <div class="case-modules">
+              <span class="case-modules-label">Modules</span>
+              <div class="case-modules-list">
+                <span class="case-module">Create</span>
+                <span class="case-module">Collections</span>
+                <span class="case-module">Branding</span>
+                <span class="case-module">Publishing</span>
+                <span class="case-module">Automation</span>
+              </div>
+            </div>
+
+            <div class="case-footer">
+              <a href="projects.html#origin-os" class="case-link">View case study</a>
+
+              <div class="case-arrows">
+                <button class="section-nav-btn ecosystem-nav-prev glow-1" aria-label="Previous ecosystem">
+                  ← Prev
+                </button>
+              </div>
+            </div>
           </article>
+
 
           <!-- Case Study 03 -->
           <article class="case-card">
@@ -385,32 +448,66 @@
     // existing JS (year, mobile nav, active link code)...
 
   // ===== CASE STUDIES CAROUSEL =====
-  const caseCards = document.querySelectorAll('.case-card-list .case-card');
-  const casePrevBtn = document.querySelector('.ecosystem-nav-prev');
-  const caseNextBtn = document.querySelector('.ecosystem-nav-next');
+  // const caseCards = document.querySelectorAll('.case-card-list .case-card');
+  // const casePrevBtn = document.querySelector('.ecosystem-nav-prev');
+  // const caseNextBtn = document.querySelector('.ecosystem-nav-next');
 
-  let currentCaseIndex = 0;
+  // let currentCaseIndex = 0;
 
-  function updateCaseCards() {
-    caseCards.forEach((card, index) => {
-      card.classList.toggle('is-active', index === currentCaseIndex);
-    });
-  }
+  // function updateCaseCards() {
+  //   caseCards.forEach((card, index) => {
+  //     card.classList.toggle('is-active', index === currentCaseIndex);
+  //   });
+  // }
 
-  if (caseCards.length > 0 && casePrevBtn && caseNextBtn) {
-    // ensure first card is active
-    updateCaseCards();
+  // if (caseCards.length > 0 && casePrevBtn && caseNextBtn) {
+  //   // ensure first card is active
+  //   updateCaseCards();
 
-    caseNextBtn.addEventListener('click', () => {
+  //   caseNextBtn.addEventListener('click', () => {
+  //     currentCaseIndex = (currentCaseIndex + 1) % caseCards.length;
+  //     updateCaseCards();
+  //   });
+
+  //   casePrevBtn.addEventListener('click', () => {
+  //     currentCaseIndex = (currentCaseIndex - 1 + caseCards.length) % caseCards.length;
+  //     updateCaseCards();
+  //   });
+  // }
+
+  // ===== CASE STUDIES CAROUSEL =====
+const caseCards = document.querySelectorAll('.case-card-list .case-card');
+let currentCaseIndex = 0;
+
+function updateCaseCards() {
+  caseCards.forEach((card, index) => {
+    card.classList.toggle('is-active', index === currentCaseIndex);
+  });
+}
+
+if (caseCards.length > 0) {
+  // respect the HTML preset .is-active
+  const presetIndex = Array.from(caseCards)
+    .findIndex(card => card.classList.contains('is-active'));
+
+  if (presetIndex >= 0) currentCaseIndex = presetIndex;
+
+  updateCaseCards();
+
+  // Event delegation so buttons work even when inside hidden cards
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('.ecosystem-nav-next')) {
       currentCaseIndex = (currentCaseIndex + 1) % caseCards.length;
       updateCaseCards();
-    });
+    }
 
-    casePrevBtn.addEventListener('click', () => {
+    if (e.target.closest('.ecosystem-nav-prev')) {
       currentCaseIndex = (currentCaseIndex - 1 + caseCards.length) % caseCards.length;
       updateCaseCards();
-    });
-  }
+    }
+  });
+}
+
 
   // ===== SUBTLE SCROLL REVEALS =====
 (function(){
@@ -507,8 +604,6 @@
     }
   });
 })();
-
-
 
 </script>
 

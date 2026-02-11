@@ -3611,3 +3611,62 @@ textarea:focus {
 .section-nav-btn:active .chev {
   transform: scale(0.98);
 }
+
+
+/* ===== CASE STUDIES: FLOW-BASED CAROUSEL (NO COLLAPSE) ===== */
+.case-card-list {
+  position: relative;
+  min-height: 0 !important;
+}
+
+/* cards participate in layout, only active one shows */
+.case-card-list .case-card {
+  position: static !important;
+  inset: auto !important;
+  display: none !important;
+  height: auto !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  overflow: visible !important;
+  pointer-events: auto !important;
+  transform: none !important;
+}
+
+.case-card-list .case-card.is-active {
+  display: block !important;
+}
+
+/* Make header arrow buttons horizontal: arrow + label inline */
+.section-nav-btn.ecosystem-nav-prev,
+.section-nav-btn.ecosystem-nav-next,
+.section-nav-btn.glow-1 {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;            /* space between arrow and text */
+  min-width: 56px;         /* allows text to fit without wrapping */
+  height: auto;            /* allow button to grow vertically when needed */
+  padding: 0.35rem 0.6rem; /* small pill shape */
+  white-space: nowrap;     /* prevent arrow/text from wrapping to column */
+  line-height: 1;
+  font-size: 0.95rem;
+}
+
+/* If you want the little chevron to be slightly separated and animated */
+.section-nav-btn .chev,
+.section-nav-btn .arrow {
+  display: inline-block;
+  transform-origin: center;
+  font-weight: 700;
+}
+
+/* Optional: make the left arrow nudge left on hover */
+.section-nav-btn.ecosystem-nav-prev:hover .chev { transform: translateX(-2px); }
+.section-nav-btn.ecosystem-nav-next:hover .chev { transform: translateX(2px); }
+
+/* If an earlier rule forced a fixed square, undo it specifically */
+.section-nav-btn[style],
+.section-nav-btn {
+  width: auto !important;
+  display: inline-flex !important;
+}
