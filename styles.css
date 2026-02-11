@@ -3611,3 +3611,27 @@ textarea:focus {
 .section-nav-btn:active .chev {
   transform: scale(0.98);
 }
+
+
+/* ===== CASE STUDIES: FLOW-BASED CAROUSEL (NO COLLAPSE) ===== */
+.case-card-list {
+  position: relative;
+  min-height: 0 !important;
+}
+
+/* cards participate in layout, only active one shows */
+.case-card-list .case-card {
+  position: static !important;
+  inset: auto !important;
+  display: none !important;
+  height: auto !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  overflow: visible !important;
+  pointer-events: auto !important;
+  transform: none !important;
+}
+
+.case-card-list .case-card.is-active {
+  display: block !important;
+}
