@@ -32,11 +32,11 @@ Focus: Ship the first version of the creative backend.
 
 ## Build:
 
-\* Login system
+\* ~Login system~
 
-\* Dashboard layout
+\* ~Dashboard layout~
 
-\* New Artwork form (title, description, image upload)
+\* ~New Artwork form (title, description, image upload)~
 
 \* Collections dropdown
 
