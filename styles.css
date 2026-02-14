@@ -3677,5 +3677,11 @@ textarea:focus {
   .case-meta { padding-top: 20px; }
   .case-meta-value { font-size: 0.7rem;}
   .case-modules { padding-top: 20px; }
-  .case-module { font-size: 0.7rem; color: var(--text-muted); }
+  .case-module { font-size: 0.7rem; color: var(--text-muted); color: rgba(255,255,255,0.58); }
+}
+
+.case-footer a,
+.case-footer .nav-link {
+  font-weight: 500;
+  opacity: 0.9;
 }
