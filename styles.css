@@ -3670,3 +3670,11 @@ textarea:focus {
   width: auto !important;
   display: inline-flex !important;
 }
+
+
+/* MOBILE CASE STUDY ADJUSTMENTS */
+@media (max-width: 768px) {
+  .case-meta { padding-top: 20px; }
+  .case-modules { padding-top: 20px; }
+  .case-module { font-size: 0.75rem; }
+}
