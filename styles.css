@@ -3676,6 +3676,7 @@ textarea:focus {
 @media (max-width: 768px) {
   .case-meta { padding-top: 20px; }
   .case-meta-value { font-size: 0.7rem;}
+  .case-row-value { font-size: 0.8rem; }
   .case-modules { padding-top: 20px; }
   .case-module { font-size: 0.7rem; color: var(--text-muted); color: rgba(255,255,255,0.58); }
 }
