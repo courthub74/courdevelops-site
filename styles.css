@@ -3675,6 +3675,7 @@ textarea:focus {
 /* MOBILE CASE STUDY ADJUSTMENTS */
 @media (max-width: 768px) {
   .case-meta { padding-top: 20px; }
+  .case-meta-value { font-size: 0.65rem; padding: 4px 8px; }
   .case-modules { padding-top: 20px; }
-  .case-module { font-size: 0.75rem; }
+  .case-module { font-size: 0.65rem; color: var(--text-muted); }
 }
