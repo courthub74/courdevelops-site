@@ -1,8 +1,6 @@
 <p align="center">
-  <img src="./img/logos/neo_logo_white.png" width="160" alt="CourDevelops Logo">
+  <img src="./img/courdevelops_logos/neo_logo_white.png" width="160" alt="CourDevelops Logo">
 </p>
-
-# courdevelops.com
 
 <p align="center">
   <strong>Creative Technology Studio · Scalable Systems · AI-Assisted Platforms</strong>
