@@ -1,94 +1,122 @@
 <p align="center">
-  <img src="./img/dream_agent_logos/DreamAgentBlue.jpg" width="180" alt="Dream Agent Logo">
+  <img src="./img/logos/neo_logo_white.png" width="160" alt="CourDevelops Logo">
 </p>
 
-# dreamagent.art
+# courdevelops.com
 
 <p align="center">
-  <strong>Official promotional website of Dream Agent</strong>
+  <strong>Creative Technology Studio · Scalable Systems · AI-Assisted Platforms</strong>
 </p>
 
 ---
 
 ## Overview
 
-**dreamagent.art** is the official promotional website for Dream Agent — an anonymous surrealist art identity exploring symbolism, mythology, economic themes, and machine-assisted oil-style works.
+**courdevelops.com** is the official website of CourDevelops, a creative technology studio specializing in scalable web platforms and AI-assisted creative systems.
 
-The site is intentionally static, minimal, and performance-focused.  
-It exists to present artwork without friction.
+The site functions as a professional representation of:
+
+- Studio capabilities
+- Platform architecture
+- Product development philosophy
+- Case studies and technical execution
+
+CourDevelops focuses on building structured systems that support long-term growth, maintainability, and production reliability.
 
 ---
 
-## System Architecture
+## Studio Capabilities
 
-dreamagent.art operates as a public-facing presentation layer.
+CourDevelops designs and engineers:
 
-Creation and structured workflow occur within:
+- Full-stack web applications
+- Modular UI systems
+- AI-integrated creative workflows
+- Structured prompt frameworks
+- Creator-focused operating systems
+- Scalable publishing pipelines
 
-<p align="center">
-  <img src="./img/courdevelops_logos/neo_logo_white.png" width="150" alt="CourDevelops Logo">
-</p>
+Each system is built with emphasis on:
+
+- Clean architectural boundaries
+- Secure backend implementation
+- Performance optimization
+- Clear separation of concerns
+- Deployment readiness
+
+---
+
+## Core Platform
 
 ### Origin OS
 
-A creator-first operating system developed by CourDevelops that powers:
+Origin OS is a creator-first operating system developed by CourDevelops to support structured AI-assisted production workflows.
 
-- AI-assisted image generation
-- Structured prompt systems
-- Collection management
-- Drop preparation
-- Publishing workflows
+Key capabilities include:
 
-Origin OS handles creation.  
-dreamagent.art handles presentation.
+- AI image generation integration
+- Structured prompt compilation
+- Collection and asset management
+- Draft and publishing workflows
+- Branding and export tooling
 
-This separation ensures:
-
-- Clean production workflow
-- No exposed backend dependencies
-- Fast global performance via Netlify
-- Controlled release cadence
+The platform is designed to support repeatable, scalable creative output while maintaining system integrity and security.
 
 ---
 
-## Technology
+## Architectural Principles
 
-- HTML
-- CSS
-- Vanilla JavaScript
-- Static deployment via Netlify CDN
+CourDevelops operates with a layered architecture model:
 
-No public runtime database or server dependencies.
+- Private creation systems
+- Isolated backend services
+- Lightweight public presentation layers
+- Controlled release environments
 
----
+This structure enables:
 
-## Update Flow
-
-1. Artwork is created and refined inside Origin OS
-2. Final assets are exported
-3. Optimized images are added to the static site
-4. Site is deployed via Netlify
+- Maintainable codebases
+- Secure deployment pipelines
+- Predictable scaling
+- Reduced operational complexity
 
 ---
 
-## Design Philosophy
+## Technology Stack
 
-- Minimal interface
-- Dark atmospheric palette
-- Art-first hierarchy
-- Intentional restraint
-- Subtle motion
+Projects may incorporate:
 
-The interface exists to frame the work — not compete with it.
+- Node.js / Express
+- MongoDB
+- RESTful API design
+- Vanilla JavaScript or modular front-end architectures
+- Static deployment strategies (e.g., CDN-based hosting)
+- AI generation APIs and workflow orchestration
+
+Technology choices are driven by scalability, clarity, and long-term maintainability.
+
+---
+
+## Design & Engineering Philosophy
+
+CourDevelops approaches digital systems as infrastructure, not experiments.
+
+Principles include:
+
+- Systems must scale before they grow
+- Interfaces should prioritize clarity over decoration
+- Architecture is a long-term investment
+- Creative workflows benefit from structure
+- Technical rigor strengthens brand identity
 
 ---
 
 ## License
 
-All artwork and branding are © Dream Agent.  
-Site engineering and system architecture by CourDevelops.
+All content © CourDevelops  
+Platform systems and engineering by CourDevelops
 
 ---
 
-dreamagent.art  
-No Face. No Fame. Just the Vision.
+courdevelops.com  
+Creative Technology. Structured Systems. Scalable Execution.
