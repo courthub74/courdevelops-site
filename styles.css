@@ -3780,3 +3780,31 @@ textarea:focus {
   padding-top: 1.25rem;   /* compact */
   padding-bottom: 0;      /* optional */
 }
+
+/* Mobile adjustments for studio grid */
+/* ✅ FINAL FIX: Studio page should stack to one column on mobile */
+@media (max-width: 900px) {
+  .studio-grid{
+    grid-template-columns: 1fr !important;
+    gap: 40px;
+
+    /* stack everything */
+    grid-template-areas:
+      "copy"
+      "work"
+      "meta";
+  }
+
+  .studio-copy{ grid-area: copy; }
+  .studio-work{ grid-area: work; }
+  .studio-meta{
+    grid-area: meta;
+
+    /* your existing mobile meta styling */
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 24px;
+    margin-top: 0;
+  }
+}
