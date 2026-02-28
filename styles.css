@@ -3808,3 +3808,11 @@ textarea:focus {
     margin-top: 0;
   }
 }
+
+@media (min-width: 901px) {
+  .studio-grid{
+    grid-template-areas:
+      "copy meta"
+      "work meta";
+  }
+}
