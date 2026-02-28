@@ -344,7 +344,7 @@ main {
 /* Section layouts */
 
 .section {
-  padding: 3rem 0 .5rem;
+  padding: 1rem 0 .5rem;
 }
 
 .section-header {
@@ -3686,4 +3686,97 @@ textarea:focus {
 .case-footer .nav-link {
   font-weight: 500;
   opacity: 0.9;
+}
+
+
+.credibility-ribbon{
+  padding: 0.9rem 0;
+}
+.credibility-inner{
+  display:flex;
+  gap:0.9rem;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  border:1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
+  border-radius: 14px;
+  padding: 0.75rem 1rem;
+}
+.credibility-label{
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+.credibility-items{
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* Process Steps */
+.process-steps{
+  display:flex;
+  flex-direction:column;
+  gap:0.85rem;
+}
+
+.process-step{
+  display:flex;
+  gap:1rem;
+  padding:0.95rem 1rem;
+  border:1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
+  border-radius: 14px;
+}
+
+.process-step-num{
+  width:42px;
+  height:42px;
+  border-radius: 12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  letter-spacing:0.06em;
+  opacity:0.9;
+  border:1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.02);
+}
+
+.process-step-title{
+  margin:0;
+  font-size:1.05rem;
+}
+
+.process-step-body{
+  margin:0.35rem 0 0 0;
+  opacity:0.9;
+  line-height:1.55;
+}
+
+#how-we-work.section{
+  padding-top: 1rem;
+}
+
+/* Studio grid areas: left stacks, right sidebar spans */
+.studio-grid{
+  display:grid;
+  grid-template-columns: minmax(0, 2.2fr) minmax(0, 1fr);
+  gap: 64px;
+  align-items: start;
+
+  grid-template-areas:
+    "copy meta"
+    "work meta";
+}
+
+.studio-copy{ grid-area: copy; }
+.studio-meta{ grid-area: meta; }
+.studio-work{ grid-area: work; }
+
+/* tighten the seam between cards and How We Work */
+.studio-work.section{
+  padding-top: 1.25rem;   /* compact */
+  padding-bottom: 0;      /* optional */
 }
