@@ -3877,3 +3877,10 @@ textarea:focus {
   line-height:1.65;
   opacity:0.82;
 }
+
+/* Hide Hero Support on mobile */
+@media (max-width: 900px) {
+  .hero-support{
+    display:none;
+  }
+}
