@@ -33,7 +33,7 @@
           <span class="bar"></span>
         </button>
 
-        <a class="nav-cta" href="contact.html">Start a consultation</a>
+        <a class="nav-cta" href="contact.html">Start a collaboration</a>
       </div>
     </div>
   </header>
@@ -44,7 +44,7 @@
     <a href="projects.html">Projects</a>
     <a href="contact.html">Contact</a>
     <a href="contact.html" class="mobile-menu-cta">
-      <span>Start a consultation</span>
+      <span>Start a collaboration</span>
       <span class="mobile-menu-cta-arrow">→</span>
     </a>
   </nav>
@@ -142,62 +142,66 @@
         </aside>
 
            <!-- HOW WE WORK (MERGED + FINAL) -->
-    <section class="section" id="how-we-work">
-      <!-- <div class="container"> -->
-        <div class="section-header">
-          <div class="section-kicker">How We Work</div>
-          <!-- <h2 class="section-title">From idea to working system</h2> -->
-          <!-- <p class="section-description">
-            We take concepts and workflows and turn them into production-ready ecosystems: designed, engineered, and built to evolve.
-          </p> -->
+        <div class="studio-process" id="how-we-work">
+          <!-- <div class="container"> -->
+            <div class="section-header">
+              <div class="section-kicker">How We Work</div>
+              <!-- <h2 class="section-title">From idea to working system</h2> -->
+              <!-- <p class="section-description">
+                We take concepts and workflows and turn them into production-ready ecosystems: designed, engineered, and built to evolve.
+              </p> -->
+            </div>
+
+            <!-- Process steps (finalized copy, merged design) -->
+            <div class="process-steps" style="margin-top:1.25rem;">
+
+              <div class="process-step">
+                  <div class="process-step-num">01</div>
+                  <div class="process-step-content">
+                  <h3 class="process-step-title">Discover</h3>
+                  <p class="process-step-body">
+                      We analyze goals, users, and friction points, then define success criteria and a clear scope that prevents rebuilds later.
+                  </p>
+                  </div>
+              </div>
+
+              <div class="process-step">
+                  <div class="process-step-num">02</div>
+                  <div class="process-step-content">
+                  <h3 class="process-step-title">Design</h3>
+                  <p class="process-step-body">
+                      We map the structure before code: data models, access control, API patterns, and modular UI flows.
+                  </p>
+                  </div>
+              </div>
+
+              <div class="process-step">
+                  <div class="process-step-num">03</div>
+                  <div class="process-step-content">
+                  <h3 class="process-step-title">Build</h3>
+                  <p class="process-step-body">
+                      We develop the system with secure authentication, clean routing, reliable storage, and applied automation where it adds real value.
+                  </p>
+                  </div>
+              </div>
+
+              <div class="process-step">
+                  <div class="process-step-num">04</div>
+                  <div class="process-step-content">
+                    <h3 class="process-step-title">Stabilize</h3>
+                    <p class="process-step-body">
+                        We test, polish, and improve performance, then support ongoing iteration as your workflows and needs grow.
+                    </p>
+                  </div>
+              </div>
+
+            </div>
+          </div>
+
         </div>
 
-        <div class="process-steps" style="margin-top:1.25rem;">
-        <div class="process-step">
-            <div class="process-step-num">01</div>
-            <div class="process-step-content">
-            <h3 class="process-step-title">Discover</h3>
-            <p class="process-step-body">
-                We analyze goals, users, and friction points, then define success criteria and a clear scope that prevents rebuilds later.
-            </p>
-            </div>
-        </div>
-
-        <div class="process-step">
-            <div class="process-step-num">02</div>
-            <div class="process-step-content">
-            <h3 class="process-step-title">Design</h3>
-            <p class="process-step-body">
-                We map the structure before code: data models, access control, API patterns, and modular UI flows.
-            </p>
-            </div>
-        </div>
-
-        <div class="process-step">
-            <div class="process-step-num">03</div>
-            <div class="process-step-content">
-            <h3 class="process-step-title">Build</h3>
-            <p class="process-step-body">
-                We develop the system with secure authentication, clean routing, reliable storage, and applied automation where it adds real value.
-            </p>
-            </div>
-        </div>
-
-        <div class="process-step">
-            <div class="process-step-num">04</div>
-            <div class="process-step-content">
-            <h3 class="process-step-title">Stabilize</h3>
-            <p class="process-step-body">
-                We test, polish, and improve performance, then support ongoing iteration as your workflows and needs grow.
-            </p>
-            </div>
-        </div>
-        </div>
-        <!-- </div> -->
-      </div>
     </section>
-      </div>
-    </section>
+     
   </main>
 
   <footer class="site-footer">
@@ -208,6 +212,8 @@
       </div>
     </div>
   </footer>
+
+  </div>
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
@@ -253,6 +259,31 @@
       if (e.key === 'Escape' && mobileNav.classList.contains('is-open')) closeMobileNav();
     });
   }
+
+   // ===== WHOLE STUDIO PAGE LOAD REVEAL =====
+(function(){
+  const prefersReduced =
+    window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const target = document.querySelector('.section-studio-intro');
+
+  if (!target) return;
+
+  target.classList.remove('is-visible');
+  target.setAttribute('data-reveal', 'up');
+  target.style.setProperty('--reveal-delay', '0ms');
+
+  if (prefersReduced) {
+    target.classList.add('is-visible');
+    return;
+  }
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      target.classList.add('is-visible');
+    });
+  });
+})();
 </script>
 
 </body>

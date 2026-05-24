@@ -2850,6 +2850,7 @@ textarea:focus {
 [data-reveal="left"]{ transform: translateX(14px); }
 [data-reveal="right"]{ transform: translateX(-14px); }
 
+
 /* Stagger helper (set via JS as inline style delay) */
 [data-reveal]{ transition-delay: var(--reveal-delay, 0ms); }
 
@@ -3883,4 +3884,20 @@ textarea:focus {
   .hero-support{
     display:none;
   }
+}
+
+[data-reveal="up"] {
+  opacity: 0;
+  transform: translateY(32px);
+  filter: blur(2px);
+  transition:
+    opacity 700ms ease,
+    transform 700ms ease,
+    filter 700ms ease;
+}
+
+[data-reveal="up"].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
 }
