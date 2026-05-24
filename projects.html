@@ -54,7 +54,7 @@
 
 
     <main>
-    <section class="section">
+    <section class="section projects-load-reveal">
       <div class="container">
 
         <!-- Viewport that holds all ecosystems -->
@@ -470,6 +470,18 @@
     if (href === path || (path === '' && href.includes('index.html'))) {
       a.classList.add('is-active');
     }
+  });
+})();
+
+// ===== PROJECTS PAGE LOAD REVEAL =====
+(function(){
+  const target = document.querySelector('.projects-load-reveal');
+  if (!target) return;
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      target.classList.add('is-visible');
+    });
   });
 })();
 

@@ -56,7 +56,7 @@
 
 
   <main>
-    <section class="section">
+    <section class="section contact-load-reveal">
       <div class="container">
         <div class="section-header">
           <div class="section-kicker">Contact</div>
@@ -280,6 +280,18 @@
       link.classList.add('nav-link-active');
     }
   });
+
+  // ===== CONTACT PAGE LOAD REVEAL =====
+(function(){
+  const target = document.querySelector('.contact-load-reveal');
+  if (!target) return;
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      target.classList.add('is-visible');
+    });
+  });
+})();
 
 </script>
 </body>
