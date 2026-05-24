@@ -3901,3 +3901,25 @@ textarea:focus {
   transform: translateY(0);
   filter: blur(0);
 }
+
+.hero-load-reveal,
+.contact-load-reveal,
+.projects-load-reveal,
+.studio-load-reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  filter: blur(2px);
+  transition:
+    opacity 700ms ease,
+    transform 700ms ease,
+    filter 700ms ease;
+}
+
+.hero-load-reveal.is-visible,
+.projects-load-reveal.is-visible,
+.contact-load-reveal.is-visible,
+.studio-load-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}

@@ -52,7 +52,7 @@
   <main>
 
     <!-- STUDIO INTRO -->
-    <section class="section section-studio-intro">
+    <section class="section section-studio-intro studio-load-reveal">
       <div class="container studio-grid">
 
         <div class="studio-copy">
@@ -262,24 +262,10 @@
     });
   }
 
-   // ===== WHOLE STUDIO PAGE LOAD REVEAL =====
+// ===== WHOLE STUDIO PAGE LOAD REVEAL =====
 (function(){
-  const prefersReduced =
-    window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  const target = document.querySelector('.section-studio-intro');
-  // const target = document.querySelector('.main');
-
+  const target = document.querySelector('.studio-load-reveal');
   if (!target) return;
-
-  target.classList.remove('is-visible');
-  target.setAttribute('data-reveal', 'up');
-  target.style.setProperty('--reveal-delay', '0ms');
-
-  if (prefersReduced) {
-    target.classList.add('is-visible');
-    return;
-  }
 
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
