@@ -3774,10 +3774,10 @@ textarea:focus {
 
 .studio-copy{ grid-area: copy; }
 .studio-meta{ grid-area: meta; }
-.studio-work{ grid-area: work; }
+.studio-process{ grid-area: work; }
 
 /* tighten the seam between cards and How We Work */
-.studio-work.section{
+.studio-process.section{
   padding-top: 1.25rem;   /* compact */
   padding-bottom: 0;      /* optional */
 }
@@ -3797,7 +3797,7 @@ textarea:focus {
   }
 
   .studio-copy{ grid-area: copy; }
-  .studio-work{ grid-area: work; }
+  .studio-process{ grid-area: work; }
   .studio-meta{
     grid-area: meta;
 
