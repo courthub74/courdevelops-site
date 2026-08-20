@@ -8,8 +8,6 @@
 
 ---
 
-# CourDevelops
-
 ## Overview
 
 CourDevelops builds software around workflows that have outgrown spreadsheets, disconnected tools, manual handoffs, or one-person institutional knowledge.
