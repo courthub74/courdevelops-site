@@ -8,9 +8,15 @@
 
 ---
 
+# CourDevelops
+
 ## Overview
 
-**courdevelops.com** is the official website of CourDevelops, a creative technology studio specializing in scalable web platforms and AI-assisted creative systems.
+CourDevelops builds software around workflows that have outgrown spreadsheets, disconnected tools, manual handoffs, or one-person institutional knowledge.
+
+Projects begin with the workflow itself: who performs the work, where information moves, where bottlenecks occur, and what should be automated or turned into software.
+
+<!-- **courdevelops.com** is the official website of CourDevelops, a creative technology studio specializing in scalable web platforms and AI-assisted creative systems.
 
 The site functions as a professional representation of:
 
@@ -19,7 +25,7 @@ The site functions as a professional representation of:
 - Product development philosophy
 - Case studies and technical execution
 
-CourDevelops focuses on building structured systems that support long-term growth, maintainability, and production reliability.
+CourDevelops focuses on building structured systems that support long-term growth, maintainability, and production reliability. -->
 
 ---
 
