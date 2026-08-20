@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <strong>Creative Technology Studio · Scalable Systems · AI-Assisted Platforms</strong>
+  <strong>Software Systems Built Around Real Workflows.</strong>
 </p>
 
 ---
