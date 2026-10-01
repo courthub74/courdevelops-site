@@ -740,6 +740,7 @@ main {
 
 .card:hover {
   border-color: rgba(0, 229, 255, 0.7);
+  border-color: var(--accent);
 }
 
 .card-title {
@@ -769,6 +770,16 @@ main {
   flex-wrap: wrap;
   gap: 0.4rem;
   margin-top: 0.7rem;
+}
+
+.card-tech {
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  margin-top: 0.6rem;
+  opacity: 0.55;
+
+  letter-spacing: 0.16em;
+  margin-bottom: 0.5rem;
 }
 
 .card-screenshot {
