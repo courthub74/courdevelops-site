@@ -775,15 +775,23 @@ main {
 .card-tech {
   font-size: 0.6rem;
   color: var(--text-muted);
-  margin-top: 0.6rem;
-  opacity: 0.55;
-
+  /* margin-top: 0.6rem; */
+  opacity: 0.75;
+  margin-top: auto;
+  padding-top: 24px;
   letter-spacing: 0.16em;
   margin-bottom: 0.5rem;
 }
 
 .card-screenshot {
   margin-top: 1rem;
+}
+
+.card-links {
+  margin-top: 0.8rem;
+  display: flex;
+  gap: 0.6rem;
+  font-size: 0.78rem;
 }
 
 .tag {
@@ -2262,6 +2270,7 @@ main {
   letter-spacing: 0.16em;
   margin-bottom: 0.5rem;
   align-items: center;
+  padding-top: 1rem;
 }
 
 /* Mobile: hide case study hero badges */
