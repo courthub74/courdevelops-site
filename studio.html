@@ -1,279 +1,328 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Courdevelops: Studio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="./img/logos/neo_logo_favicon.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="./img/logos/neo_logo_favicon.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="./img/logos/neo_logo_favicon.png">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<div class="site-wrapper">
-  <header class="site-header">
-    <div class="container">
-      <div class="nav-bar">
-        <a href="index.html" class="brand">
-          <div class="brand-text">
-              <div class="brand-tagline">Workflow Architecture Studio</div>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Courdevelops: Studio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./img/logos/neo_logo_favicon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./img/logos/neo_logo_favicon.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./img/logos/neo_logo_favicon.png"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="site-wrapper">
+      <header class="site-header">
+        <div class="container">
+          <div class="nav-bar">
+            <a href="index.html" class="brand">
+              <div class="brand-text">
+                <div class="brand-tagline">Independent Developer</div>
+              </div>
+            </a>
+
+            <nav class="nav-links">
+              <a href="index.html">Home</a>
+              <a href="#" class="disabled">About Me</a>
+              <!-- <a href="projects.html">Projects</a> -->
+              <a href="contact.html">Contact</a>
+            </nav>
+
+            <button
+              class="mobile-nav-toggle"
+              aria-label="Toggle navigation"
+              aria-expanded="false"
+            >
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </button>
+
+            <a class="nav-cta" href="contact.html">Start a collaboration</a>
           </div>
+        </div>
+      </header>
+
+      <nav class="mobile-nav" aria-label="Mobile navigation">
+        <a href="index.html">Home</a>
+        <a href="#" class="disabled mobile-disable">About Me</a>
+        <!-- <a href="projects.html">Projects</a> -->
+        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="mobile-menu-cta">
+          <span>Get in Touch</span>
+          <span class="mobile-menu-cta-arrow">→</span>
         </a>
+      </nav>
 
-        <nav class="nav-links">
-          <a href="index.html">Home</a>
-          <a href="#" class="disabled">Studio</a>
-          <a href="projects.html">Projects</a>
-          <a href="contact.html">Contact</a>
-        </nav>
+      <main>
+        <!-- STUDIO INTRO -->
+        <section class="section section-studio-intro studio-load-reveal">
+          <div class="container studio-grid">
+            <div class="studio-copy">
+              <div class="section-kicker">About Me</div>
+              <h1 class="section-title">Where workflows become systems</h1>
 
-        <button class="mobile-nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </button>
-
-        <a class="nav-cta" href="contact.html">Start a collaboration</a>
-      </div>
-    </div>
-  </header>
-
-  <nav class="mobile-nav" aria-label="Mobile navigation">
-    <a href="index.html">Home</a>
-    <a href="#" class="disabled mobile-disable">Studio</a>
-    <a href="projects.html">Projects</a>
-    <a href="contact.html">Contact</a>
-    <a href="contact.html" class="mobile-menu-cta">
-      <span>Start a collaboration</span>
-      <span class="mobile-menu-cta-arrow">→</span>
-    </a>
-  </nav>
-
-  <main>
-
-    <!-- STUDIO INTRO -->
-    <section class="section section-studio-intro studio-load-reveal">
-      <div class="container studio-grid">
-
-        <div class="studio-copy">
-          <div class="section-kicker">Studio</div>
-          <h1 class="section-title">
-            Where workflows become systems
-          </h1>
-
-          <!-- <p>
+              <!-- <p>
             CourDevelops is a workflow architecture studio designing production-ready digital systems for modern teams.
             We engineer the structural layers behind real work — architecture, interfaces, automation, and infrastructure built to scale.
           </p> -->
 
-          <p>
-            CourDevelops is a workflow architecture studio designing digital ecosystems for creators. 
-            We engineer the structural layers behind modern creative work, 
-            combining interfaces, automation, and scalable infrastructure into platforms built to evolve.
-          </p>
-          
-        <div class="section-kicker" style="margin-top:1.5rem;">What we do</div>
+              <p>
+                I build, test, and refine. I work through projects by getting
+                something running, testing how it behaves, and improving it as I
+                understand the problem more clearly. AI is part of my
+                development process. I use it to explore approaches,
+                troubleshoot issues, and review changes. I’m responsible for
+                understanding the result, checking its behavior, and deciding
+                what belongs in the project. I share milestones and lessons as
+                the work develops, including the parts that take more than one
+                attempt.
+              </p>
 
-        <div class="card-grid" style="margin-top:1rem;">
-        <div class="card">
-            <div class="card-tagline">
-              <img src="./img/icons/systems.png" alt="Systems icon" style="width:1.2rem; height:1.2rem; vertical-align:middle; margin-right:0.4rem;">
-              Systems
+              <div class="section-kicker" style="margin-top: 1.5rem">
+                What Intersests Me
+              </div>
+
+              <div class="card-grid" style="margin-top: 1rem">
+                <div class="card">
+                  <div class="card-tagline">
+                    <img
+                      src="./img/icons/tools.png"
+                      alt="Tools icon"
+                      style="
+                        width: 1.2rem;
+                        height: 1.2rem;
+                        vertical-align: middle;
+                        margin-right: 0.4rem;
+                      "
+                    />
+                    Internal tools
+                  </div>
+                  <!-- <h3 class="card-title">Workflow-first platforms</h3> -->
+                  <p class="card-body">
+                    Applications that help people manage everyday work
+                  </p>
+                </div>
+
+                <div class="card">
+                  <div class="card-tagline">
+                    <img
+                      src="./img/icons/design.png"
+                      alt="Design icon"
+                      style="
+                        width: 1.2rem;
+                        height: 1.2rem;
+                        vertical-align: middle;
+                        margin-right: 0.4rem;
+                      "
+                    />
+                    Workflows
+                  </div>
+                  <!-- <h3 class="card-title">Creative Workflows</h3> -->
+                  <p class="card-body">
+                    How tasks connect, where handoffs get awkward, and how
+                    software can make the process easier to follow.
+                  </p>
+                </div>
+
+                <div class="card">
+                  <div class="card-tagline">
+                    <img
+                      src="./img/icons/automation.png"
+                      alt="Automation icon"
+                      style="
+                        width: 1.2rem;
+                        height: 1.2rem;
+                        vertical-align: middle;
+                        margin-right: 0.4rem;
+                      "
+                    />
+                    Refinement
+                  </div>
+                  <!-- <h3 class="card-title">Automation built into the system</h3> -->
+                  <p class="card-body">
+                    Understanding behavior, finding problems, and improving
+                    reliability
+                  </p>
+                </div>
+              </div>
             </div>
-            <h3 class="card-title">Workflow-first platforms</h3>
-            <p class="card-body">
-            We architect durable systems that turn messy workflows into clean, repeatable operations.
-            </p>
-        </div>
 
-        <div class="card">
-            <div class="card-tagline">
-              <img src="./img/icons/monitor.png" alt="Interfaces icon" style="width:1.2rem; height:1.2rem; vertical-align:middle; margin-right:0.4rem;">
-              Interfaces
-            </div>
-            <h3 class="card-title">Dashboards & internal tools</h3>
-            <p class="card-body">
-            Control panels, admin layers, and backrooms that make real work faster and calmer.
-            </p>
-        </div>
+            <!-- ------------------------ -->
 
-        <div class="card">
-            <div class="card-tagline">
-              <img src="./img/icons/automation.png" alt="Automation icon" style="width:1.2rem; height:1.2rem; vertical-align:middle; margin-right:0.4rem;">
-              Automation
-            </div>
-            <h3 class="card-title">Automation built into the system</h3>
-            <p class="card-body">
-              Operational workflows designed to reduce friction and scale output, 
-              with AI applied where it adds measurable value.
-            </p>
-        </div>
-        </div>
+            <!-- ------------------------- -->
 
-        </div>
+            <aside class="studio-meta">
+              <div class="sidebar-block">
+                <h3 class="studio-meta-label">Capabilities</h3>
+                <ul class="capabilities-list">
+                  <li>AI-integrated web experiences</li>
+                  <li>Modular dashboards & internal tools</li>
+                  <li>Workflow automation & system logic</li>
+                  <li>Platform architecture & API integration</li>
+                  <li>
+                    Design-forward interfaces backed by durable infrastructure
+                  </li>
+                </ul>
+              </div>
 
-        <!-- ------------------------ -->
-         
-        
+              <!-- <div class="sidebar-block">
+                <div class="studio-meta-label">Use cases</div>
+                <ul class="capabilities-list">
+                  <li>Creator platforms & publishing ecosystems</li>
+                  <li>Internal tools for operations & content</li>
+                  <li>Product prototypes built to scale</li>
+                  <li>Automation-first workflow systems</li>
+                </ul>
+              </div> -->
+            </aside>
 
-        <!-- ------------------------- -->
-
-        <aside class="studio-meta">
-          <div class="sidebar-block">
-            <h3 class="studio-meta-label">Capabilities</h3>
-            <ul class="capabilities-list">
-              <li>AI-integrated web experiences</li>
-              <li>Modular dashboards & internal tools</li>
-              <li>Workflow automation & system logic</li>
-              <li>Platform architecture & API integration</li>
-              <li>Design-forward interfaces backed by durable infrastructure</li>
-            </ul>
-          </div>
-
-          <div class="sidebar-block">
-            <div class="studio-meta-label">Use cases</div>
-            <ul class="capabilities-list">
-              <li>Creator platforms & publishing ecosystems</li>
-              <li>Internal tools for operations & content</li>
-              <li>Product prototypes built to scale</li>
-              <li>Automation-first workflow systems</li>
-            </ul>
-          </div>
-        </aside>
-
-           <!-- HOW WE WORK (MERGED + FINAL) -->
-        <div class="studio-process" id="how-we-work">
-          <!-- <div class="container"> -->
-            <div class="section-header">
-              <div class="section-kicker">How We Work</div>
-              <!-- <h2 class="section-title">From idea to working system</h2> -->
-              <!-- <p class="section-description">
+            <!-- HOW WE WORK (MERGED + FINAL) -->
+            <div class="studio-process" id="how-we-work">
+              <!-- <div class="container"> -->
+              <div class="section-header">
+                <div class="section-kicker">How We Work</div>
+                <!-- <h2 class="section-title">From idea to working system</h2> -->
+                <!-- <p class="section-description">
                 We take concepts and workflows and turn them into production-ready ecosystems: designed, engineered, and built to evolve.
               </p> -->
-            </div>
+              </div>
 
-            <!-- Process steps (finalized copy, merged design) -->
-            <div class="process-steps" style="margin-top:1.25rem;">
-
-              <div class="process-step">
+              <!-- Process steps (finalized copy, merged design) -->
+              <div class="process-steps" style="margin-top: 1.25rem">
+                <div class="process-step">
                   <div class="process-step-num">01</div>
                   <div class="process-step-content">
-                  <h3 class="process-step-title">Discover</h3>
-                  <p class="process-step-body">
-                      We analyze goals, users, and friction points, then define success criteria and a clear scope that prevents rebuilds later.
-                  </p>
+                    <h3 class="process-step-title">Discover</h3>
+                    <p class="process-step-body">
+                      We analyze goals, users, and friction points, then define
+                      success criteria and a clear scope that prevents rebuilds
+                      later.
+                    </p>
                   </div>
-              </div>
+                </div>
 
-              <div class="process-step">
+                <!-- <div class="process-step">
                   <div class="process-step-num">02</div>
                   <div class="process-step-content">
-                  <h3 class="process-step-title">Design</h3>
-                  <p class="process-step-body">
-                      We map the structure before code: data models, access control, API patterns, and modular UI flows.
-                  </p>
+                    <h3 class="process-step-title">Design</h3>
+                    <p class="process-step-body">
+                      We map the structure before code: data models, access
+                      control, API patterns, and modular UI flows.
+                    </p>
                   </div>
-              </div>
+                </div> -->
 
-              <div class="process-step">
+                <!-- <div class="process-step">
                   <div class="process-step-num">03</div>
                   <div class="process-step-content">
-                  <h3 class="process-step-title">Build</h3>
-                  <p class="process-step-body">
-                      We develop the system with secure authentication, clean routing, reliable storage, and applied automation where it adds real value.
-                  </p>
+                    <h3 class="process-step-title">Build</h3>
+                    <p class="process-step-body">
+                      We develop the system with secure authentication, clean
+                      routing, reliable storage, and applied automation where it
+                      adds real value.
+                    </p>
                   </div>
-              </div>
+                </div>
 
-              <div class="process-step">
+                <div class="process-step">
                   <div class="process-step-num">04</div>
                   <div class="process-step-content">
                     <h3 class="process-step-title">Stabilize</h3>
                     <p class="process-step-body">
-                        We test, polish, and improve performance, then support ongoing iteration as your workflows and needs grow.
+                      We test, polish, and improve performance, then support
+                      ongoing iteration as your workflows and needs grow.
                     </p>
                   </div>
+                </div> -->
               </div>
-
             </div>
           </div>
+        </section>
+      </main>
 
+      <footer class="site-footer">
+        <div class="container footer-inner">
+          <div>
+            © <span id="year"></span> CourDevelops. All rights reserved.
+          </div>
+          <div class="footer-right">
+            Workflow architecture for creative platforms.
+          </div>
         </div>
-
-    </section>
-     
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>© <span id="year"></span> CourDevelops. All rights reserved.</div>
-      <div class="footer-right">
-        Workflow architecture for creative platforms.
-      </div>
+      </footer>
     </div>
-  </footer>
 
-  </div>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
 
+      // Mobile nav toggle (kept minimal, same as prior simplified file)
+      const mobileToggle = document.querySelector(".mobile-nav-toggle");
+      const mobileNav = document.querySelector(".mobile-nav");
+      const bodyEl = document.body;
 
+      function openMobileNav() {
+        mobileNav.classList.add("is-open");
+        mobileToggle.classList.add("is-open");
+        mobileToggle.setAttribute("aria-expanded", "true");
+        bodyEl.classList.add("no-scroll");
+      }
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
+      function closeMobileNav() {
+        mobileNav.classList.remove("is-open");
+        mobileToggle.classList.remove("is-open");
+        mobileToggle.setAttribute("aria-expanded", "false");
+        bodyEl.classList.remove("no-scroll");
+      }
 
-  // Mobile nav toggle (kept minimal, same as prior simplified file)
-  const mobileToggle = document.querySelector('.mobile-nav-toggle');
-  const mobileNav = document.querySelector('.mobile-nav');
-  const bodyEl = document.body;
+      if (mobileToggle && mobileNav) {
+        mobileToggle.addEventListener("click", (e) => {
+          e.stopPropagation();
+          if (mobileNav.classList.contains("is-open")) closeMobileNav();
+          else openMobileNav();
+        });
 
-  function openMobileNav() {
-    mobileNav.classList.add('is-open');
-    mobileToggle.classList.add('is-open');
-    mobileToggle.setAttribute('aria-expanded', 'true');
-    bodyEl.classList.add('no-scroll');
-  }
+        mobileNav.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => closeMobileNav());
+        });
 
-  function closeMobileNav() {
-    mobileNav.classList.remove('is-open');
-    mobileToggle.classList.remove('is-open');
-    mobileToggle.setAttribute('aria-expanded', 'false');
-    bodyEl.classList.remove('no-scroll');
-  }
+        document.addEventListener("click", (e) => {
+          if (!mobileNav.classList.contains("is-open")) return;
+          const clickInsideNav = mobileNav.contains(e.target);
+          const clickToggle = mobileToggle.contains(e.target);
+          if (!clickInsideNav && !clickToggle) closeMobileNav();
+        });
 
-  if (mobileToggle && mobileNav) {
-    mobileToggle.addEventListener('click', (e) => {
-      e.stopPropagation();
-      if (mobileNav.classList.contains('is-open')) closeMobileNav();
-      else openMobileNav();
-    });
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && mobileNav.classList.contains("is-open"))
+            closeMobileNav();
+        });
+      }
 
-    mobileNav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => closeMobileNav());
-    });
+      // ===== WHOLE STUDIO PAGE LOAD REVEAL =====
+      (function () {
+        const target = document.querySelector(".studio-load-reveal");
+        if (!target) return;
 
-    document.addEventListener('click', (e) => {
-      if (!mobileNav.classList.contains('is-open')) return;
-      const clickInsideNav = mobileNav.contains(e.target);
-      const clickToggle = mobileToggle.contains(e.target);
-      if (!clickInsideNav && !clickToggle) closeMobileNav();
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && mobileNav.classList.contains('is-open')) closeMobileNav();
-    });
-  }
-
-// ===== WHOLE STUDIO PAGE LOAD REVEAL =====
-(function(){
-  const target = document.querySelector('.studio-load-reveal');
-  if (!target) return;
-
-  requestAnimationFrame(() => {
-    requestAnimationFrame(() => {
-      target.classList.add('is-visible');
-    });
-  });
-})();
-</script>
-
-</body>
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            target.classList.add("is-visible");
+          });
+        });
+      })();
+    </script>
+  </body>
 </html>
