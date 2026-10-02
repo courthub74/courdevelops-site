@@ -810,6 +810,11 @@ main {
   border: 1px solid var(--border-soft);
 }
 
+.card-footer {
+  margin-top: auto;
+  padding-top: 24px;
+}
+
 /* Projects list */
 
 .project-list {
