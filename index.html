@@ -292,6 +292,12 @@
   </footer>
 </div>
 
+<!-- Screenshot Viewer -->
+<dialog id="screenshot-viewer">
+  <button id="close-viewer" aria-label="Close screenshot">✕</button>
+  <img id="card-screenshot" alt="">
+</dialog>
+
 <!-- JS -->
 <script>
   // Footer year
@@ -520,7 +526,7 @@ if (caseCards.length > 0) {
 
 // ==== SCREENSHOT VIEWER LOGIC =====
 const viewer = document.getElementById("screenshot-viewer");
-const fullScreenshot = document.getElementById("full-screenshot");
+const fullScreenshot = document.getElementById("card-screenshot");
 
 document.querySelectorAll(".screenshot-button").forEach(button => {
   button.addEventListener("click", () => {
@@ -551,12 +557,6 @@ viewer.addEventListener("click", event => {
 
 </script>
 
-
-<!-- Screenshot Viewer -->
-<dialog id="screenshot-viewer">
-  <button id="close-viewer" aria-label="Close screenshot">✕</button>
-  <img id="full-screenshot" alt="">
-</dialog>
 
 </body>
 </html>
