@@ -785,6 +785,8 @@ main {
 
 .card-screenshot {
   margin-top: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
 }
 
 .card-links {
