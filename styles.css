@@ -1326,6 +1326,51 @@ main {
   text-decoration: underline;
 }
 
+.screenshot-button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: zoom-in;
+}
+
+.screenshot-button img {
+  display: block;
+  width: 100%;
+}
+
+#screenshot-viewer {
+  max-width: 95vw;
+  max-height: 95vh;
+  padding: 40px 12px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  background: #080d18;
+}
+
+#screenshot-viewer::backdrop {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+#full-screenshot {
+  display: block;
+  max-width: 90vw;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+#close-viewer {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  border: 0;
+  background: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
 @media (max-width: 768px) {
   .case-footer {
     display: flex;

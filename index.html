@@ -163,7 +163,10 @@
             Viking Ice Arena
           </div>
           <!-- SCREENSHOT -->
-           <img src="./img/project_screenshots/viking_arena_timecard/manager_dashboard.png" alt="Viking Ice Arena Timekeeping App Screenshot" class="card-screenshot">
+           <!-- Wrap in Button -->
+            <button class="screenshot-button" aria-label="Enlarge Viking Ice Arena screenshot">
+              <img src="./img/project_screenshots/viking_arena_timecard/manager_dashboard.png" alt="Viking Ice Arena Timekeeping App Screenshot" class="card-screenshot">
+            </button>
           <!-- <h3 class="card-title">System interfaces</h3> -->
           <p class="card-body">
             A timekeeping and scheduling application for ice arena employees and managers. Employees record their hours, while managers review time entries and see who worked each day.
@@ -204,7 +207,11 @@
             <img src="./img/origin_os_logos/origin-os.png" alt="Systems Icon" style="width:2rem; height:2rem; vertical-align:middle; margin-right:0.4rem;">
             Origin OS
           </div>
-          <img src="./img/project_screenshots/origin_os/origin_os.jpeg" alt="Origin OS Screenshot" class="card-screenshot">
+          <!-- SCREENSHOT -->
+           <!-- Wrap in Button -->
+          <button class="screenshot-button" aria-label="Enlarge Origin OS screenshot">
+            <img src="./img/project_screenshots/origin_os/origin_os.jpeg" alt="Origin OS Screenshot" class="card-screenshot">
+          </button>
           <!-- <h3 class="card-title">Dashboards & operational tools</h3> -->
           <p class="card-body">
             A creative workflow application for organizing structured prompts and drafts. I’m developing it to bring the steps of a creative project into one workspace.
@@ -241,7 +248,9 @@
             <img src="./img/dream_agent_logos/DreamAgentBlue.jpg" alt="Automation Icon" style="width:2rem; height:2rem; vertical-align:middle; margin-right:0.4rem;">
             Dream Agent
           </div>
-          <img src="./img/project_screenshots/dream_agent/dream_agent_art.jpeg" alt="Dream Agent Screenshot" class="card-screenshot">
+          <button class="screenshot-button" aria-label="Enlarge Dream Agent screenshot">
+            <img src="./img/project_screenshots/dream_agent/dream_agent_art.jpeg" alt="Dream Agent Screenshot" class="card-screenshot">
+          </button>
           <!-- <h3 class="card-title">AI-integrated workflows</h3> -->
           <p class="card-body">
             An artist portfolio website for Dream Agent, showcasing surreal artwork through themed collections. I designed and built the site with responsive galleries, full-size artwork viewing, and an organized collection archive.
@@ -509,7 +518,45 @@ if (caseCards.length > 0) {
   });
 })();
 
+// ==== SCREENSHOT VIEWER LOGIC =====
+const viewer = document.getElementById("screenshot-viewer");
+const fullScreenshot = document.getElementById("full-screenshot");
+
+document.querySelectorAll(".screenshot-button").forEach(button => {
+  button.addEventListener("click", () => {
+    const screenshot = button.querySelector("img");
+
+    fullScreenshot.src = screenshot.currentSrc || screenshot.src;
+    fullScreenshot.alt = screenshot.alt;
+    viewer.showModal();
+  });
+});
+
+document.getElementById("close-viewer").addEventListener("click", () => {
+  viewer.close();
+});
+
+viewer.addEventListener("click", event => {
+  const bounds = viewer.getBoundingClientRect();
+
+  if (
+    event.clientX < bounds.left ||
+    event.clientX > bounds.right ||
+    event.clientY < bounds.top ||
+    event.clientY > bounds.bottom
+  ) {
+    viewer.close();
+  }
+});
+
 </script>
+
+
+<!-- Screenshot Viewer -->
+<dialog id="screenshot-viewer">
+  <button id="close-viewer" aria-label="Close screenshot">✕</button>
+  <img id="full-screenshot" alt="">
+</dialog>
 
 </body>
 </html>
