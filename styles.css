@@ -790,6 +790,7 @@ main {
 .card-links {
   margin-top: 0.8rem;
   display: flex;
+  align-items: space-between;
   gap: 0.6rem;
   font-size: 0.78rem;
 }
@@ -812,7 +813,7 @@ main {
 
 .card-footer {
   margin-top: auto;
-  padding-top: 24px;
+  padding-top: 40px;
 }
 
 /* Projects list */
