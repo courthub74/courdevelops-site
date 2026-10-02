@@ -960,7 +960,9 @@ main {
 
 .footer-right {
   text-align: right;
-  font-weight: bold;
+  font-weight: 400;
+  color: grey;
+  font-size: 14px;
 }
 
 .contact-form .field-group {
