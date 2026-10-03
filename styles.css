@@ -1371,6 +1371,11 @@ main {
   cursor: pointer;
 }
 
+#origin-live-link,
+#viking-live-link {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .case-footer {
     display: flex;
