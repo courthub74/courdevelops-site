@@ -4142,3 +4142,40 @@ textarea:focus {
 .linkedin-icon:hover {
   transform: translateY(-1px) scale(1.06);
 }
+
+/* Project status pills */
+.project-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  width: fit-content;
+  margin: 0.25rem 0 0.9rem;
+  padding: 0.3rem 0.65rem;
+  border: 1px solid;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.project-status::before {
+  content: "";
+  width: 0.35rem;
+  height: 0.35rem;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.project-status--production {
+  color: #91caff;
+  background: rgba(58, 157, 247, 0.1);
+  border-color: rgba(58, 157, 247, 0.3);
+}
+
+.project-status--live {
+  color: #93e4b3;
+  background: rgba(74, 192, 120, 0.1);
+  border-color: rgba(74, 192, 120, 0.3);
+}
