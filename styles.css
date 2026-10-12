@@ -788,7 +788,7 @@ main {
 }
 
 .card-tech {
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   color: var(--text-muted);
   /* margin-top: 0.6rem; */
   opacity: 0.75;
@@ -830,7 +830,17 @@ main {
 
 .card-footer {
   margin-top: auto;
-  padding-top: 40px;
+  /* padding-top: 40px; */
+}
+
+.card-grid .card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-grid .card-footer {
+  margin-top: auto;
+  padding-top: 1.5rem;
 }
 
 /* Projects list */
@@ -4013,7 +4023,7 @@ textarea:focus {
 .card-body {
   font-size: 0.88rem;
   line-height: 1.65;
-  opacity: 0.82;
+  opacity: 0.95;
 }
 
 /* Hide Hero Support on mobile */
@@ -4154,7 +4164,8 @@ textarea:focus {
   border: 1px solid;
   border-radius: 999px;
   font-size: 0.72rem;
-  font-weight: 500;
+  /* font-weight: 500; */
+  font-weight: 300;
   line-height: 1.4;
   white-space: nowrap;
 }
