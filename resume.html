@@ -1,0 +1,617 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CourDevelops | Résumé</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./img/logos/neo_logo_favicon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./img/logos/neo_logo_favicon.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./img/logos/neo_logo_favicon.png"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <style>
+      .resume {
+        width: 100%;
+        min-width: 0;
+        padding-block: clamp(2rem, 6vw, 5rem);
+        color: inherit;
+        line-height: 1.65;
+      }
+
+      .resume h1 {
+        font-size: clamp(2rem, 5vw, 3.3rem);
+        line-height: 1.15;
+        margin: 0.4rem 0;
+      }
+
+      .resume h2.section-kicker {
+        display: block;
+        width: 100%;
+        margin: 0 0 1.25rem;
+        padding: 0 0 0.75rem;
+        border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+        font-size: 0.85rem;
+        font-weight: 600;
+        line-height: 1.4;
+      }
+
+      .resume h3 {
+        font-size: 1.08rem;
+        margin: 0;
+      }
+
+      .resume section {
+        margin-top: 2.5rem;
+      }
+
+      .resume p {
+        margin: 0.65rem 0;
+      }
+
+      .resume ul {
+        padding-left: 1.25rem;
+      }
+
+      .resume li {
+        margin: 0.45rem 0;
+      }
+
+      .resume article + article {
+        margin-top: 1.8rem;
+      }
+
+      .resume-actions a,
+      .resume-actions button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        padding: 0.75rem 1.4rem;
+        border: 1px solid transparent;
+        border-radius: 999px;
+        font: inherit;
+        font-weight: 600;
+        line-height: 1.2;
+        text-decoration: none;
+        cursor: pointer;
+        transition:
+          background 160ms ease,
+          border-color 160ms ease;
+      }
+
+      /* Primary action */
+      .resume-actions button {
+        background: linear-gradient(110deg, #39a3f4, #73d0f5);
+        color: #07111e;
+      }
+
+      /* Secondary action */
+      .resume-actions a {
+        background: #101827;
+        border-color: #222c3d;
+        color: #39a3f4;
+      }
+
+      .resume-actions button:hover {
+        background: #73d0f5;
+      }
+
+      .resume-actions a:hover {
+        background: #172338;
+        border-color: #39a3f4;
+      }
+
+      .resume-actions a:focus-visible,
+      .resume-actions button:focus-visible {
+        outline: 2px solid #73d0f5;
+        outline-offset: 4px;
+      }
+
+      .resume-skills {
+        display: grid;
+        grid-template-columns: 7.5rem 1fr;
+        gap: 0.65rem 1rem;
+      }
+
+      .resume-skills dt {
+        font-weight: 700;
+      }
+
+      .resume-skills dd {
+        margin: 0;
+      }
+
+      .resume-status {
+        font-size: 0.8rem;
+        font-weight: 400;
+        margin-left: 0.5rem;
+      }
+
+      .resume-links {
+        font-size: 0.9rem;
+      }
+
+      .skip-link {
+        position: absolute;
+        left: 1rem;
+        top: -5rem;
+      }
+
+      .skip-link:focus {
+        top: 1rem;
+        z-index: 1000;
+        background: white;
+        color: black;
+        padding: 0.75rem;
+      }
+
+      .resume {
+        padding-top: clamp(2rem, 6vw, 5rem);
+        padding-bottom: clamp(2rem, 6vw, 5rem);
+        color: inherit;
+        line-height: 1.65;
+      }
+
+      @media (max-width: 520px) {
+        .resume-skills {
+          grid-template-columns: 1fr;
+          gap: 0.25rem;
+        }
+
+        .resume-skills dd {
+          margin-bottom: 0.7rem;
+        }
+      }
+
+      @media print {
+        @page {
+          margin: 16mm;
+        }
+
+        .site-header,
+        .mobile-nav,
+        .site-footer,
+        .resume-actions,
+        .skip-link {
+          display: none !important;
+        }
+
+        html,
+        body,
+        .site-wrapper {
+          background: #fff !important;
+          color: #111 !important;
+        }
+
+        .resume {
+          max-width: none;
+          padding: 0;
+          font-size: 10pt;
+          line-height: 1.4;
+        }
+
+        .resume h1 {
+          font-size: 25pt;
+        }
+
+        .resume h2 {
+          font-size: 13pt;
+        }
+
+        .resume h3 {
+          font-size: 11pt;
+        }
+
+        .resume section {
+          margin-top: 1.1rem;
+        }
+
+        .resume article + article {
+          margin-top: 1rem;
+        }
+
+        .resume li {
+          margin: 0.2rem 0;
+          break-inside: avoid;
+        }
+
+        .resume h2,
+        .resume h3 {
+          break-after: avoid;
+        }
+
+        .resume a {
+          color: #111 !important;
+        }
+
+        .resume-meta,
+        .resume-stack {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#resume">Skip to résumé</a>
+
+    <div class="site-wrapper">
+      <header class="site-header">
+        <div class="container">
+          <div class="nav-bar">
+            <a href="index.html" class="brand">
+              <div class="brand-text">
+                <div class="brand-tagline">CourDevelops</div>
+              </div>
+            </a>
+
+            <nav class="nav-links">
+              <a href="index.html">Home</a>
+              <a href="studio.html">About Me</a>
+              <a href="resume.html" aria-current="page" class="disabled"
+                >Résumé</a
+              >
+            </nav>
+
+            <button
+              class="mobile-nav-toggle"
+              aria-label="Toggle navigation"
+              aria-expanded="false"
+            >
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </button>
+
+            <a class="nav-cta" href="contact.html">Get in Touch</a>
+          </div>
+        </div>
+      </header>
+
+      <nav class="mobile-nav" aria-label="Mobile navigation">
+        <a href="index.html">Home</a>
+        <a href="studio.html">About Me</a>
+        <a href="resume.html" aria-current="page">Résumé</a>
+
+        <a href="contact.html" class="mobile-menu-cta">
+          <span>Get in Touch</span>
+          <span class="mobile-menu-cta-arrow">→</span>
+        </a>
+      </nav>
+
+      <!-- Résumé -->
+
+      <main>
+        <div class="container">
+          <div id="resume" class="resume studio-load-reveal">
+            <header>
+              <div class="section-kicker">Résumé</div>
+
+              <h1>Courtney Jacobs</h1>
+
+              <p class="resume-role">
+                Software Developer<br />
+                Internal Tools &amp; Web Application Testing
+              </p>
+
+              <p class="resume-meta">
+                Southeast Michigan ·
+                <a href="https://github.com/courthub74">GitHub</a> ·
+                <a href="contact.html">Contact</a>
+              </p>
+
+              <p>Open to full-time, part-time, and contract opportunities.</p>
+
+              <div class="resume-actions">
+                <button type="button" id="print-resume">
+                  Print / Save as PDF
+                </button>
+                <a href="contact.html">Get in Touch</a>
+              </div>
+            </header>
+
+            <section aria-labelledby="summary-heading">
+              <h2 id="summary-heading" class="section-kicker">
+                Professional Summary
+              </h2>
+
+              <p>
+                I build and test web applications that help people organize and
+                complete everyday work. My independent projects include employee
+                timekeeping, scheduling, and creative workflow tools built with
+                JavaScript, Node.js, Express, PostgreSQL, and MongoDB.
+              </p>
+
+              <p>
+                I’m seeking opportunities in software development, QA/UAT, or
+                application support where I can contribute to useful systems,
+                investigate problems, and improve the user experience.
+              </p>
+            </section>
+
+            <section aria-labelledby="skills-heading">
+              <h2 id="skills-heading" class="section-kicker">
+                Technical Skills
+              </h2>
+
+              <dl class="resume-skills">
+                <dt>Development</dt>
+                <dd>
+                  JavaScript, HTML, CSS, Node.js, Express, REST APIs,
+                  PostgreSQL, MongoDB, JWT authentication, Git
+                </dd>
+
+                <dt>Testing</dt>
+                <dd>
+                  Manual and exploratory testing, smoke testing, regression
+                  checks, API testing, authentication and permission checks,
+                  responsive interface testing, bug reproduction
+                </dd>
+
+                <dt>Tools</dt>
+                <dd>GitHub, Postman, curl, VS Code, MongoDB Compass</dd>
+              </dl>
+            </section>
+
+            <section aria-labelledby="projects-heading">
+              <h2 id="projects-heading" class="section-kicker">
+                Selected Independent Projects
+              </h2>
+
+              <article>
+                <h3>
+                  Viking Ice Arena Time Card
+                  <span class="resume-status">In Development</span>
+                </h3>
+
+                <p>Employee timekeeping and scheduling application.</p>
+
+                <p class="resume-stack">
+                  JavaScript · Node.js · Express · PostgreSQL
+                </p>
+
+                <ul>
+                  <li>
+                    Built employee and manager workflows for account access,
+                    time entry, weekly schedules, and hours review.
+                  </li>
+                  <li>
+                    Developed PostgreSQL-backed REST endpoints with role checks,
+                    PIN hashing, input validation, and error handling.
+                  </li>
+                  <li>
+                    Implemented manager invitations and scheduling confirmations
+                    to support operational requirements.
+                  </li>
+                  <li>
+                    Tested login, time entry, manager review, logout, and
+                    responsive layouts; checked invalid requests and verified
+                    fixes.
+                  </li>
+                </ul>
+
+                <p class="resume-links">
+                  <a
+                    href="https://github.com/courthub74/viking-arena-time-card"
+                  >
+                    View Viking source on GitHub
+                  </a>
+                </p>
+              </article>
+
+              <article>
+                <h3>
+                  Origin OS
+                  <span class="resume-status">In Development</span>
+                </h3>
+
+                <p>Creative workflow application.</p>
+
+                <p class="resume-stack">
+                  JavaScript · Node.js · Express · MongoDB · JWT
+                </p>
+
+                <ul>
+                  <li>
+                    Built account registration and login with JWT-based
+                    authentication.
+                  </li>
+                  <li>
+                    Developed workflows for creating, saving, reopening, and
+                    editing artwork records.
+                  </li>
+                  <li>
+                    Simplified the creation interface to keep project details
+                    and creative inputs together.
+                  </li>
+                  <li>
+                    Tested authentication and data persistence, including
+                    verifying saved work after logging out and back in.
+                  </li>
+                </ul>
+
+                <p class="resume-links">
+                  <a href="https://github.com/courthub74/origin-os">
+                    View Origin OS source on GitHub
+                  </a>
+                </p>
+              </article>
+
+              <article>
+                <h3>
+                  Dream Agent
+                  <span class="resume-status">Live</span>
+                </h3>
+
+                <p>Artist portfolio and collection archive.</p>
+
+                <p class="resume-stack">HTML · CSS · JavaScript · GSAP</p>
+
+                <ul>
+                  <li>
+                    Developed a responsive portfolio with themed collections,
+                    artwork details, and related-work navigation.
+                  </li>
+                  <li>
+                    Structured artwork metadata to support consistent
+                    presentation and connections across collections.
+                  </li>
+                  <li>
+                    Refined navigation, animation, and mobile layouts to help
+                    visitors explore the archive.
+                  </li>
+                </ul>
+
+                <p class="resume-links">
+                  <a href="https://dreamagent.art">Visit Dream Agent</a>
+                </p>
+              </article>
+            </section>
+
+            <section aria-labelledby="education-heading">
+              <h2 id="education-heading">Education</h2>
+
+              <h3>B.S., Information Systems</h3>
+              <p>ITT Technical Institute</p>
+
+              <p>
+                Additional software development training through a coding
+                bootcamp and ongoing independent application development.
+              </p>
+            </section>
+
+            <section aria-labelledby="experience-heading">
+              <h2 id="experience-heading" class="section-kicker">
+                Additional Experience
+              </h2>
+
+              <h3>School Bus Driver Trainee</h3>
+
+              <p class="resume-meta">
+                Durham School Services · Southeast Michigan
+              </p>
+
+              <p>Completing training for a school bus driving role.</p>
+            </section>
+
+            <section aria-labelledby="availability-heading">
+              <h2 id="availability-heading" class="section-kicker">
+                Availability
+              </h2>
+
+              <p>
+                Open to full-time, part-time, and contract opportunities in
+                software development, QA/UAT, and application support.
+              </p>
+
+              <p>
+                Interested in remote roles and hybrid or onsite opportunities in
+                Oakland and Macomb counties. Seeking a regular work schedule
+                without overnight shifts or on-call production support.
+              </p>
+
+              <p>
+                <a href="contact.html">Contact me about an opportunity →</a>
+              </p>
+            </section>
+          </div>
+        </div>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container footer-inner">
+          <div>
+            © <span id="year"></span> CourDevelops. All rights reserved.
+          </div>
+          <div class="footer-right">Building workflows.</div>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      const mobileToggle = document.querySelector(".mobile-nav-toggle");
+      const mobileNav = document.querySelector(".mobile-nav");
+      const bodyEl = document.body;
+
+      function openMobileNav() {
+        mobileNav.classList.add("is-open");
+        mobileToggle.classList.add("is-open");
+        mobileToggle.setAttribute("aria-expanded", "true");
+        bodyEl.classList.add("no-scroll");
+      }
+
+      function closeMobileNav() {
+        mobileNav.classList.remove("is-open");
+        mobileToggle.classList.remove("is-open");
+        mobileToggle.setAttribute("aria-expanded", "false");
+        bodyEl.classList.remove("no-scroll");
+      }
+
+      if (mobileToggle && mobileNav) {
+        mobileToggle.addEventListener("click", (e) => {
+          e.stopPropagation();
+
+          if (mobileNav.classList.contains("is-open")) {
+            closeMobileNav();
+          } else {
+            openMobileNav();
+          }
+        });
+
+        mobileNav.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", closeMobileNav);
+        });
+
+        document.addEventListener("click", (e) => {
+          if (!mobileNav.classList.contains("is-open")) return;
+
+          const clickInsideNav = mobileNav.contains(e.target);
+          const clickToggle = mobileToggle.contains(e.target);
+
+          if (!clickInsideNav && !clickToggle) {
+            closeMobileNav();
+          }
+        });
+
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && mobileNav.classList.contains("is-open")) {
+            closeMobileNav();
+          }
+        });
+      }
+
+      document
+        .getElementById("print-resume")
+        .addEventListener("click", () => window.print());
+
+      // Reveal the résumé when the page opens.
+      const resumePage = document.getElementById("resume");
+
+      if (resumePage) {
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            resumePage.classList.add("is-visible");
+          });
+        });
+      }
+    </script>
+  </body>
+</html>
