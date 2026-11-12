@@ -77,7 +77,7 @@
         gap: 0.25rem;
         font-size: 0.75rem;
         color: var(--accent);
-        text-transform: uppercase;
+        /* text-transform: uppercase; */
         letter-spacing: 0.16em;
       }
 
@@ -162,6 +162,13 @@
 
       .resume-links {
         font-size: 0.9rem;
+        /* background: red; */
+      }
+
+      .resume-links-icon {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
       }
 
       .skip-link {
@@ -272,6 +279,51 @@
         .resume article h3 .resume-status {
           color: #111;
         }
+
+        /* Remove the website container's extra print margins. */
+        main > .container {
+          width: 100%;
+          max-width: none;
+          margin: 0;
+          padding: 0;
+        }
+
+        .resume {
+          padding: 0;
+          font-size: 10pt;
+          line-height: 1.35;
+        }
+
+        .resume section {
+          margin-top: 1rem;
+        }
+
+        .resume h2.section-kicker {
+          margin-bottom: 0.6rem;
+          padding-bottom: 0.35rem;
+        }
+
+        .resume p {
+          margin: 0.35rem 0;
+        }
+
+        .resume ul {
+          margin-block: 0.45rem;
+        }
+
+        .resume li {
+          margin: 0.2rem 0;
+        }
+
+        .resume article + article {
+          margin-top: 0.9rem;
+        }
+
+        /* Keep project headings and introductory details together. */
+        .resume article h3,
+        .resume article > p:not(.resume-links) {
+          break-after: avoid;
+        }
       }
       .resume article h3 {
         color: #8bc9f4;
@@ -294,8 +346,16 @@
       }
 
       .resume-links a {
+        color: #8bc9f4;
+        color: var(--accent);
         text-decoration: underline;
         text-underline-offset: 3px;
+      }
+
+      .github-icon {
+        width: 1em;
+        height: 1em;
+        vertical-align: -0.15em;
       }
     </style>
   </head>
@@ -363,8 +423,9 @@
               </p>
 
               <p class="resume-meta">
-                Southeast Michigan ·
+                Southeast Michigan
                 <a href="https://github.com/courthub74">
+                  ·
                   <img
                     src="img/icons/projects/github.png"
                     alt="GitHub logo"
@@ -373,8 +434,9 @@
                   />
                   GitHub
                 </a>
-                ·
+
                 <a href="https://www.linkedin.com/in/courdevelops/">
+                  ·
                   <img
                     src="img/icons/linkedin.png"
                     alt="LinkedIn logo"
@@ -383,6 +445,8 @@
                   />
                   LinkedIn
                 </a>
+
+                <a href="mailto:you@example.com">· courdevelops@gmail.com</a>
               </p>
 
               <p>Open to full-time, part-time, and contract opportunities.</p>
@@ -478,8 +542,16 @@
                 <p class="resume-links">
                   <a
                     href="https://github.com/courthub74/viking-arena-time-card"
+                    class="resume-links-icon"
                   >
-                    View Viking source on GitHub
+                    View Viking source on
+                    <img
+                      src="img/icons/projects/github.png"
+                      alt="GitHub"
+                      width="16"
+                      height="16"
+                    />
+                    GitHub
                   </a>
                 </p>
               </article>
@@ -516,8 +588,18 @@
                 </ul>
 
                 <p class="resume-links">
-                  <a href="https://github.com/courthub74/origin-os">
-                    View Origin OS source on GitHub
+                  <a
+                    href="https://github.com/courthub74/origin-os"
+                    class="resume-links-icon"
+                  >
+                    View Origin OS source on
+                    <img
+                      src="img/icons/projects/github.png"
+                      alt="GitHub"
+                      width="16"
+                      height="16"
+                    />
+                    GitHub
                   </a>
                 </p>
               </article>
@@ -547,8 +629,19 @@
                   </li>
                 </ul>
 
-                <p class="resume-links">
+                <!-- <p class="resume-links">
                   <a href="https://dreamagent.art">Visit Dream Agent</a>
+                </p> -->
+                <p class="resume-links">
+                  <a href="https://dreamagent.art" class="resume-links-icon">
+                    <img
+                      src="img/dream_agent_logos/DreamAgentBlue.jpg"
+                      alt="External link"
+                      width="25"
+                      height="25"
+                    />
+                    dreamagent.art
+                  </a>
                 </p>
               </article>
             </section>
