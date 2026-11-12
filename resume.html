@@ -64,6 +64,23 @@
         margin: 0.65rem 0;
       }
 
+      .resume-meta {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .resume-meta a {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        font-size: 0.75rem;
+        color: var(--accent);
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+      }
+
       .resume ul {
         padding-left: 1.25rem;
       }
@@ -267,6 +284,19 @@
         font-size: 0.8rem;
         font-weight: 400;
       }
+
+      .resume-stack {
+        color: #94a3b8;
+        font-size: 0.93rem;
+        font-weight: 400;
+        line-height: 1.6;
+        opacity: 1;
+      }
+
+      .resume-links a {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
     </style>
   </head>
 
@@ -334,8 +364,25 @@
 
               <p class="resume-meta">
                 Southeast Michigan ·
-                <a href="https://github.com/courthub74">GitHub</a> ·
-                <a href="contact.html">Contact</a>
+                <a href="https://github.com/courthub74">
+                  <img
+                    src="img/icons/projects/github.png"
+                    alt="GitHub logo"
+                    width="16"
+                    height="16"
+                  />
+                  GitHub
+                </a>
+                ·
+                <a href="https://www.linkedin.com/in/courdevelops/">
+                  <img
+                    src="img/icons/linkedin.png"
+                    alt="LinkedIn logo"
+                    width="18"
+                    height="18"
+                  />
+                  LinkedIn
+                </a>
               </p>
 
               <p>Open to full-time, part-time, and contract opportunities.</p>
@@ -507,7 +554,7 @@
             </section>
 
             <section aria-labelledby="education-heading">
-              <h2 id="education-heading">Education</h2>
+              <h2 id="education-heading" class="section-kicker">Education</h2>
 
               <h3>B.S., Information Systems</h3>
               <p>ITT Technical Institute</p>
