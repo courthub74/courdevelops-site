@@ -357,6 +357,111 @@
         height: 1em;
         vertical-align: -0.15em;
       }
+      .resume-contact {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 0.5rem 1rem;
+      }
+
+      .resume-contact .contact-email {
+        font-size: inherit;
+        font-weight: 400;
+        letter-spacing: normal;
+        text-transform: none;
+        line-height: inherit;
+      }
+
+      .resume-contact {
+        align-items: center;
+      }
+
+      .resume-contact .contact-socials,
+      .resume-contact .contact-email {
+        display: inline-flex;
+        align-items: center;
+        margin-block: 0;
+        padding-block: 0;
+        line-height: 1.4;
+      }
+
+      @media screen and (max-width: 600px) {
+        .resume-contact {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.45rem;
+        }
+
+        .resume-contact > .contact-divider {
+          display: none;
+        }
+
+        .contact-socials {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.6rem;
+        }
+
+        .resume-contact .contact-email {
+          letter-spacing: normal;
+          text-transform: none;
+          overflow-wrap: anywhere;
+        }
+      }
+
+      .resume-contact {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.6rem 1.25rem;
+        font-size: 0.93rem;
+        line-height: 1.5;
+      }
+
+      .resume-contact .contact-socials {
+        display: inline-flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .resume-contact a {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        margin: 0;
+        padding: 0;
+        font-family: inherit;
+        font-size: inherit;
+        font-weight: 400;
+        line-height: inherit;
+        color: var(--accent);
+        letter-spacing: normal;
+        text-transform: none;
+        vertical-align: middle;
+      }
+
+      .resume-contact a img {
+        display: block;
+        width: 1em;
+        height: 1em;
+        object-fit: contain;
+        flex-shrink: 0;
+      }
+
+      @media screen and (max-width: 600px) {
+        .resume-contact {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.45rem;
+        }
+
+        .resume-contact .contact-email {
+          overflow-wrap: anywhere;
+          min-width: 0;
+          max-width: 100%;
+        }
+      }
     </style>
   </head>
 
@@ -422,7 +527,42 @@
                 Internal Tools &amp; Web Application Testing
               </p>
 
-              <p class="resume-meta">
+              <p class="resume-meta resume-contact">
+                <span class="contact-location">Southeast Michigan</span>
+                <!-- <span class="contact-divider" aria-hidden="true"> </span> -->
+
+                <span class="contact-socials">
+                  <!-- Your existing GitHub link and icon -->
+                  <a href="https://github.com/courthub74">
+                    <img
+                      src="img/icons/projects/github.png"
+                      alt="GitHub logo"
+                      width="16"
+                      height="16"
+                    />
+                    GitHub
+                  </a>
+                  <!-- <span aria-hidden="true"> </span> -->
+                  <!-- Your existing LinkedIn link and icon -->
+                  <a href="https://www.linkedin.com/in/courdevelops/">
+                    <img
+                      src="img/icons/linkedin.png"
+                      alt="LinkedIn logo"
+                      width="18"
+                      height="18"
+                    />
+                    LinkedIn
+                  </a>
+                </span>
+
+                <!-- <span class="contact-divider" aria-hidden="true"> </span> -->
+
+                <a class="contact-email" href="mailto:courdevelops@gmail.com">
+                  courdevelops@gmail.com
+                </a>
+              </p>
+
+              <!-- <p class="resume-meta">
                 Southeast Michigan
                 <a href="https://github.com/courthub74">
                   ·
@@ -447,7 +587,7 @@
                 </a>
 
                 <a href="mailto:you@example.com">· courdevelops@gmail.com</a>
-              </p>
+              </p> -->
 
               <p>Open to full-time, part-time, and contract opportunities.</p>
 
