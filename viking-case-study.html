@@ -42,10 +42,22 @@
         margin-top: 2rem;
       }
       .case-study-page .hero-title {
+        margin: 0;
+      }
+      .case-study-page .hero-heading {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding-top: 1.25rem;
         margin: 0.35rem 0 0.75rem;
+      }
+      .case-study-page .case-study-logo {
+        flex: 0 0 auto;
+        display: flex;
       }
       .case-study-page .hero-subtitle {
         max-width: none;
+        margin-top: 0;
       }
       .case-study-page > section {
         border-top: 1px solid var(--border-soft);
@@ -135,7 +147,18 @@
           <p class="section-kicker">
             Internal tools · QA and user acceptance testing
           </p>
-          <h1 class="hero-title">Viking Ice Arena</h1>
+          <div class="hero-heading">
+            <!-- Viking Logo -->
+            <div class="case-study-logo">
+              <img
+                src="/img/logos/hazel_park_logo.png"
+                alt="Viking Ice Arena logo"
+                width="40"
+                height="40"
+              />
+            </div>
+            <h1 class="hero-title">Viking Ice Arena</h1>
+          </div>
           <p class="hero-subtitle">
             An employee time card and manager review tool for an ice rink.
           </p>
