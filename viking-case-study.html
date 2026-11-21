@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Viking Ice Arena Case Study | CourDevelops</title>
+    <meta
+      name="description"
+      content="How Viking Ice Arena handles employee timekeeping and manager review."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./img/logos/neo_logo_favicon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./img/logos/neo_logo_favicon.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./img/logos/neo_logo_favicon.png"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .case-study-page.container {
+        max-width: 52rem;
+        padding-top: clamp(2.5rem, 7vw, 5rem);
+        padding-bottom: 2rem;
+      }
+      .case-study-page .case-return {
+        color: var(--accent);
+        text-decoration: underline;
+        text-underline-offset: 0.2em;
+      }
+      .case-study-page header {
+        margin-top: 2rem;
+      }
+      .case-study-page .hero-title {
+        margin: 0.35rem 0 0.75rem;
+      }
+      .case-study-page .hero-subtitle {
+        max-width: none;
+      }
+      .case-study-page > section {
+        border-top: 1px solid var(--border-soft);
+        margin-top: 2rem;
+        padding-top: 1.25rem;
+      }
+      .case-study-page > section p {
+        color: var(--text-muted);
+        line-height: 1.65;
+      }
+      .case-study-page figure {
+        margin: 1.5rem 0;
+      }
+      .case-study-page figure img {
+        height: auto;
+        border: 1px solid var(--border-soft);
+        border-radius: var(--radius-lg);
+      }
+      .case-study-page figcaption {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+        margin-top: 0.65rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="site-wrapper">
+      <header class="site-header">
+        <div class="container">
+          <div class="nav-bar">
+            <a href="index.html" class="brand">
+              <!-- <div class="brand-mark"><img src="./img/logos/light_blue_logo.png" alt="courdevelops_logo"></div> -->
+              <div class="brand-text">
+                <div class="brand-tagline">CourDevelops</div>
+              </div>
+            </a>
+
+            <!-- Nav with mobile burger -->
+            <nav class="nav-links" aria-label="Main navigation">
+              <a href="index.html">Home</a>
+              <a href="studio.html">About Me</a>
+              <a href="resume.html">Résumé</a>
+              <!-- <a href="contact.html">Contact</a> -->
+            </nav>
+
+            <button
+              class="mobile-nav-toggle"
+              aria-label="Toggle navigation"
+              aria-controls="case-mobile-nav"
+              aria-expanded="false"
+            >
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </button>
+
+            <a class="nav-cta" href="contact.html">Get in Touch</a>
+          </div>
+        </div>
+      </header>
+
+      <!-- NAV MENU -->
+      <nav
+        id="case-mobile-nav"
+        class="mobile-nav"
+        aria-label="Mobile navigation"
+      >
+        <a href="index.html">Home</a>
+        <a href="studio.html">About Me</a>
+        <a href="resume.html">Résumé</a>
+        <div class="mobile-menu-footer">
+          <a href="contact.html" class="mobile-menu-cta">
+            <span>Get in Touch</span>
+            <span class="mobile-menu-cta-arrow">→</span>
+          </a>
+        </div>
+      </nav>
+
+      <main class="container case-study-page">
+        <!-- On CourDevelops.com, point the Viking project card to viking-case-study.html.
+       Update this back link if the project cards use a different page or anchor.
+       To reuse, duplicate this file and replace project copy, metadata, and figures. -->
+        <nav aria-label="Portfolio">
+          <a class="case-return" href="index.html">Back to CourDevelops</a>
+        </nav>
+        <header>
+          <p class="section-kicker">
+            Internal tools · QA and user acceptance testing
+          </p>
+          <h1 class="hero-title">Viking Ice Arena</h1>
+          <p class="hero-subtitle">
+            An employee time card and manager review tool for an ice rink.
+          </p>
+        </header>
+        <section>
+          <h2 class="section-title">The workflow</h2>
+          <p>
+            Employees enter worked hours. The manager reviews the weekly records
+            and copies the hours for payroll.
+          </p>
+          <!-- Add a screenshot of the manager’s weekly view using demo names and hours.
+    <figure>
+      <img src="/images/viking-weekly-view.webp" alt="Weekly manager view with sample employee hours">
+      <figcaption>The manager reviews worked hours for the selected week before copying them for payroll.</figcaption>
+    </figure>
+    -->
+        </section>
+        <section>
+          <h2 class="section-title">Verified milestones</h2>
+          <!-- Repeat this article for each verified Portfolio draft from the Publishing Desk. -->
+          <article>
+            <h3>Account cooldown and recovery</h3>
+            <p>
+              I tested three outcomes on the PostgreSQL backend branch. A test
+              account entered cooldown after repeated incorrect PIN attempts. A
+              second account could still sign in. The original account could
+              sign in again after the cooldown expired.
+            </p>
+            <!-- Insert only after capturing a redacted screenshot with a test account.
+      <figure>
+        <img src="/images/viking-cooldown.webp" alt="Sign-in screen showing the cooldown message for a test account">
+        <figcaption>The message shows the account is temporarily in cooldown. Separate sign-in checks covered the second account and recovery.</figcaption>
+      </figure>
+      -->
+          </article>
+        </section>
+        <section>
+          <h2 class="section-title">Developer Thinking</h2>
+          <p>
+            I wanted a cooldown to apply to the account receiving repeated
+            failed attempts. That decision gave me two acceptance checks beyond
+            displaying the message: whether a second employee could still sign
+            in and whether the cooled-down employee could get back in later.
+          </p>
+        </section>
+      </main>
+      <footer class="site-footer">
+        <div class="container footer-inner">
+          <div>
+            © <span id="year"></span> CourDevelops. All rights reserved.
+          </div>
+          <div class="footer-right">Building Workflows.</div>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      // Footer year
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // ===== MOBILE NAV LOGIC =====
+      const mobileToggle = document.querySelector(".mobile-nav-toggle");
+      const mobileNav = document.querySelector(".mobile-nav");
+      const bodyEl = document.body;
+
+      function openMobileNav() {
+        mobileNav.classList.add("is-open");
+        mobileToggle.classList.add("is-open");
+        mobileToggle.setAttribute("aria-expanded", "true");
+        bodyEl.classList.add("no-scroll");
+      }
+
+      function closeMobileNav() {
+        mobileNav.classList.remove("is-open");
+        mobileToggle.classList.remove("is-open");
+        mobileToggle.setAttribute("aria-expanded", "false");
+        bodyEl.classList.remove("no-scroll");
+      }
+
+      if (mobileToggle && mobileNav) {
+        // Toggle on button click
+        mobileToggle.addEventListener("click", (e) => {
+          e.stopPropagation(); // don't trigger click-outside
+          if (mobileNav.classList.contains("is-open")) {
+            closeMobileNav();
+          } else {
+            openMobileNav();
+          }
+        });
+
+        // Auto-close when a link is clicked
+        mobileNav.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            closeMobileNav();
+          });
+        });
+
+        // Click outside to close
+        document.addEventListener("click", (e) => {
+          if (!mobileNav.classList.contains("is-open")) return;
+
+          const clickInsideNav = mobileNav.contains(e.target);
+          const clickToggle = mobileToggle.contains(e.target);
+
+          if (!clickInsideNav && !clickToggle) {
+            closeMobileNav();
+          }
+        });
+
+        // ESC to close
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && mobileNav.classList.contains("is-open")) {
+            closeMobileNav();
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
