@@ -210,10 +210,28 @@
             </div>
             
             <!-- SCREENSHOT -->
+             <!-- Wrap in figure -->
+              <figure class="viking-card-media">
+                 <video
+                    class="card-screenshot viking-card-preview"
+                    poster="/assets/videos/manager-hours-poster.webp"
+                    controls
+                    playsinline
+                    preload="metadata"
+                    style="display: block; width: 100%; height: auto"
+                    aria-label="Viking Ice Arena manager hours demo"
+                  >
+                    <source
+                      src="/assets/videos/manager-hours-demo.m4v"
+                      type="video/mp4"
+                    />
+                    Your browser does not support embedded video.
+                  </video>
+              </figure>
             <!-- Wrap in Button -->
-              <button class="screenshot-button" aria-label="Enlarge Viking Ice Arena screenshot">
+              <!-- <button class="screenshot-button" aria-label="Enlarge Viking Ice Arena screenshot">
                 <img src="./img/project_screenshots/viking_arena_timecard/manager_dashboard.png" alt="Viking Ice Arena Timekeeping App Screenshot" class="card-screenshot">
-              </button>
+              </button> -->
             <!-- <h3 class="card-title">System interfaces</h3> -->
             <p class="card-body">
               A scheduling and timekeeping system for ice arena employees and managers.            

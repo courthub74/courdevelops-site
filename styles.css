@@ -4190,3 +4190,14 @@ textarea:focus {
   background: rgba(74, 192, 120, 0.1);
   border-color: rgba(74, 192, 120, 0.3);
 }
+
+/* Selected Projects */
+.viking-card-media {
+  margin: 0;
+}
+
+.viking-card-media .viking-card-preview {
+  display: block;
+  width: 100%;
+  height: auto;
+}
