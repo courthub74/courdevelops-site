@@ -141,7 +141,7 @@
        Update this back link if the project cards use a different page or anchor.
        To reuse, duplicate this file and replace project copy, metadata, and figures. -->
         <nav aria-label="Portfolio">
-          <a class="case-return" href="index.html">Back to CourDevelops</a>
+          <a class="case-return" href="index.html">Back to Home Page</a>
         </nav>
         <header>
           <p class="section-kicker">
@@ -172,13 +172,24 @@
           </p>
           <!-- Add a screenshot of the manager’s weekly view using demo names and hours. -->
           <figure>
-            <img
-              src="/img/"
-              alt="Weekly manager view with sample employee hours"
-            />
+            <video
+              controls
+              playsinline
+              preload="metadata"
+              width="1920"
+              height="1080"
+              style="display: block; width: 100%; height: auto"
+              aria-label="Viking Ice Arena manager hours demo"
+            >
+              <source
+                src="/assets/videos/manager-hours-demo.m4v"
+                type="video/mp4"
+              />
+              Your browser does not support embedded video.
+            </video>
             <figcaption>
-              The manager reviews worked hours for the selected week before
-              copying them for payroll.
+              A manager opens an employee’s recorded shift and copies the entry
+              for payroll.
             </figcaption>
           </figure>
         </section>
@@ -194,12 +205,26 @@
               second account could still sign in. The original account could
               sign in again after the cooldown expired.
             </p>
-            <!-- Insert only after capturing a redacted screenshot with a test account.
-      <figure>
-        <img src="/images/viking-cooldown.webp" alt="Sign-in screen showing the cooldown message for a test account">
-        <figcaption>The message shows the account is temporarily in cooldown. Separate sign-in checks covered the second account and recovery.</figcaption>
-      </figure>
-      -->
+            <!-- Insert only after capturing a redacted screenshot with a test account.-->
+            <figure style="margin: 1rem 0; max-width: 480px">
+              <video
+                controls
+                playsinline
+                preload="metadata"
+                style="display: block; width: 100%; height: auto"
+                aria-label="Viking Ice Arena account cooldown demo"
+              >
+                <source
+                  src="/assets/videos/account-cooldown-demo.mp4"
+                  type="video/mp4"
+                />
+                Your browser does not support embedded video.
+              </video>
+              <figcaption>
+                The fifth incorrect PIN attempt triggers a temporary account
+                cooldown.
+              </figcaption>
+            </figure>
           </article>
         </section>
         <section>
